@@ -1,0 +1,24 @@
+dist: trusty
+sudo: required
+
+language: node_js
+
+services:
+  - docker
+
+before_install:
+  - export DEBIAN_FRONTEND=noninteractive;
+  - sudo apt-get -qq --yes update
+  - npm install
+
+test:
+  - echo "no tests"
+
+script:
+  - npm run build
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker build -t serras.xyz .;
+      docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD";
+      docker tag serras.xyz gerardabello/serras.xyz;
+      docker push gerardabello/serras.xyz;
+    fi

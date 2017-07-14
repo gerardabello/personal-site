@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+
+.root {
+  display: grid;
+
+  grid-template-columns: 25vw 25vw 25vw 25vw;
+  grid-template-rows: 25vw 25vw 25vw 25vw 25vw;
+
+  font-size: 5vw;
+
+}
+
+
+@media (max-width: 600px) {
+  .root {
+    font-size: 10vw;
+
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50vw 50vw 50vw 50vw 50vw 50vw 50vw 50vw 50vw 50vw;
+
+  }
+}
+
