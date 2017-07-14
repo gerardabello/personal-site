@@ -13,5 +13,6 @@ RUN curl --silent --show-error --fail --location \
 EXPOSE 80 443 2015 
 WORKDIR /srv
 COPY ./dist .
+COPY ./Caddyfile .
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["--conf", "./Caddyfile", "--log", "stdout"]
