@@ -7,7 +7,7 @@ injectGlobal`
 `
 
 const sizes = {
-  tablet: 800,
+  tablet: 850,
   mobile: 630
 }
 
@@ -71,12 +71,32 @@ const TitleWrapper = styled.div`
   `}
 `
 
-const AboutMe = styled.div`
-  padding: 1em;
+const AboutMeContent = styled.div`
   min-width: 275px;
+
   ${media.mobile`
     min-width: 0px;
   `}
+`
+
+const AboutMe = styled.div`
+  padding: 1em;
+  margin-bottom: 2em;
+`
+
+const AboutMeWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  ${media.tablet`
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  `}
+`
+
+const Projects = styled.div`
+  padding: 1em;
 `
 
 const NameWrapper = styled.div`
@@ -99,12 +119,36 @@ const TitleImgWrapper = styled.div`
   }
 `
 
+const InlineImgWrapper = styled.div`
+  display: none;
+  ${media.tablet`
+    display: initial;
+  `}
+  ${media.mobile`
+    display: none;
+  `}
+
+  float: right;
+  padding: 1em;
+  padding-right: 0;
+
+  img {
+    width: 30vw;
+    margin-top: 6px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
+  }
+`
+
 const ContentImgWrapper = styled.div`
   ${media.tablet`
     display: none;
   `}
 
-  padding: 1em;
+  ${media.mobile`
+    float: right;
+  `}
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -112,29 +156,7 @@ const ContentImgWrapper = styled.div`
   img {
     max-width: 100%;
     width: 250px;
-    margin-top: 80px;
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
-  }
-`
-
-const InlineImgWrapper = styled.div`
-  display: none;
-  ${media.tablet`
-    display: initial;
-  `}
-
-  ${media.mobile`
-    display: none;
-  `}
-
-  padding: 1em;
-  float: right;
-  margin-top: 6px;
-
-
-  img {
-    width: 210px;
+    margin-top: 20px;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
   }
@@ -142,14 +164,7 @@ const InlineImgWrapper = styled.div`
 
 const Content = styled.div`
   padding: 1em;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: auto;
-
-  ${media.tablet`
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  `}
+  padding-top: 0;
 `
 
 const Name = styled.h1`
@@ -187,42 +202,42 @@ export default class App extends Component {
         <Content>
           <AboutMe>
             <SectionTitle>About me</SectionTitle>
-            <InlineImgWrapper>
-              <img src='/assets/imgs/profile2.jpg' />
-            </InlineImgWrapper>
-            <Paragraph>
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
-              It
-              has roots in a piece of classical Latin literature from 45 BC,
-              making
-              it over 2000 years old. Richard McClintock, a Latin professor at
-              Hampden-Sydney College in Virginia, looked up one of the more
-              obscure
-              Latin words, consectetur, from a Lorem Ipsum passage, and going
-              through the cites of the word in classical literature, discovered
-              the
-              undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-              1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good
-              and
-              Evil) by Cicero, written in 45 BC. This book is a treatise on the
-              theory of ethics, very popular during the Renaissance. The first
-              line
-              of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-              in
-              section 1.10.32.
-            </Paragraph>
-            <Paragraph>
-              The standard chunk of Lorem Ipsum used since the 1500s is
-              reproduced
-              below for those interested. Sections 1.10.32 and 1.10.33 from "de
-              Finibus Bonorum et Malorum" by Cicero are also reproduced in their
-              exact original form, accompanied by English versions from the 1914
-              translation by H. Rackham.
-            </Paragraph>
+            <AboutMeWrapper>
+              <AboutMeContent>
+                <InlineImgWrapper>
+                  <img src='/assets/imgs/profile2.jpg' />
+                </InlineImgWrapper>
+                <Paragraph>
+                  Hello! I'm Gerard, a developer based in Barcelona currently
+                  working at Typeform. I try to be a
+                  comprehensive programmer, as no one technology is good for
+                  solving
+                  all problems. I believe good, modern design and quality code
+                  are
+                  fundamental to create excellent software products. I love
+                  learning
+                  new technologies and methods as a way to challenge myself, but
+                  it
+                  also allows me to face problems I could not solve before.
+                </Paragraph>
+                <Paragraph>
+                  Programming is not only my job, it is also my passion. I love,
+                  among other technologies, Javascript, React, WebAudio, Go and
+                  Deep
+                  Learning.
+                </Paragraph>
+                <Paragraph>
+                  I also like drawing, gaming, hiking and tea.
+                </Paragraph>
+              </AboutMeContent>
+              <ContentImgWrapper>
+                <img src='/assets/imgs/profile2.jpg' />
+              </ContentImgWrapper>
+            </AboutMeWrapper>
           </AboutMe>
-          <ContentImgWrapper>
-            <img src='/assets/imgs/profile2.jpg' />
-          </ContentImgWrapper>
+          <Projects>
+            <SectionTitle>Some interesting projects</SectionTitle>
+          </Projects>
         </Content>
       </Root>
     )
