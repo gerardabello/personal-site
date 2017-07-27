@@ -165,6 +165,7 @@ const ContentImgWrapper = styled.div`
 const Content = styled.div`
   padding: 1em;
   padding-top: 0;
+  max-width: 800px;
 `
 
 const Name = styled.h1`
