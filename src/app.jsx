@@ -7,9 +7,8 @@ injectGlobal`
 `
 
 const sizes = {
-  desktop: 992,
-  tablet: 768,
-  phone: 376
+  tablet: 800,
+  mobile: 630
 }
 
 // Iterate through the sizes and create a media template
@@ -34,7 +33,7 @@ const Root = styled.div`
   grid-template-columns: 200px 1fr;
   grid-template-rows: auto;
 
-  ${media.tablet`
+  ${media.mobile`
     grid-template-columns: 1fr;
     grid-template-rows: 50vw auto;
   `}
@@ -53,7 +52,7 @@ const Paragraph = styled.p`
 `
 
 const SectionTitle = styled.h2`
-  font-size: 64px;
+  font-size: 48px;
   margin: 0;
 `
 
@@ -61,22 +60,27 @@ const TitleWrapper = styled.div`
   background-color: #F7F9F9;
   padding: 1em;
   height: 100vh;
-  ${media.tablet`
+  box-shadow: inset rgba(0, 0, 0, 0.09) -20px 0 30px -20px;
+  ${media.mobile`
     height: 50vw;
     padding: 0;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
+    box-shadow: inset rgba(0, 0, 0, 0.09) 0px -20px 30px -20px;
   `}
 `
 
 const AboutMe = styled.div`
   padding: 1em;
-  min-width: 360px;
+  min-width: 275px;
+  ${media.mobile`
+    min-width: 0px;
+  `}
 `
 
 const NameWrapper = styled.div`
-  ${media.tablet`
+  ${media.mobile`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +90,7 @@ const NameWrapper = styled.div`
 
 const TitleImgWrapper = styled.div`
   display: none;
-  ${media.tablet`
+  ${media.mobile`
     display: initial;
   `}
   img{
@@ -108,7 +112,29 @@ const ContentImgWrapper = styled.div`
   img {
     max-width: 100%;
     width: 250px;
-    margin-top: 30px;
+    margin-top: 80px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
+  }
+`
+
+const InlineImgWrapper = styled.div`
+  display: none;
+  ${media.tablet`
+    display: initial;
+  `}
+
+  ${media.mobile`
+    display: none;
+  `}
+
+  padding: 1em;
+  float: right;
+  margin-top: 6px;
+
+
+  img {
+    width: 210px;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
   }
@@ -117,7 +143,7 @@ const ContentImgWrapper = styled.div`
 const Content = styled.div`
   padding: 1em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: auto;
 
   ${media.tablet`
@@ -129,7 +155,7 @@ const Content = styled.div`
 const Name = styled.h1`
   font-size: 48px;
   margin: 0;
-  ${media.tablet`
+  ${media.mobile`
     font-size: 11vw;
   `}
 `
@@ -161,7 +187,9 @@ export default class App extends Component {
         <Content>
           <AboutMe>
             <SectionTitle>About me</SectionTitle>
-
+            <InlineImgWrapper>
+              <img src='/assets/imgs/profile2.jpg' />
+            </InlineImgWrapper>
             <Paragraph>
               Contrary to popular belief, Lorem Ipsum is not simply random text.
               It
