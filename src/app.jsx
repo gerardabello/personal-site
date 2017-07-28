@@ -41,7 +41,7 @@ const Root = styled.div`
 
 const Paragraph = styled.p`
   font-family: 'Zilla Slab', serif;
-  color: #7E8685;
+  color: #676d6c;
   font-size: 16px;
   line-height: 20px;
   text-align: justify;
