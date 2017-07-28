@@ -54,6 +54,9 @@ const Paragraph = styled.p`
 const SectionTitle = styled.h2`
   font-size: 48px;
   margin: 0;
+  ${media.mobile`
+    font-size: 8vw;
+  `}
 `
 
 const TitleWrapper = styled.div`
@@ -73,6 +76,12 @@ const TitleWrapper = styled.div`
 
 const AboutMeContent = styled.div`
   min-width: 275px;
+  max-width: 400px;
+  flex: 1;
+
+  ${media.tablet`
+    max-width: initial;
+  `}
 
   ${media.mobile`
     min-width: 0px;
@@ -85,14 +94,7 @@ const AboutMe = styled.div`
 `
 
 const AboutMeWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-
-  ${media.tablet`
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  `}
+  display: flex;
 `
 
 const Projects = styled.div`
@@ -149,6 +151,8 @@ const ContentImgWrapper = styled.div`
     float: right;
   `}
 
+  flex: 1;
+  margin-right: -2em;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -156,7 +160,7 @@ const ContentImgWrapper = styled.div`
   img {
     max-width: 100%;
     width: 250px;
-    margin-top: 20px;
+    margin-top: -16px;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
   }
@@ -165,7 +169,6 @@ const ContentImgWrapper = styled.div`
 const Content = styled.div`
   padding: 1em;
   padding-top: 0;
-  max-width: 800px;
 `
 
 const Name = styled.h1`
