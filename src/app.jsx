@@ -4,6 +4,7 @@ import styled, { injectGlobal } from 'styled-components'
 import Projects from './projects'
 import { SectionTitle } from './common'
 import media from './media'
+import CanvasDraw from './canvas'
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -89,6 +90,7 @@ const AboutMeContent = styled.div`
 const AboutMe = styled.div`
   padding: 1em;
   margin-bottom: 2em;
+  position: relative;
 `
 
 const AboutMeWrapper = styled.div`
@@ -160,7 +162,16 @@ const ContentImgWrapper = styled.div`
   }
 `
 
+const Canvas = styled.canvas`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
+
 const Content = styled.div`
+  position: relative;
   padding: 1em;
   padding-top: 0;
 
@@ -187,6 +198,10 @@ export default class App extends Component {
     this.state = {}
   }
 
+  componentDidMount () {
+    CanvasDraw(this.canvas)
+  }
+
   render () {
     return (
       <Root>
@@ -205,6 +220,11 @@ export default class App extends Component {
         </TitleWrapper>
 
         <Content>
+          <Canvas
+            innerRef={comp => {
+              this.canvas = comp
+            }}
+          />
           <AboutMe>
             <SectionTitle>About me</SectionTitle>
             <AboutMeWrapper>
@@ -227,7 +247,7 @@ export default class App extends Component {
                   also allows me to face problems I could not solve before.
                 </Paragraph>
                 <Paragraph>
-                  Programming is not only my job, it is also my passion. I love,
+                  Programming is not only my job, it is also my passion. I like,
                   among other technologies, <strong>Javascript</strong>,
                   {' '}<strong>React</strong>, <strong>WebAudio</strong>,
                   {' '}<strong>Go</strong> and <strong>Deep Learning</strong>.

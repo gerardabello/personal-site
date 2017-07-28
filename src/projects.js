@@ -39,6 +39,7 @@ const projects = [
 const Root = styled.div`
   padding: 1em;
   max-width: 700px;
+  position: relative;
 `
 
 const Grid = styled.div`
