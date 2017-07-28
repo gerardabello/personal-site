@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import styled, { injectGlobal, css } from 'styled-components'
 
-injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat');
-  @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,500,600,700');
-`
-
 const sizes = {
   tablet: 850,
   mobile: 630
@@ -21,6 +16,18 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
   return acc
 }, {})
+
+injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,500,600,700');
+
+  body {
+    overflow: hidden;
+    ${media.mobile`
+      overflow-y: auto;
+    `}
+  }
+`
 
 const Root = styled.div`
   font-family: 'Montserrat', sans-serif;
@@ -49,6 +56,17 @@ const Paragraph = styled.p`
   font-size: 16px;
   line-height: 20px;
   text-align: justify;
+
+  a {
+    color: #4ab9a3;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #1f7aa1;
+  }
 `
 
 const SectionTitle = styled.h2`
@@ -169,6 +187,13 @@ const ContentImgWrapper = styled.div`
 const Content = styled.div`
   padding: 1em;
   padding-top: 0;
+
+  overflow-y: auto;
+  height: 100vh;
+  ${media.mobile`
+    overflow-y: hidden;
+    height: auto;
+  `}
 `
 
 const Name = styled.h1`
@@ -213,12 +238,13 @@ export default class App extends Component {
                 </InlineImgWrapper>
                 <Paragraph>
                   Hello! I'm Gerard, a developer based in Barcelona currently
-                  working at Typeform. I try to be a
+                  working at <a href='https://www.typeform.com'>Typeform</a>. I
+                  try to be a
                   comprehensive programmer, as no one technology is good for
                   solving
                   all problems. I believe good, modern design and quality code
                   are
-                  fundamental to create excellent software products. I love
+                  fundamental to create excellent software products. I like
                   learning
                   new technologies and methods as a way to challenge myself, but
                   it
@@ -226,9 +252,9 @@ export default class App extends Component {
                 </Paragraph>
                 <Paragraph>
                   Programming is not only my job, it is also my passion. I love,
-                  among other technologies, Javascript, React, WebAudio, Go and
-                  Deep
-                  Learning.
+                  among other technologies, <strong>Javascript</strong>,
+                  {' '}<strong>React</strong>, <strong>WebAudio</strong>,
+                  {' '}<strong>Go</strong> and <strong>Deep Learning</strong>.
                 </Paragraph>
                 <Paragraph>
                   I also like drawing, gaming, hiking and tea.
