@@ -1,25 +1,13 @@
 import React, { Component } from 'react'
-import styled, { injectGlobal, css } from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 
-const sizes = {
-  tablet: 850,
-  mobile: 630
-}
-
-// Iterate through the sizes and create a media template
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label] / 16}em) {
-      ${css(...args)}
-    }
-  `
-
-  return acc
-}, {})
+import Projects from './projects'
+import { SectionTitle } from './common'
+import media from './media'
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Montserrat');
-  @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,500,600,700');
+  @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,600');
 
   body {
     overflow: hidden;
@@ -69,14 +57,6 @@ const Paragraph = styled.p`
   }
 `
 
-const SectionTitle = styled.h2`
-  font-size: 48px;
-  margin: 0;
-  ${media.mobile`
-    font-size: 8vw;
-  `}
-`
-
 const TitleWrapper = styled.div`
   background-color: #F7F9F9;
   padding: 1em;
@@ -113,10 +93,6 @@ const AboutMe = styled.div`
 
 const AboutMeWrapper = styled.div`
   display: flex;
-`
-
-const Projects = styled.div`
-  padding: 1em;
 `
 
 const NameWrapper = styled.div`
@@ -265,9 +241,7 @@ export default class App extends Component {
               </ContentImgWrapper>
             </AboutMeWrapper>
           </AboutMe>
-          <Projects>
-            <SectionTitle>Some interesting projects</SectionTitle>
-          </Projects>
+          <Projects />
         </Content>
       </Root>
     )
