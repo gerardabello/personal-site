@@ -14,8 +14,6 @@ const draw = canvas => {
     triangles.push(newTriangle())
   }
 
-  console.log(triangles)
-
   animate()
 }
 

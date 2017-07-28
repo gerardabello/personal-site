@@ -37,7 +37,7 @@ const projects = [
 ]
 
 const Root = styled.div`
-  padding: 1em;
+  padding: 20px;
   max-width: 700px;
   position: relative;
 `
@@ -47,7 +47,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-gap: 1em;
+  grid-gap: 20px;
 
 `
 

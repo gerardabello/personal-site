@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled, { injectGlobal } from 'styled-components'
 
 import Projects from './projects'
+import Contact from './contact'
 import { SectionTitle } from './common'
 import media from './media'
 import CanvasDraw from './canvas'
@@ -26,7 +27,7 @@ const Root = styled.div`
   color: #3A3E3D;
 
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 206px 1fr;
   grid-template-rows: auto;
 
   ${media.mobile`
@@ -54,13 +55,13 @@ const Paragraph = styled.p`
 
   strong {
     font-weight: 600;
-    color: #1f7aa1;
+    color: #587dc5;
   }
 `
 
 const TitleWrapper = styled.div`
   background-color: #F7F9F9;
-  padding: 1em;
+  padding: 20px;
   height: 100vh;
   box-shadow: inset rgba(0, 0, 0, 0.09) -20px 0 30px -20px;
   ${media.mobile`
@@ -88,8 +89,7 @@ const AboutMeContent = styled.div`
 `
 
 const AboutMe = styled.div`
-  padding: 1em;
-  margin-bottom: 2em;
+  padding: 20px;
   position: relative;
 `
 
@@ -127,7 +127,7 @@ const InlineImgWrapper = styled.div`
   `}
 
   float: right;
-  padding: 1em;
+  padding: 20px;
   padding-right: 0;
 
   img {
@@ -172,7 +172,7 @@ const Canvas = styled.canvas`
 
 const Content = styled.div`
   position: relative;
-  padding: 1em;
+  padding: 20px;
   padding-top: 0;
 
   overflow-y: auto;
@@ -262,6 +262,7 @@ export default class App extends Component {
             </AboutMeWrapper>
           </AboutMe>
           <Projects />
+          <Contact />
         </Content>
       </Root>
     )
