@@ -17,6 +17,17 @@ const draw = canvas => {
   animate()
 }
 
+const triangleOrientation = triangle => {
+  let sum = 0.0
+  const n = triangle.points.length
+  for (let i = 0; i < n; i++) {
+    let v1 = triangle.points[i]
+    let v2 = triangle.points[(i + 1) % n] // % is the modulo operator
+    sum += (v2.x - v1.x) * (v2.y + v1.y)
+  }
+  return sum > 0.0
+}
+
 const newTriangle = () => {
   let points = []
 
@@ -55,7 +66,11 @@ const animate = () => {
     ctx.moveTo(triangle.points[0].x, triangle.points[0].y)
     ctx.lineTo(triangle.points[1].x, triangle.points[1].y)
     ctx.lineTo(triangle.points[2].x, triangle.points[2].y)
-    ctx.fillStyle = '#E1F6F1'
+    if (triangleOrientation(triangle)) {
+      ctx.fillStyle = '#EFF3FB'
+    } else {
+      ctx.fillStyle = '#E1F6F1'
+    }
     ctx.fill()
   })
 }
