@@ -1,3 +1,5 @@
+import R from 'ramda'
+
 let ctx
 let cvWidth
 let cvHeight
@@ -10,7 +12,7 @@ const draw = canvas => {
   ctx.canvas.width = cvWidth
   ctx.canvas.height = cvHeight
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 30; i++) {
     triangles.push(newTriangle())
   }
 
@@ -45,20 +47,63 @@ const newTriangle = () => {
   }
 }
 
-const newPoint = (center, size = 200) => {
+const newPoint = (center, size = 200, vel = 20) => {
   return {
     x: center.x + (Math.random() - 0.5) * size,
-    y: center.y + (Math.random() - 0.5) * size
+    y: center.y + (Math.random() - 0.5) * size,
+    vx: (Math.random() - 0.5) * vel,
+    vy: (Math.random() - 0.5) * vel
   }
 }
 
+const average = R.converge(R.divide, [R.sum, R.length])
+const axisAverage = (axis, list) => {
+  return average(R.map(R.prop(axis), list))
+}
+
+const distance = (point1, point2) => {
+  return Math.sqrt(
+    Math.pow(point1.x - point2.x, 2) + Math.pow(point1.y - point2.y, 2)
+  )
+}
+
+const unitaryVector = (point1, point2) => {
+  const d = distance(point1, point2)
+  return { x: (point2.x - point1.x) / d, y: (point2.y - point1.y) / d }
+}
+
 const animate = () => {
+  const dt = 1 / 60
+
   // call again next time we can draw
   window.requestAnimationFrame(animate)
   // clear canvas
   ctx.clearRect(0, 0, cvWidth, cvHeight)
   // draw everything
-  //
+
+  triangles = triangles.map(triangle => {
+    const center = {
+      x: axisAverage('x', triangle.points),
+      y: axisAverage('y', triangle.points)
+    }
+
+    return Object.assign({}, triangle, {
+      points: triangle.points.map(point => {
+        const gravityForce = 0.0001 * Math.pow(distance(point, center), 2)
+        const gv = unitaryVector(point, center)
+        const g = { x: gv.x * gravityForce, y: gv.y * gravityForce }
+        const vx = point.vx + g.x * dt
+        const vy = point.vy + g.y * dt
+
+        return {
+          x: point.x + vx * dt,
+          y: point.y + vy * dt,
+          vx,
+          vy
+        }
+      })
+    })
+  })
 
   triangles.map(triangle => {
     // Filled triangle
