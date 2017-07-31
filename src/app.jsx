@@ -180,6 +180,7 @@ const Content = styled.div`
   ${media.mobile`
     overflow-y: hidden;
     height: auto;
+    padding: 0;
   `}
 `
 
