@@ -91,11 +91,14 @@ const animate = () => {
 
     return Object.assign({}, triangle, {
       points: triangle.points.map(point => {
-        const gravityForce = 0.0001 * Math.pow(distance(point, center), 2)
-        const gv = unitaryVector(point, center)
-        const g = { x: gv.x * gravityForce, y: gv.y * gravityForce }
-        const vx = point.vx + g.x * dt
-        const vy = point.vy + g.y * dt
+        const absSpringForce = 0.0001 * Math.pow(distance(point, center), 2)
+        const uVecToCenter = unitaryVector(point, center)
+        const springForce = {
+          x: uVecToCenter.x * absSpringForce,
+          y: uVecToCenter.y * absSpringForce
+        }
+        const vx = point.vx + springForce.x * dt
+        const vy = point.vy + springForce.y * dt
 
         return {
           x: point.x + vx * dt,
