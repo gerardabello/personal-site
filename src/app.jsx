@@ -8,8 +8,7 @@ import media from './media'
 import CanvasDraw from './canvas'
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat');
-  @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,600');
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto+Slab:300,400');
 
   body {
     overflow: hidden;
@@ -20,7 +19,7 @@ injectGlobal`
 `
 
 const Root = styled.div`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 
   background-color: #FFFFFF;
 
@@ -41,29 +40,30 @@ const Root = styled.div`
 `
 
 const Paragraph = styled.p`
-  font-family: 'Zilla Slab', serif;
-  color: #676d6c;
-  font-size: 16px;
-  line-height: 20px;
+  /* Contrary to popular: */
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  color: #676D6C;
+  font-size: 14px;
+  line-height: 22px;
   text-align: justify;
 
   a {
     color: #4ab9a3;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: underline;
   }
 
   strong {
-    font-weight: 600;
+    font-weight: 400;
     color: #587dc5;
   }
 `
 
 const TitleWrapper = styled.div`
-  background-color: #F7F9F9;
+  background-color: #f1f1f1;
   padding: 20px;
   height: 100vh;
-  box-shadow: inset rgba(0, 0, 0, 0.09) -20px 0 30px -20px;
   ${media.mobile`
     height: 50vw;
     padding: 0;
@@ -89,6 +89,7 @@ const AboutMeContent = styled.div`
 `
 
 const AboutMe = styled.div`
+  margin-top: 10px;
   padding: 20px;
   position: relative;
 `
@@ -98,7 +99,10 @@ const AboutMeWrapper = styled.div`
 `
 
 const NameWrapper = styled.div`
+  margin-top: 10px;
+  text-align: center;
   ${media.mobile`
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,6 +190,7 @@ const Content = styled.div`
 
 const Name = styled.h1`
   font-size: 48px;
+  font-weight: 300;
   margin: 0;
   ${media.mobile`
     font-size: 11vw;

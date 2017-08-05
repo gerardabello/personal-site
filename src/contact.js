@@ -20,7 +20,7 @@ const PopupButton = styled.button`
   border: none;
   height: 40px;
   font-size: 22px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   border-radius: 3px;
   margin-top: 20px;
   cursor: pointer;
