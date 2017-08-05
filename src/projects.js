@@ -18,13 +18,13 @@ const projects = [
   },
   {
     img: '/assets/imgs/colossal.png',
-    href: 'http://gerardabello.gitlab.io/colossal',
+    href: 'https://colossal.surge.sh',
     title: 'Colossal',
     description: 'A simple poly synth using Web Audio and React'
   },
   {
     img: '/assets/imgs/weight.png',
-    href: 'https://gitlab.com/gerardabello/weight',
+    href: 'https://github.com/gerardabello/weight',
     title: 'Weight',
     description: 'Neural network lib focused on ease of use'
   },
