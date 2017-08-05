@@ -12,7 +12,9 @@ const draw = canvas => {
   ctx.canvas.width = cvWidth
   ctx.canvas.height = cvHeight
 
-  for (let i = 0; i < 30; i++) {
+  const n = Math.floor(cvWidth * cvHeight / Math.pow(200, 2))
+
+  for (let i = 0; i < n; i++) {
     triangles.push(newTriangle())
   }
 
