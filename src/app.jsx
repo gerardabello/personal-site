@@ -61,7 +61,7 @@ const Paragraph = styled.p`
 `
 
 const TitleWrapper = styled.div`
-  background-color: #f1f1f1;
+  background-color: #f6f6f6;
   padding: 20px;
   height: 100vh;
   ${media.mobile`
