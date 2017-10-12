@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   entry: {
     bundle: './src/index.js'
   },
@@ -27,23 +27,16 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true, // enable source maps to map errors (stack traces) to modules
+      output: {
+        comments: false // remove all comments
+      }
+    }),
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     })
-  ],
-  devServer: {
-    quiet: false,
-    noInfo: false,
-    contentBase: './',
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    },
-    publicPath: '/',
-    // headers: { "X-Custom-Header": "yes" },
-    stats: {
-      colors: true
-    }
-  }
+  ]
 }

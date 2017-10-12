@@ -13,14 +13,14 @@
   "dependencies": {
     "@typeform/embed": "^0.1.4",
     "ramda": "^0.24.1",
-    "react": "^16.0.0-alpha.13",
-    "react-dom": "^16.0.0-alpha.13",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "styled-components": "^2.1.1"
   },
   "scripts": {
     "clean": "rm -rf dist",
     "start": "webpack-dev-server",
-    "build": "npm run clean && NODE_ENV=production webpack && cp ./index.html ./dist && cp -r ./assets ./dist",
+    "build": "npm run clean && webpack --config webpack.config.prod.js && cp ./index.html ./dist && cp -r ./assets ./dist",
     "lint": "standard --verbose",
     "deploy": "npm run build && surge -p dist -d gerardabello.surge.sh"
   },
@@ -40,7 +40,12 @@
   },
   "babel": {
     "presets": [
-      "es2015",
+      [
+        "es2015",
+        {
+          "modules": false
+        }
+      ],
       "react"
     ]
   }
