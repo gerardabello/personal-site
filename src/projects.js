@@ -33,6 +33,12 @@ const projects = [
     href: 'https://www.npmjs.com/package/adsr-envelope-graph',
     title: 'ADSR Graph',
     description: 'Visualization of an ADSR envelope as a React component'
+  },
+  {
+    img: '/assets/imgs/gaspt.jpg',
+    href: 'https://gaspt.serras.xyz',
+    title: 'gasPT',
+    description: 'Javascript path tracer based on smallPT'
   }
 ]
 
@@ -48,7 +54,6 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
-
 `
 
 const Project = styled.div`
@@ -60,7 +65,7 @@ const Project = styled.div`
 
   box-shadow: rgba(0, 0, 0, 0.2) 0 0px 0px;
   transition: all 0.3s ease;
-  &:hover{
+  &:hover {
     transform: translateY(-4px);
     box-shadow: rgba(0, 0, 0, 0.2) 0 4px 8px;
   }
@@ -90,13 +95,14 @@ export default class Projects extends Component {
       <Root>
         <SectionTitle>Some interesting projects</SectionTitle>
         <Grid>
-          {projects.map(p =>
+          {projects.map(p => (
             <Project key={p.title}>
               <a href={p.href}>
-                <Img src={p.img} /><Hover> {p.title} </Hover>
+                <Img src={p.img} />
+                <Hover> {p.title} </Hover>
               </a>
             </Project>
-          )}
+          ))}
         </Grid>
       </Root>
     )
