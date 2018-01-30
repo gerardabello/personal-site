@@ -18,12 +18,13 @@ const PopupButton = styled.button`
   max-width: 350px;
   outline: none;
   border: none;
-  height: 40px;
-  font-size: 22px;
-  font-family: 'Roboto Condensed', sans-serif;
+  height: 54px;
+  font-size: 38px;
+  font-family: 'SHKODER', sans-serif;
   border-radius: 3px;
   margin-top: 20px;
   cursor: pointer;
+  line-height: 1.666;
 
   transition: all 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0px 0px;
@@ -47,7 +48,6 @@ export default class Contact extends Component {
   render () {
     return (
       <Root>
-        <SectionTitle>Contact me</SectionTitle>
         <PopupButton onClick={this.openPopup}>
           Leave a message
         </PopupButton>
