@@ -21,23 +21,15 @@
   "scripts": {
     "clean": "rm -rf dist",
     "start": "webpack-dev-server",
-    "build": "npm run clean && webpack --config webpack.config.prod.js && cp ./index.html ./dist && cp -r ./assets ./dist",
+    "build":
+      "npm run clean && webpack --config webpack.config.prod.js && cp ./index.html ./dist",
     "lint": "standard --verbose",
     "deploy": "npm run build && surge -p dist -d gerardabello.surge.sh"
   },
   "license": "UNLICENSED",
   "standard": {
-    "global": [
-      "it",
-      "xit",
-      "describe",
-      "xdescribe",
-      "beforeEach",
-      "afterEach"
-    ],
-    "ignore": [
-      "/node_modules/"
-    ]
+    "global": ["it", "xit", "describe", "xdescribe", "beforeEach", "afterEach"],
+    "ignore": ["/node_modules/"]
   },
   "babel": {
     "presets": [
