@@ -6,6 +6,7 @@ import Contact from './contact'
 import { SectionTitle } from './common'
 import media from './media'
 import CanvasDraw from './canvas'
+import SocialIcons from './social-icons'
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto+Slab:300,400');
@@ -261,6 +262,7 @@ export default class App extends Component {
                 <Paragraph>
                   I also like drawing, gaming, hiking and tea.
                 </Paragraph>
+                <SocialIcons />
               </AboutMeContent>
               <ContentImgWrapper>
                 <img src='/assets/imgs/profile2.jpg' />
