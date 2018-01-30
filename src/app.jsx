@@ -8,8 +8,35 @@ import media from './media'
 import CanvasDraw from './canvas'
 import SocialIcons from './social-icons'
 
+import ShkoderLight from '../assets/fonts/Shkoder 1989 Light.otf'
+import ShkoderBlack from '../assets/fonts/Shkoder 1989 Black.otf'
+import SourceSansProRegular from '../assets/fonts/SourceSansPro-Regular.ttf'
+import SourceSansProBold from '../assets/fonts/SourceSansPro-Bold.ttf'
+
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto+Slab:300,400');
+  @font-face {
+    font-family: Source Sans Pro;
+    src: url(${SourceSansProRegular});
+    font-weight:400;
+  }
+
+  @font-face {
+    font-family: Source Sans Pro;
+    src: url(${SourceSansProBold});
+    font-weight:600;
+  }
+
+  @font-face {
+    font-family: SHKODER;
+    src: url(${ShkoderLight});
+    font-weight:200;
+  }
+
+  @font-face {
+    font-family: SHKODER;
+    src: url(${ShkoderBlack});
+    font-weight:800;
+  }
 
   body {
     overflow: hidden;
@@ -20,7 +47,7 @@ injectGlobal`
 `
 
 const Root = styled.div`
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 
   background-color: #FFFFFF;
 
@@ -42,26 +69,28 @@ const Root = styled.div`
 
 const Paragraph = styled.p`
   /* Contrary to popular: */
-  font-family: 'Roboto Slab', serif;
-  font-weight: 300;
+  font-family: 'Source Sans Pro', serif;
+  font-weight: 400;
   color: #676D6C;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   text-align: justify;
 
   a {
     color: #4ab9a3;
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: underline;
   }
 
   strong {
-    font-weight: 400;
+    font-weight: 600;
     color: #587dc5;
   }
 `
 
 const TitleWrapper = styled.div`
+  font-family: SHKODER;
+  font-weight: 200;
   background-color: #f6f6f6;
   padding: 20px;
   height: 100vh;

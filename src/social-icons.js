@@ -12,7 +12,7 @@ const IconWrapper = styled.a`
   width: 38px;
   height: 38px;
   margin-right: 20px;
-  opacity: 0.5;
+  opacity: 0.75;
   transition: opacity 0.4s ease;
 
   &:hover {

@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import media from './media'
 
 export const SectionTitle = styled.h2`
+  font-family: SHKODER;
+  font-weight: 800;
   font-size: 48px;
-  font-weight: 400;
   margin: 0;
   margin-bottom: 10px;
   ${media.mobile`
