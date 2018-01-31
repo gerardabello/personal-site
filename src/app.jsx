@@ -13,6 +13,8 @@ import ShkoderBlack from '../assets/fonts/Shkoder 1989 Black.otf'
 import SourceSansProRegular from '../assets/fonts/SourceSansPro-Regular.ttf'
 import SourceSansProBold from '../assets/fonts/SourceSansPro-Bold.ttf'
 
+import profilePic from '../assets/imgs/profile2.jpg'
+
 injectGlobal`
   @font-face {
     font-family: Source Sans Pro;
@@ -251,7 +253,7 @@ export default class App extends Component {
           </NameWrapper>
 
           <TitleImgWrapper>
-            <img src='/assets/imgs/profile2.jpg' />
+            <img src={profilePic} />
           </TitleImgWrapper>
         </TitleWrapper>
 
@@ -266,7 +268,7 @@ export default class App extends Component {
             <AboutMeWrapper>
               <AboutMeContent>
                 <InlineImgWrapper>
-                  <img src='/assets/imgs/profile2.jpg' />
+                  <img src={profilePic} />
                 </InlineImgWrapper>
                 <Paragraph>
                   Hello! I'm Gerard, a developer based in Barcelona currently
@@ -294,7 +296,7 @@ export default class App extends Component {
                 <SocialIcons />
               </AboutMeContent>
               <ContentImgWrapper>
-                <img src='/assets/imgs/profile2.jpg' />
+                <img src={profilePic} />
               </ContentImgWrapper>
             </AboutMeWrapper>
           </AboutMe>
