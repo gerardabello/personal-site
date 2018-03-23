@@ -1,4 +1,4 @@
-import R from 'ramda'
+import { converge, divide, sum, length, map, curry, clamp, prop } from 'ramda'
 
 let ctx
 let cvWidth
@@ -58,9 +58,9 @@ const newPoint = (center, size = 200, vel = 20) => {
   }
 }
 
-const average = R.converge(R.divide, [R.sum, R.length])
+const average = converge(divide, [sum, length])
 const axisAverage = (axis, list) => {
-  return average(R.map(R.prop(axis), list))
+  return average(map(prop(axis), list))
 }
 
 const distance = (point1, point2) => {
@@ -74,7 +74,7 @@ const unitaryVector = (point1, point2) => {
   return { x: (point2.x - point1.x) / d, y: (point2.y - point1.y) / d }
 }
 
-const updatePoint = R.curry((dt, center, point) => {
+const updatePoint = curry((dt, center, point) => {
   const absSpringForce = 0.0001 * Math.pow(distance(point, center), 2)
   const uVecToCenter = unitaryVector(point, center)
   const springForce = {
@@ -85,12 +85,12 @@ const updatePoint = R.curry((dt, center, point) => {
   let vy = point.vy + springForce.y * dt
 
   if (point.x < 0 || point.x > cvWidth) {
-    point.x = R.clamp(0, cvWidth, point.x)
+    point.x = clamp(0, cvWidth, point.x)
     vx = -vx
   }
 
   if (point.y < 0 || point.y > cvHeight) {
-    point.y = R.clamp(0, cvHeight, point.y)
+    point.y = clamp(0, cvHeight, point.y)
     vy = -vy
   }
 
@@ -102,14 +102,14 @@ const updatePoint = R.curry((dt, center, point) => {
   }
 })
 
-const updateTriangle = R.curry((dt, triangle) => {
+const updateTriangle = curry((dt, triangle) => {
   const center = {
     x: axisAverage('x', triangle.points),
     y: axisAverage('y', triangle.points)
   }
 
   return Object.assign({}, triangle, {
-    points: R.map(updatePoint(dt, center), triangle.points)
+    points: map(updatePoint(dt, center), triangle.points)
   })
 })
 
@@ -121,10 +121,10 @@ const animate = () => {
   // clear canvas
   ctx.fillStyle = '#FFFFFF'
   ctx.fillRect(0, 0, cvWidth, cvHeight)
-  // ctx.clearRect(0, 0, cvWidth, cvHeight)
+  // ctx.clearct(0, 0, cvWidth, cvHeight)
   // draw everything
 
-  triangles = R.map(updateTriangle(dt), triangles)
+  triangles = map(updateTriangle(dt), triangles)
 
   triangles.map(triangle => {
     // Filled triangle

@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './app.jsx'
+import App from './app'
 
-export function mount ({rootNode}) {
-  ReactDOM.render(<App />, rootNode)
+export function mount (node) {
+  ReactDOM.render(<App />, node)
 }
 
-mount({
-  rootNode: document.getElementById('root')
-})
+mount(document.getElementById('root'))

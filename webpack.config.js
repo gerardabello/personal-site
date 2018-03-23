@@ -1,28 +1,15 @@
-const path = require('path')
-const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map',
-  entry: {
-    bundle: './src/index.js'
-  },
-  output: {
-    library: ['bundle'],
-    libraryTarget: 'var',
-    publicPath: '/',
-    filename: '[name].js',
-    path: path.join(__dirname, './dist')
-  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js?$/,
         exclude: /(node_modules)/,
-        use: [
-          {
-            loader: 'babel-loader'
-          }
-        ]
+        use: {
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.(png|jpg|gif|svg|ttf|otf)$/,
@@ -35,24 +22,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"development"'
-    })
-  ],
-  devServer: {
-    quiet: false,
-    noInfo: false,
-    contentBase: './',
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    },
-    publicPath: '/',
-    // headers: { "X-Custom-Header": "yes" },
-    stats: {
-      colors: true
-    }
-  }
+  plugins: [new HtmlWebpackPlugin({ template: 'src/index.html' })]
 }
