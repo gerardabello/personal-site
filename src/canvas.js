@@ -34,6 +34,8 @@ const triangleOrientation = triangle => {
 
 const newTriangle = () => {
   let points = []
+  const color1 = `rgba(132, 164, 227, ${Math.random() * 0.3 + 0.1})`
+  const color2 = `rgba(125, 215, 194, ${Math.random() * 0.3 + 0.1})`
 
   let center = {
     x: Math.random() * cvWidth,
@@ -45,7 +47,9 @@ const newTriangle = () => {
   }
 
   return {
-    points
+    points,
+    color1,
+    color2
   }
 }
 
@@ -133,9 +137,9 @@ const animate = () => {
     ctx.lineTo(triangle.points[1].x, triangle.points[1].y)
     ctx.lineTo(triangle.points[2].x, triangle.points[2].y)
     if (triangleOrientation(triangle)) {
-      ctx.fillStyle = '#EFF3FB'
+      ctx.fillStyle = triangle.color1
     } else {
-      ctx.fillStyle = '#E1F6F1'
+      ctx.fillStyle = triangle.color2
     }
     ctx.fill()
   })

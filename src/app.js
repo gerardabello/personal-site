@@ -46,7 +46,7 @@ const Root = styled.div`
 
   background-color: #ffffff;
 
-  color: #3a3e3d;
+  color: #353535;
 
   display: grid;
   grid-template-columns: 206px 1fr;
@@ -64,7 +64,7 @@ const Paragraph = styled.p`
   /* Contrary to popular: */
   font-family: 'Source Sans Pro', serif;
   font-weight: 400;
-  color: #676d6c;
+  color: #484848;
   font-size: 16px;
   line-height: 22px;
   text-align: justify;
