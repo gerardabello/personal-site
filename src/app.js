@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import styled, { injectGlobal, ThemeProvider } from 'styled-components'
 
 import Projects from './projects'
 import Contact from './contact'
-import { SectionTitle } from './common'
+import { Img, SectionTitle } from './common'
 import media from './media'
 import CanvasDraw from './canvas'
 import SocialIcons from './social-icons'
@@ -13,6 +13,22 @@ import SourceSansProRegular from '../assets/fonts/SourceSansPro-Regular.otf.woff
 import SourceSansProBold from '../assets/fonts/SourceSansPro-Bold.otf.woff2'
 
 import profilePic from '../assets/imgs/profile2.jpg'
+
+const lightTheme = {
+  titleColor: '#353535',
+  bodyColor: '#484848',
+  backgroundColor: 'white',
+  sidebarColor: '#f6f6f6',
+  imgMixBlendMode: 'multiply'
+}
+
+const darkTheme = {
+  titleColor: '#ececec',
+  bodyColor: '#dcdcdc',
+  backgroundColor: '#1b1b1b',
+  sidebarColor: '#161616',
+  imgMixBlendMode: 'difference'
+}
 
 injectGlobal`
   @font-face {
@@ -44,9 +60,9 @@ injectGlobal`
 const Root = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
 
-  background-color: #ffffff;
+  background-color: ${props => props.theme.backgroundColor};
 
-  color: #353535;
+  color: ${props => props.theme.bodyColor};
 
   display: grid;
   grid-template-columns: 206px 1fr;
@@ -64,7 +80,7 @@ const Paragraph = styled.p`
   /* Contrary to popular: */
   font-family: 'Source Sans Pro', serif;
   font-weight: 400;
-  color: #484848;
+  color: ${props => props.theme.bodyColor};
   font-size: 16px;
   line-height: 22px;
   text-align: justify;
@@ -84,7 +100,8 @@ const Paragraph = styled.p`
 const TitleWrapper = styled.div`
   font-family: SHKODER;
   font-weight: 200;
-  background-color: #f6f6f6;
+  background-color: ${props => props.theme.sidebarColor};
+  color: ${props => props.theme.titleColor};
   padding: 20px;
   height: 100vh;
   ${media.mobile`
@@ -218,7 +235,7 @@ export default class App extends Component {
   constructor () {
     super()
 
-    this.state = {}
+    this.state = { theme: lightTheme }
   }
 
   componentDidMount () {
@@ -227,64 +244,66 @@ export default class App extends Component {
 
   render () {
     return (
-      <Root>
-        <TitleWrapper>
-          <NameWrapper>
-            <div>
-              <Name>Gerard</Name>
-              <Name>Abelló</Name>
-              <Name>Serras</Name>
-            </div>
-          </NameWrapper>
+      <ThemeProvider theme={this.state.theme}>
+        <Root>
+          <TitleWrapper>
+            <NameWrapper>
+              <div>
+                <Name>Gerard</Name>
+                <Name>Abelló</Name>
+                <Name>Serras</Name>
+              </div>
+            </NameWrapper>
 
-          <TitleImgWrapper>
-            <img src={profilePic} />
-          </TitleImgWrapper>
-        </TitleWrapper>
+            <TitleImgWrapper>
+              <Img src={profilePic} />
+            </TitleImgWrapper>
+          </TitleWrapper>
 
-        <Content>
-          <Canvas
-            innerRef={comp => {
-              this.canvas = comp
-            }}
-          />
-          <AboutMe>
-            <SectionTitle>About me</SectionTitle>
-            <AboutMeWrapper>
-              <AboutMeContent>
-                <InlineImgWrapper>
-                  <img src={profilePic} />
-                </InlineImgWrapper>
-                <Paragraph>
-                  Hello! I'm Gerard, a developer based in Barcelona currently
-                  working at <a href='https://www.typeform.com'>Typeform</a>. I
-                  try to be a comprehensive programmer, as no one technology is
-                  good for solving all problems. I believe good, modern design
-                  and quality code are fundamental to create excellent software
-                  products. I like learning new technologies and methods as a
-                  way to challenge myself, but it also allows me to face
-                  problems I could not solve before.
-                </Paragraph>
-                <Paragraph>
-                  Programming is not only my job, it is also my passion. I like,
-                  among other technologies, <strong>Javascript</strong>,{' '}
-                  <strong>React</strong>, <strong>WebAudio</strong>,{' '}
-                  <strong>Go</strong> and <strong>Deep Learning</strong>.
-                </Paragraph>
-                <Paragraph>
-                  I also like drawing, gaming, hiking and tea.
-                </Paragraph>
-                <SocialIcons />
-              </AboutMeContent>
-              <ContentImgWrapper>
-                <img src={profilePic} />
-              </ContentImgWrapper>
-            </AboutMeWrapper>
-          </AboutMe>
-          <Projects />
-          <Contact />
-        </Content>
-      </Root>
+          <Content>
+            <Canvas
+              innerRef={comp => {
+                this.canvas = comp
+              }}
+            />
+            <AboutMe>
+              <SectionTitle>About me</SectionTitle>
+              <AboutMeWrapper>
+                <AboutMeContent>
+                  <InlineImgWrapper>
+                    <Img src={profilePic} />
+                  </InlineImgWrapper>
+                  <Paragraph>
+                    Hello! I'm Gerard, a developer based in Barcelona currently
+                    working at <a href='https://www.typeform.com'>Typeform</a>.
+                    I try to be a comprehensive programmer, as no one technology
+                    is good for solving all problems. I believe good, modern
+                    design and quality code are fundamental to create excellent
+                    software products. I like learning new technologies and
+                    methods as a way to challenge myself, but it also allows me
+                    to face problems I could not solve before.
+                  </Paragraph>
+                  <Paragraph>
+                    Programming is not only my job, it is also my passion. I
+                    like, among other technologies, <strong>Javascript</strong>,{' '}
+                    <strong>React</strong>, <strong>WebAudio</strong>,{' '}
+                    <strong>Go</strong> and <strong>Deep Learning</strong>.
+                  </Paragraph>
+                  <Paragraph>
+                    I also like drawing, gaming, hiking and tea.
+                  </Paragraph>
+                  <SocialIcons />
+                </AboutMeContent>
+                <ContentImgWrapper>
+                  <Img src={profilePic} />
+                </ContentImgWrapper>
+              </AboutMeWrapper>
+            </AboutMe>
+            <Projects />
+            <Contact />
+          </Content>
+        </Root>
+      </ThemeProvider>
     )
   }
 }

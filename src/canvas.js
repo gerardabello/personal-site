@@ -123,9 +123,7 @@ const animate = () => {
   // call again next time we can draw
   window.requestAnimationFrame(animate)
   // clear canvas
-  ctx.fillStyle = '#FFFFFF'
-  ctx.fillRect(0, 0, cvWidth, cvHeight)
-  // ctx.clearct(0, 0, cvWidth, cvHeight)
+  ctx.clearRect(0, 0, cvWidth, cvHeight)
   // draw everything
 
   triangles = map(updateTriangle(dt), triangles)
