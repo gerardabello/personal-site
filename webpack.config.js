@@ -12,7 +12,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|gif|svg|ttf|otf)$/,
+        test: /\.(png|jpg|gif|svg|ttf|otf|woff|woff2)$/,
         use: [
           {
             loader: 'file-loader',

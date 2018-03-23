@@ -9,8 +9,8 @@ import CanvasDraw from './canvas'
 import SocialIcons from './social-icons'
 
 import ShkoderLight from '../assets/fonts/Shkoder 1989 Light.otf'
-import SourceSansProRegular from '../assets/fonts/SourceSansPro-Regular.ttf'
-import SourceSansProBold from '../assets/fonts/SourceSansPro-Bold.ttf'
+import SourceSansProRegular from '../assets/fonts/SourceSansPro-Regular.otf.woff2'
+import SourceSansProBold from '../assets/fonts/SourceSansPro-Bold.otf.woff2'
 
 import profilePic from '../assets/imgs/profile2.jpg'
 
