@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { makePopup } from '@typeform/embed'
 
 import { SectionTitle } from './common'
 
@@ -29,28 +28,30 @@ const PopupButton = styled.button`
   transition: all 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0px 0px;
 
-  &:hover{
+  &:hover {
     transform: translateY(-4px);
     box-shadow: rgba(0, 0, 0, 0.2) 0 4px 8px;
-    background-color: #84A4E3;
+    background-color: #84a4e3;
   }
 `
 
 export default class Contact extends Component {
   openPopup () {
-    makePopup('https://gerardabello.typeform.com/to/ITG3fr', {
-      mode: 'drawer_right',
-      autoOpen: true,
-      autoClose: 2000
-    })
+    import(/* webpackChunkName: "embed" */ '@typeform/embed')
+      .then(({ makePopup }) => {
+        makePopup('https://gerardabello.typeform.com/to/ITG3fr', {
+          mode: 'drawer_right',
+          autoOpen: true,
+          autoClose: 2000
+        })
+      })
+      .catch(error => alert('Could not show contact form'))
   }
 
   render () {
     return (
       <Root>
-        <PopupButton onClick={this.openPopup}>
-          Leave a message
-        </PopupButton>
+        <PopupButton onClick={this.openPopup}>Leave a message</PopupButton>
       </Root>
     )
   }
