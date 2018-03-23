@@ -9,7 +9,6 @@ import CanvasDraw from './canvas'
 import SocialIcons from './social-icons'
 
 import ShkoderLight from '../assets/fonts/Shkoder 1989 Light.otf'
-import ShkoderBlack from '../assets/fonts/Shkoder 1989 Black.otf'
 import SourceSansProRegular from '../assets/fonts/SourceSansPro-Regular.ttf'
 import SourceSansProBold from '../assets/fonts/SourceSansPro-Bold.ttf'
 
@@ -34,12 +33,6 @@ injectGlobal`
     font-weight:200;
   }
 
-  @font-face {
-    font-family: SHKODER;
-    src: url(${ShkoderBlack});
-    font-weight:800;
-  }
-
   body {
     overflow: hidden;
     ${media.mobile`
@@ -51,9 +44,9 @@ injectGlobal`
 const Root = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
 
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
-  color: #3A3E3D;
+  color: #3a3e3d;
 
   display: grid;
   grid-template-columns: 206px 1fr;
@@ -62,9 +55,7 @@ const Root = styled.div`
   ${media.mobile`
     grid-template-columns: 1fr;
     grid-template-rows: 50vw auto;
-  `}
-
-  * {
+  `} * {
     box-sizing: border-box;
   }
 `
@@ -73,7 +64,7 @@ const Paragraph = styled.p`
   /* Contrary to popular: */
   font-family: 'Source Sans Pro', serif;
   font-weight: 400;
-  color: #676D6C;
+  color: #676d6c;
   font-size: 16px;
   line-height: 22px;
   text-align: justify;
@@ -103,7 +94,7 @@ const TitleWrapper = styled.div`
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     box-shadow: inset rgba(0, 0, 0, 0.09) 0px -20px 30px -20px;
-  `}
+  `};
 `
 
 const AboutMeContent = styled.div`
@@ -113,11 +104,9 @@ const AboutMeContent = styled.div`
 
   ${media.tablet`
     max-width: initial;
-  `}
-
-  ${media.mobile`
+  `} ${media.mobile`
     min-width: 0px;
-  `}
+  `};
 `
 
 const AboutMe = styled.div`
@@ -139,15 +128,14 @@ const NameWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  `}
+  `};
 `
 
 const TitleImgWrapper = styled.div`
   display: none;
   ${media.mobile`
     display: initial;
-  `}
-  img{
+  `} img {
     width: 100%;
     height: 50vw;
   }
@@ -157,8 +145,7 @@ const InlineImgWrapper = styled.div`
   display: none;
   ${media.tablet`
     display: initial;
-  `}
-  ${media.mobile`
+  `} ${media.mobile`
     display: none;
   `}
 
@@ -177,9 +164,7 @@ const InlineImgWrapper = styled.div`
 const ContentImgWrapper = styled.div`
   ${media.tablet`
     display: none;
-  `}
-
-  ${media.mobile`
+  `} ${media.mobile`
     float: right;
   `}
 
@@ -217,7 +202,7 @@ const Content = styled.div`
     overflow-y: hidden;
     height: auto;
     padding: 0;
-  `}
+  `};
 `
 
 const Name = styled.h1`
@@ -226,7 +211,7 @@ const Name = styled.h1`
   margin: 0;
   ${media.mobile`
     font-size: 11vw;
-  `}
+  `};
 `
 
 export default class App extends Component {
@@ -273,22 +258,18 @@ export default class App extends Component {
                 <Paragraph>
                   Hello! I'm Gerard, a developer based in Barcelona currently
                   working at <a href='https://www.typeform.com'>Typeform</a>. I
-                  try to be a
-                  comprehensive programmer, as no one technology is good for
-                  solving
-                  all problems. I believe good, modern design and quality code
-                  are
-                  fundamental to create excellent software products. I like
-                  learning
-                  new technologies and methods as a way to challenge myself, but
-                  it
-                  also allows me to face problems I could not solve before.
+                  try to be a comprehensive programmer, as no one technology is
+                  good for solving all problems. I believe good, modern design
+                  and quality code are fundamental to create excellent software
+                  products. I like learning new technologies and methods as a
+                  way to challenge myself, but it also allows me to face
+                  problems I could not solve before.
                 </Paragraph>
                 <Paragraph>
                   Programming is not only my job, it is also my passion. I like,
-                  among other technologies, <strong>Javascript</strong>,
-                  {' '}<strong>React</strong>, <strong>WebAudio</strong>,
-                  {' '}<strong>Go</strong> and <strong>Deep Learning</strong>.
+                  among other technologies, <strong>Javascript</strong>,{' '}
+                  <strong>React</strong>, <strong>WebAudio</strong>,{' '}
+                  <strong>Go</strong> and <strong>Deep Learning</strong>.
                 </Paragraph>
                 <Paragraph>
                   I also like drawing, gaming, hiking and tea.
