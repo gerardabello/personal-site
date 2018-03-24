@@ -1,41 +1,37 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import { SectionTitle } from './common'
+import Layout from './layout'
 
-const Root = styled.div`
-  margin-top: 20px;
-  padding: 20px;
-  max-width: 700px;
-  position: relative;
+const Root = styled.div``
+
+const Content = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `
 
-const PopupButton = styled.button`
-  background-color: #86d2c0;
-  color: white;
-  width: 100%;
-  max-width: 350px;
+const ContactButton = styled.button`
+  border: 4px solid #eae3e0;
+  padding: 16px 24px;
+  margin-top: 20vh;
+  color: ${props => props.theme.text};
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  background: transparent;
   outline: none;
-  border: none;
-  height: 54px;
-  font-size: 38px;
-  font-family: 'SHKODER', sans-serif;
-  border-radius: 3px;
-  margin-top: 20px;
+  font-family: Sofia Pro;
   cursor: pointer;
-  line-height: 1.666;
 
-  transition: all 0.3s ease;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0px 0px;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: rgba(0, 0, 0, 0.2) 0 4px 8px;
-    background-color: #84a4e3;
+  @media (max-width: 450px) {
+    padding: 12px 20px;
+    font-size: 24px;
+    line-height: 24px;
   }
 `
 
-export default class Contact extends Component {
+export default class About extends Component {
   openPopup () {
     import(/* webpackChunkName: "embed" */ '@typeform/embed')
       .then(({ makePopup }) => {
@@ -51,7 +47,13 @@ export default class Contact extends Component {
   render () {
     return (
       <Root>
-        <PopupButton onClick={this.openPopup}>Leave a message</PopupButton>
+        <Layout title='Contact'>
+          <Content>
+            <ContactButton onClick={this.openPopup}>
+              Leave a message
+            </ContactButton>
+          </Content>
+        </Layout>
       </Root>
     )
   }

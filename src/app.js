@@ -1,308 +1,92 @@
 import React, { Component } from 'react'
 import styled, { injectGlobal, ThemeProvider } from 'styled-components'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import Home from './home'
+import About from './about'
 import Projects from './projects'
 import Contact from './contact'
-import { Img, SectionTitle } from './common'
-import media from './media'
-import CanvasDraw from './canvas'
-import SocialIcons from './social-icons'
+import Background from './background'
 
-import ShkoderLight from '../assets/fonts/Shkoder 1989 Light.otf'
-import SourceSansProRegular from '../assets/fonts/SourceSansPro-Regular.otf.woff2'
-import SourceSansProBold from '../assets/fonts/SourceSansPro-Bold.otf.woff2'
+import SofiaProBoldWoff from '../assets/fonts/subset-SofiaPro-Bold.woff'
+import SofiaProBoldWoff2 from '../assets/fonts/subset-SofiaPro-Bold.woff2'
 
-import profilePic from '../assets/imgs/profile2.jpg'
+import SofiaProLightWoff from '../assets/fonts/subset-SofiaPro-Light.woff'
+import SofiaProLightWoff2 from '../assets/fonts/subset-SofiaPro-Light.woff2'
 
-const lightTheme = {
-  titleColor: '#353535',
-  bodyColor: '#484848',
-  backgroundColor: 'white',
-  sidebarColor: '#f6f6f6',
-  imgMixBlendMode: 'multiply'
-}
-
-const darkTheme = {
-  titleColor: '#ececec',
-  bodyColor: '#dcdcdc',
-  backgroundColor: '#1b1b1b',
-  sidebarColor: '#161616',
-  imgMixBlendMode: 'difference'
+const theme = {
+  background: '#11151C',
+  text: '#EAE3E0',
+  color1: '#212D40',
+  color2: '#364156',
+  color3: '#7D4E57',
+  color4: '#D66853'
 }
 
 injectGlobal`
+
   @font-face {
-    font-family: Source Sans Pro;
-    src: url(${SourceSansProRegular});
-    font-weight:400;
+      font-family: 'Sofia Pro';
+      src: url(${SofiaProBoldWoff2}) format('woff2'),
+          url(${SofiaProBoldWoff}) format('woff');
+      font-weight: bold;
+      font-style: normal;
   }
 
   @font-face {
-    font-family: Source Sans Pro;
-    src: url(${SourceSansProBold});
-    font-weight:600;
+      font-family: 'Sofia Pro';
+      src: url(${SofiaProLightWoff2}) format('woff2'),
+          url(${SofiaProLightWoff}) format('woff');
+      font-weight: 300;
+      font-style: normal;
   }
 
-  @font-face {
-    font-family: SHKODER;
-    src: url(${ShkoderLight});
-    font-weight:200;
+
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  body {
-    overflow: hidden;
-    ${media.mobile`
-      overflow-y: auto;
-    `}
+  a {
+    text-decoration: none;
   }
 `
 
 const Root = styled.div`
-  font-family: 'Source Sans Pro', sans-serif;
-
-  background-color: ${props => props.theme.backgroundColor};
-
-  color: ${props => props.theme.bodyColor};
-
-  display: grid;
-  grid-template-columns: 206px 1fr;
-  grid-template-rows: auto;
-
-  ${media.mobile`
-    grid-template-columns: 1fr;
-    grid-template-rows: 50vw auto;
-  `} * {
-    box-sizing: border-box;
-  }
-`
-
-const Paragraph = styled.p`
-  /* Contrary to popular: */
-  font-family: 'Source Sans Pro', serif;
-  font-weight: 400;
-  color: ${props => props.theme.bodyColor};
-  font-size: 16px;
-  line-height: 22px;
-  text-align: justify;
-
-  a {
-    color: #4ab9a3;
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  strong {
-    font-weight: 600;
-    color: #587dc5;
-  }
-`
-
-const TitleWrapper = styled.div`
-  font-family: SHKODER;
-  font-weight: 200;
-  background-color: ${props => props.theme.sidebarColor};
-  color: ${props => props.theme.titleColor};
-  padding: 20px;
-  height: 100vh;
-  ${media.mobile`
-    height: 50vw;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
-    box-shadow: inset rgba(0, 0, 0, 0.09) 0px -20px 30px -20px;
-  `};
-`
-
-const AboutMeContent = styled.div`
-  min-width: 275px;
-  max-width: 400px;
-  flex: 1;
-
-  ${media.tablet`
-    max-width: initial;
-  `} ${media.mobile`
-    min-width: 0px;
-  `};
-`
-
-const AboutMe = styled.div`
-  margin-top: 10px;
-  padding: 20px;
-  position: relative;
-`
-
-const AboutMeWrapper = styled.div`
-  display: flex;
-`
-
-const NameWrapper = styled.div`
-  margin-top: 10px;
-  text-align: center;
-  ${media.mobile`
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  `};
-`
-
-const TitleImgWrapper = styled.div`
-  display: none;
-  ${media.mobile`
-    display: initial;
-  `} img {
-    width: 100%;
-    height: 50vw;
-  }
-`
-
-const InlineImgWrapper = styled.div`
-  display: none;
-  ${media.tablet`
-    display: initial;
-  `} ${media.mobile`
-    display: none;
-  `}
-
-  float: right;
-  padding: 20px;
-  padding-right: 0;
-
-  img {
-    width: 30vw;
-    margin-top: 6px;
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
-  }
-`
-
-const ContentImgWrapper = styled.div`
-  ${media.tablet`
-    display: none;
-  `} ${media.mobile`
-    float: right;
-  `}
-
-  flex: 1;
-  margin-right: -2em;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  img {
-    max-width: 100%;
-    width: 250px;
-    margin-top: -16px;
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 15px 30px;
-  }
-`
-
-const Canvas = styled.canvas`
-  position: absolute;
-  top: 0;
-  left: 0;
+  font-family: 'Sofia Pro', sans-serif;
+  min-height: 100%;
   width: 100%;
-  height: 100vh;
+  overflow-x: hidden;
+  background-color: ${props => props.theme.background};
+  color: ${props => props.theme.text};
+  padding: 48px;
+
+  @media (max-width: 450px) {
+    padding: 36px;
+  }
 `
 
 const Content = styled.div`
+  min-height: 100%;
   position: relative;
-  padding: 20px;
-  padding-top: 0;
-
-  overflow-y: auto;
-  height: 100vh;
-  ${media.mobile`
-    overflow-y: hidden;
-    height: auto;
-    padding: 0;
-  `};
-`
-
-const Name = styled.h1`
-  font-size: 48px;
-  font-weight: 300;
-  margin: 0;
-  ${media.mobile`
-    font-size: 11vw;
-  `};
 `
 
 export default class App extends Component {
-  constructor () {
-    super()
-
-    this.state = { theme: lightTheme }
-  }
-
-  componentDidMount () {
-    CanvasDraw(this.canvas)
-  }
-
   render () {
     return (
-      <ThemeProvider theme={this.state.theme}>
-        <Root>
-          <TitleWrapper>
-            <NameWrapper>
-              <div>
-                <Name>Gerard</Name>
-                <Name>Abelló</Name>
-                <Name>Serras</Name>
-              </div>
-            </NameWrapper>
-
-            <TitleImgWrapper>
-              <Img src={profilePic} />
-            </TitleImgWrapper>
-          </TitleWrapper>
-
-          <Content>
-            <Canvas
-              innerRef={comp => {
-                this.canvas = comp
-              }}
-            />
-            <AboutMe>
-              <SectionTitle>About me</SectionTitle>
-              <AboutMeWrapper>
-                <AboutMeContent>
-                  <InlineImgWrapper>
-                    <Img src={profilePic} />
-                  </InlineImgWrapper>
-                  <Paragraph>
-                    Hello! I'm Gerard, a developer based in Barcelona currently
-                    working at <a href='https://www.typeform.com'>Typeform</a>.
-                    I try to be a comprehensive programmer, as no one technology
-                    is good for solving all problems. I believe good, modern
-                    design and quality code are fundamental to create excellent
-                    software products. I like learning new technologies and
-                    methods as a way to challenge myself, but it also allows me
-                    to face problems I could not solve before.
-                  </Paragraph>
-                  <Paragraph>
-                    Programming is not only my job, it is also my passion. I
-                    like, among other technologies, <strong>Javascript</strong>,{' '}
-                    <strong>React</strong>, <strong>WebAudio</strong>,{' '}
-                    <strong>Go</strong> and <strong>Deep Learning</strong>.
-                  </Paragraph>
-                  <Paragraph>
-                    I also like drawing, gaming, hiking and tea.
-                  </Paragraph>
-                  <SocialIcons />
-                </AboutMeContent>
-                <ContentImgWrapper>
-                  <Img src={profilePic} />
-                </ContentImgWrapper>
-              </AboutMeWrapper>
-            </AboutMe>
-            <Projects />
-            <Contact />
-          </Content>
-        </Root>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Root>
+            <Background />
+            <Content>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/projects' component={Projects} />
+              <Route exact path='/contact' component={Contact} />
+            </Content>
+          </Root>
+        </Router>
       </ThemeProvider>
     )
   }

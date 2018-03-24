@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import { SectionTitle } from './common'
+import Layout from './layout'
 
 import fldImg from '../assets/imgs/fld.jpg'
 import goobaImg from '../assets/imgs/gooba.jpg'
@@ -49,68 +49,66 @@ const projects = [
   }
 ]
 
-const Root = styled.div`
-  padding: 20px;
-  max-width: 700px;
-  position: relative;
+const Root = styled.div``
+const ProjectList = styled.div`
+  width: max-content;
+  margin: 0 auto;
 `
-
-const Grid = styled.div`
-  margin-top: 2em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-gap: 20px;
-`
-
 const Project = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+`
+
+const ProjectImgWrapper = styled.div`
   border-radius: 3px;
+  border: 2px solid #eae3e0;
+  line-height: 0;
+  margin-right: 16px;
+`
 
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0px 0px;
-  transition: all 0.3s ease;
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: rgba(0, 0, 0, 0.2) 0 4px 8px;
+const ProjectImg = styled.img`
+  height: 64px;
+  width: 64px;
+
+  @media (max-width: 500px) {
+    height: 48px;
+    width: 48px;
   }
+
+  filter: saturate(0) contrast(1.2);
 `
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-`
+const ProjectTitle = styled.span`
+  color: #eae3e0;
+  font-size: 24px;
+  font-weight: 300;
 
-const Hover = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: black;
-  color: white;
-
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `
 
 export default class Projects extends Component {
   render () {
     return (
       <Root>
-        <SectionTitle>Some interesting projects</SectionTitle>
-        <Grid>
-          {projects.map(p => (
-            <Project key={p.title}>
-              <a href={p.href}>
-                <Img src={p.img} />
-                <Hover> {p.title} </Hover>
+        <Layout title='Projects'>
+          <ProjectList>
+            {projects.map(project => (
+              <a key={project.title} href={project.href}>
+                <Project>
+                  <ProjectImgWrapper>
+                    <ProjectImg src={project.img} />
+                  </ProjectImgWrapper>
+                  <ProjectTitle>{project.title}</ProjectTitle>
+                </Project>
               </a>
-            </Project>
-          ))}
-        </Grid>
+            ))}
+          </ProjectList>
+        </Layout>
       </Root>
     )
   }
