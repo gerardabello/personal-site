@@ -1,6 +1,8 @@
 # NPM packages
 node_modules
 
+stats.json
+
 # General ignored folder
 ignore
 
