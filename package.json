@@ -1,11 +1,22 @@
 {
   "name": "gerardabello",
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 edge versions",
+    "last 2 safari versions",
+    "last 2 and_chr versions",
+    "last 2 ios_saf versions",
+    "> 1% in ES",
+    "not ie < 12"
+  ],
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.41",
+    "@babel/core": "^7.0.0-beta.42",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.42",
-    "@babel/preset-env": "^7.0.0-beta.41",
-    "@babel/preset-react": "^7.0.0-beta.41",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
     "babel-loader": "8.0.0-beta.0",
+    "browserslist": "^3.2.2",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.0.4",
     "webpack": "4.0.1",
