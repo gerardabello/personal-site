@@ -50,12 +50,54 @@ const projects = [
 ]
 
 const Root = styled.div``
+const ProjectList = styled.div`
+  width: max-content;
+  margin: 0 auto;
+`
+const Project = styled.div`
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+`
+
+const ProjectImgWrapper = styled.div`
+  border-radius: 3px;
+  border: 2px solid #eae3e0;
+  line-height: 0;
+  margin-right: 16px;
+`
+
+const ProjectImg = styled.img`
+  height: 48px;
+  width: 48px;
+  filter: saturate(0) contrast(1.2);
+`
+
+const ProjectTitle = styled.span`
+  color: #eae3e0;
+  font-size: 20px;
+`
 
 export default class Projects extends Component {
   render () {
     return (
       <Root>
-        <Layout title='Projects'>...</Layout>
+        <Layout title='Projects'>
+          <ProjectList>
+            {projects.map(project => (
+              <a key={project.title} href={project.href}>
+                <Project>
+                  <ProjectImgWrapper>
+                    <ProjectImg src={project.img} />
+                  </ProjectImgWrapper>
+                  <ProjectTitle>{project.title}</ProjectTitle>
+                </Project>
+              </a>
+            ))}
+          </ProjectList>
+        </Layout>
       </Root>
     )
   }
