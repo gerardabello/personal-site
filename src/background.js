@@ -58,12 +58,12 @@ const Root = styled.div`
   height: 100%;
   position: relative;
 
-  @media (max-width: 750px) {
+  @media (max-width: 550px) {
     transform: scale(0.85);
   }
 
   @media (max-width: 400px) {
-    transform: scale(0.6);
+    transform: scale(0.65);
   }
 `
 const hover = keyframes`
@@ -98,8 +98,8 @@ const generateShapes = () => {
     position => {
       const ret =
         position[1] - margin < 0.35 ||
-        position[0] - margin < 0.22 ||
-        position[0] - margin > 0.78
+        position[0] - margin < 0.23 ||
+        position[0] - margin > 0.77
       return ret
     }
   )
