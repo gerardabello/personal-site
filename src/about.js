@@ -30,8 +30,9 @@ export default class About extends Component {
       <Root>
         <Layout title='About me'>
           <Paragraph>
-            Hello! I'm Gerard, a developer based in Barcelona currently working
-            at <a href='https://www.typeform.com'>Typeform</a>. I try to be a
+            My name is Gerard Abelló Serras and I'm a developer based in
+            Barcelona currently working at{' '}
+            <a href='https://www.typeform.com'>Typeform</a>. I try to be a
             comprehensive programmer, as no one technology is good for solving
             all problems. I believe good, modern design and quality code are
             fundamental to create excellent software products. I like learning
