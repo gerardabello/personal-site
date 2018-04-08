@@ -15,6 +15,8 @@ const Paragraph = styled.p`
   color: #eae3e0;
   letter-spacing: 0.31px;
 
+  hyphens: auto;
+
   a {
     color: ${props => props.theme.color4};
   }
