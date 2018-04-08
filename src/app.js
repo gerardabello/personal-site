@@ -60,10 +60,12 @@ const Root = styled.div`
   overflow-x: hidden;
   background-color: ${props => props.theme.background};
   color: ${props => props.theme.text};
-  padding: 48px;
+  padding: 36px;
+  padding-top: 24px;
 
   @media (max-width: 450px) {
-    padding: 36px;
+    padding: 24px;
+    padding-top: 18px;
   }
 `
 
