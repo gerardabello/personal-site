@@ -20,8 +20,8 @@ test:
 script:
   - npm run build
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-      docker build -t serras.xyz .;
+      docker build -t personal-site .;
       docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD";
-      docker tag serras.xyz gerardabello/serras.xyz;
-      docker push gerardabello/serras.xyz;
+      docker tag personal-site gerardabello/personal-site;
+      docker push gerardabello/personal-site;
     fi
