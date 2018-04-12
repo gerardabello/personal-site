@@ -43,7 +43,7 @@ const projects = [
   },
   {
     img: gasptImg,
-    href: 'https://gaspt.serras.xyz',
+    href: 'https://gaspt.gerard.sh',
     title: 'gasPT',
     description: 'Javascript path tracer based on smallPT'
   }
