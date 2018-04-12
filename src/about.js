@@ -13,7 +13,6 @@ const Paragraph = styled.p`
   font-weight: 300;
   font-size: 16px;
   color: #eae3e0;
-  letter-spacing: 0.31px;
 
   hyphens: auto;
 
