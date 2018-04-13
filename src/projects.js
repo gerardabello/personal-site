@@ -91,6 +91,11 @@ const ProjectTitle = styled.span`
   }
 `
 
+const Link = styled.a`
+  outline: none;
+  border: none;
+`
+
 export default class Projects extends Component {
   render () {
     return (
@@ -98,14 +103,14 @@ export default class Projects extends Component {
         <Layout title='Projects'>
           <ProjectList>
             {projects.map(project => (
-              <a key={project.title} href={project.href}>
+              <Link key={project.title} href={project.href}>
                 <Project>
                   <ProjectImgWrapper>
                     <ProjectImg src={project.img} />
                   </ProjectImgWrapper>
                   <ProjectTitle>{project.title}</ProjectTitle>
                 </Project>
-              </a>
+              </Link>
             ))}
           </ProjectList>
         </Layout>
