@@ -84,7 +84,7 @@ const ProjectImg = styled.img`
 const ProjectTitle = styled.span`
   color: #eae3e0;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 100;
 
   @media (max-width: 500px) {
     font-size: 20px;

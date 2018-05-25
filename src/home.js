@@ -45,6 +45,9 @@ const Title = styled.h1`
   @media (max-width: 500px) {
     font-size: 42px;
   }
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 `
 
 const HiTitle = styled(Title)`

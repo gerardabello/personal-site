@@ -11,8 +11,8 @@ import Background from './background'
 import SofiaProBoldWoff from '../assets/fonts/subset-SofiaPro-Bold.woff'
 import SofiaProBoldWoff2 from '../assets/fonts/subset-SofiaPro-Bold.woff2'
 
-import SofiaProLightWoff from '../assets/fonts/subset-SofiaPro-Light.woff'
-import SofiaProLightWoff2 from '../assets/fonts/subset-SofiaPro-Light.woff2'
+import SofiaProUltraLightWoff from '../assets/fonts/subset-SofiaPro-UltraLight.woff'
+import SofiaProUltraLightWoff2 from '../assets/fonts/subset-SofiaPro-UltraLight.woff2'
 
 const theme = {
   background: '#11151C',
@@ -35,17 +35,15 @@ injectGlobal`
 
   @font-face {
       font-family: 'Sofia Pro';
-      src: url(${SofiaProLightWoff2}) format('woff2'),
-          url(${SofiaProLightWoff}) format('woff');
-      font-weight: 300;
+      src: url(${SofiaProUltraLightWoff2}) format('woff2'),
+          url(${SofiaProUltraLightWoff}) format('woff');
+      font-weight: 100;
       font-style: normal;
   }
 
 
   * {
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   a {

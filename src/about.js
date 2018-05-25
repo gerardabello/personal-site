@@ -10,8 +10,9 @@ const Paragraph = styled.p`
   text-indent: 2em;
   text-align: justify;
 
-  font-weight: 300;
+  font-weight: 100;
   font-size: 16px;
+  line-height: 1.5em;
   color: #eae3e0;
 
   hyphens: auto;

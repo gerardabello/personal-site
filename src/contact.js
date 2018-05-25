@@ -24,6 +24,9 @@ const ContactButton = styled.button`
   font-family: Sofia Pro;
   cursor: pointer;
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   @media (max-width: 450px) {
     padding: 12px 20px;
     font-size: 24px;
