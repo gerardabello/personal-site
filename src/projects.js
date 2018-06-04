@@ -88,7 +88,7 @@ const ProjectImg = styled.img`
 
 const ProjectTitle = styled.span`
   font-family: 'GT Pressura Mono', sans-serif;
-  color: #eae3e0;
+  color: ${p => p.theme.text};
   font-size: 20px;
   font-weight: 400;
 
