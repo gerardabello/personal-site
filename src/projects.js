@@ -52,7 +52,11 @@ const projects = [
 const Root = styled.div``
 const ProjectList = styled.div`
   width: max-content;
-  // margin: 0 auto;
+  margin: 0 auto;
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 `
 const Project = styled.div`
   width: max-content;
@@ -64,18 +68,19 @@ const Project = styled.div`
 
 const ProjectImgWrapper = styled.div`
   border-radius: 3px;
-  border: 2px solid #eae3e0;
+  border: 1px solid #eae3e033;
   line-height: 0;
   margin-right: 16px;
+  overflow: hidden;
 `
 
 const ProjectImg = styled.img`
-  height: 64px;
-  width: 64px;
+  height: 86px;
+  width: 86px;
 
   @media (max-width: 500px) {
-    height: 48px;
-    width: 48px;
+    height: 64px;
+    width: 64px;
   }
 
   filter: saturate(0) contrast(1.2);
