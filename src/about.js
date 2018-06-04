@@ -14,7 +14,6 @@ const Paragraph = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5em;
-  letter-spacing: -0.02em;
   color: #eae3e0;
 
   hyphens: auto;
