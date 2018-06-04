@@ -61,9 +61,14 @@ const Root = styled.div`
   padding: 36px;
   padding-top: 24px;
 
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     padding: 24px;
     padding-top: 18px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 18px;
+    padding-top: 16px;
   }
 `
 

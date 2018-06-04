@@ -29,6 +29,7 @@ const TitleWrapper = styled.div`
 
 const MenuWrapper = styled.div`
   margin-top: 20vh;
+  padding: 0 8px;
 
   opacity: 0;
   animation: ${appearBottom} 1s ease 1.8s forwards;
