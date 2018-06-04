@@ -52,7 +52,7 @@ const projects = [
 const Root = styled.div``
 const ProjectList = styled.div`
   width: max-content;
-  margin: 0 auto;
+  // margin: 0 auto;
 `
 const Project = styled.div`
   width: max-content;
