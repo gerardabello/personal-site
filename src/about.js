@@ -12,7 +12,8 @@ const Paragraph = styled.p`
   text-align: justify;
 
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
   line-height: 1.5em;
   color: #eae3e0;
 

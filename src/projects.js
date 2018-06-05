@@ -54,7 +54,7 @@ const ProjectList = styled.div`
   width: max-content;
   margin: 0 auto;
 
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     width: 100%;
   }
 `
@@ -78,7 +78,7 @@ const ProjectImg = styled.img`
   height: 86px;
   width: 86px;
 
-  @media (max-width: 500px) {
+  @media (max-width: 400px) {
     height: 64px;
     width: 64px;
   }

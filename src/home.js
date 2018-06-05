@@ -37,13 +37,16 @@ const MenuWrapper = styled.div`
 
 const Title = styled.h1`
   font-weight: 700;
-  font-size: 64px;
   margin-bottom: 48px;
   text-align: center;
   opacity: 0;
   margin: 0;
 
+  font-size: 72px;
   @media (max-width: 500px) {
+    font-size: 58px;
+  }
+  @media (max-width: 350px) {
     font-size: 42px;
   }
 

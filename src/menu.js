@@ -9,7 +9,6 @@ const Root = styled.div`
 `
 
 const Box = styled.div`
-  font-size: 24px;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,8 +16,17 @@ const Box = styled.div`
 
   border-bottom: ${p => (p.selected ? '4px solid #d66752' : 'none')};
 
-  @media (max-width: 450px) {
-    font-size: 20px;
+
+  height: 40px;
+  font-size: 30px;
+  @media (max-width: 500px) {
+    height: 36px;
+    font-size: 28px;
+  }
+
+  @media (max-width: 400px) {
+    height: 30px;
+    font-size: 22px;
   }
 
   a {
