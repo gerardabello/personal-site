@@ -11,8 +11,8 @@ import Background from './background'
 import SofiaProBoldWoff from '../assets/fonts/subset-SofiaPro-Bold.woff'
 import SofiaProBoldWoff2 from '../assets/fonts/subset-SofiaPro-Bold.woff2'
 
-import GTPressuraMonoWoff from '../assets/fonts/subset-GTPressuraMono.woff'
-import GTPressuraMonoWoff2 from '../assets/fonts/subset-GTPressuraMono.woff2'
+import MonostenWoff from '../assets/fonts/subset-Monosten-E.woff'
+import MonostenWoff2 from '../assets/fonts/subset-Monosten-E.woff2'
 
 const theme = {
   background: '#11151C',
@@ -34,13 +34,12 @@ injectGlobal`
   }
 
   @font-face {
-      font-family: 'GT Pressura Mono';
-      src: url(${GTPressuraMonoWoff2}) format('woff2'),
-          url(${GTPressuraMonoWoff}) format('woff');
+      font-family: 'Monosten-E';
+      src: url(${MonostenWoff2}) format('woff2'),
+          url(${MonostenWoff}) format('woff');
       font-weight: 400;
       font-style: normal;
   }
-
 
   * {
     box-sizing: border-box;

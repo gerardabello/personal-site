@@ -6,14 +6,14 @@ import Layout from './layout'
 const Root = styled.div``
 
 const Paragraph = styled.p`
-  font-family: 'GT Pressura Mono', sans-serif;
+  font-family: 'Monosten-E', sans-serif;
   margin-top: 0;
   text-indent: 2em;
   text-align: justify;
 
   font-weight: 400;
-  font-size: 18px;
-  letter-spacing: -0.02em;
+  font-size: 16px;
+  letter-spacing: -0.01em;
   line-height: 1.5em;
   color: #eae3e0;
 
