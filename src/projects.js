@@ -67,11 +67,10 @@ const Project = styled.div`
 `
 
 const ProjectImgWrapper = styled.div`
-  border-radius: 3px;
-  border: 1px solid #eae3e033;
   line-height: 0;
   margin-right: 16px;
   overflow: hidden;
+  box-shadow: ${p => p.theme.color2} -5px 5px 0 -1px;
 `
 
 const ProjectImg = styled.img`
