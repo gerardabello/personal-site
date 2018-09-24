@@ -18,4 +18,4 @@ export const lightTheme = {
   color4: '#d67761'
 }
 
-export const theme = Math.random() > 0.5 ? lightTheme : darkTheme
+export const theme = darkTheme
