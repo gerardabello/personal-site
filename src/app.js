@@ -14,14 +14,7 @@ import SofiaProBoldWoff2 from '../assets/fonts/subset-SofiaPro-Bold.woff2'
 import MonostenWoff from '../assets/fonts/subset-Monosten-E.woff'
 import MonostenWoff2 from '../assets/fonts/subset-Monosten-E.woff2'
 
-const theme = {
-  background: '#11151C',
-  text: '#EAE3E0',
-  color1: '#212D40',
-  color2: '#364156',
-  color3: '#7D4E57',
-  color4: '#D66853'
-}
+import { theme } from './config'
 
 injectGlobal`
 

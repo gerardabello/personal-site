@@ -11,6 +11,8 @@ import Square from './figures/square'
 
 import poissonDiscSampler from './sampling'
 
+import { theme } from './config'
+
 const FIGURE_SHAPES = {
   ring: Ring,
   zig: Zig,
@@ -21,7 +23,7 @@ const FIGURE_SHAPES = {
   square: Square
 }
 
-const COLORS = ['#212D40', '#364156', '#7D4E57', '#D66853']
+const COLORS = [theme.color1, theme.color2, theme.color3, theme.color4]
 
 function shuffle (iarray) {
   let array = [...iarray]
