@@ -2,6 +2,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map',
+  resolve: {
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
+  },
   module: {
     rules: [
       {
