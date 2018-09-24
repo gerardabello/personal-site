@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Layout from './layout'
 
 import fldImg from '../assets/imgs/fld.jpg'
+import countersImg from '../assets/imgs/counters.png'
 import goobaImg from '../assets/imgs/gooba.jpg'
 import colossalImg from '../assets/imgs/colossal.png'
 import weighImg from '../assets/imgs/weight.png'
@@ -12,22 +13,16 @@ import gasptImg from '../assets/imgs/gaspt.jpg'
 
 const projects = [
   {
-    img: fldImg,
-    href: 'http://upcommons.upc.edu/handle/2099.1/25191?locale-attribute=en',
-    title: 'Master thesis',
-    description: 'Robot loop detection'
+    img: countersImg,
+    href: 'https://counters.gerard.sh/',
+    title: 'Counters',
+    description: 'Create online shareable counters'
   },
   {
-    img: goobaImg,
-    href: 'http://play.google.com/store/apps/details?id=com.gerardas.gooba',
-    title: 'Gooba Monsters',
-    description: 'Android puzzle game'
-  },
-  {
-    img: colossalImg,
-    href: 'https://colossal.surge.sh',
-    title: 'Colossal',
-    description: 'A simple poly synth using Web Audio and React'
+    img: gasptImg,
+    href: 'https://pt.gerard.sh',
+    title: 'gasPT',
+    description: 'Javascript path tracer based on smallPT'
   },
   {
     img: weighImg,
@@ -42,10 +37,22 @@ const projects = [
     description: 'Visualization of an ADSR envelope as a React component'
   },
   {
-    img: gasptImg,
-    href: 'https://pt.gerard.sh',
-    title: 'gasPT',
-    description: 'Javascript path tracer based on smallPT'
+    img: colossalImg,
+    href: 'https://colossal.surge.sh',
+    title: 'Colossal',
+    description: 'A simple poly synth using Web Audio and React'
+  },
+  {
+    img: goobaImg,
+    href: 'http://play.google.com/store/apps/details?id=com.gerardas.gooba',
+    title: 'Gooba Monsters',
+    description: 'Android puzzle game'
+  },
+  {
+    img: fldImg,
+    href: 'http://upcommons.upc.edu/handle/2099.1/25191?locale-attribute=en',
+    title: 'Master thesis',
+    description: 'Robot loop detection'
   }
 ]
 
