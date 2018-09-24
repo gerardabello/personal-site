@@ -14,8 +14,7 @@ const Box = styled.div`
   -moz-osx-font-smoothing: grayscale;
   color: ${p => p.theme.text};
 
-  border-bottom: ${p => (p.selected ? '4px solid #d66752' : 'none')};
-
+  border-bottom: ${p => (p.selected ? `4px solid ${p.theme.color4}` : 'none')};
 
   height: 40px;
   font-size: 30px;

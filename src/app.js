@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled, { injectGlobal, ThemeProvider } from 'styled-components'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import MetaTags from 'react-meta-tags'
 
 import Home from './home'
 import About from './about'
@@ -17,6 +18,9 @@ import MonostenWoff2 from '../assets/fonts/subset-Monosten-E.woff2'
 import { theme } from './config'
 
 injectGlobal`
+  html, body, #root{
+    background: ${theme.background};
+  }
 
   @font-face {
       font-family: 'Sofia Pro';
@@ -75,6 +79,9 @@ export default class App extends Component {
       <ThemeProvider theme={theme}>
         <Router>
           <Root>
+            <MetaTags>
+              <meta name='theme-color' content={theme.background} />
+            </MetaTags>
             <Background />
             <Content>
               <Route exact path='/' component={Home} />

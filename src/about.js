@@ -11,11 +11,11 @@ const Paragraph = styled.p`
   text-indent: 2em;
   text-align: justify;
 
-  font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.01em;
   line-height: 1.5em;
-  color: #eae3e0;
+  color: ${p => p.theme.text};
+  font-weight: ${p => p.theme.bodyFontWeight};
 
   hyphens: auto;
 

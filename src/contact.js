@@ -12,7 +12,7 @@ const Content = styled.div`
 `
 
 const ContactButton = styled.button`
-  border: 4px solid #eae3e0;
+  border: 4px solid ${p => p.theme.text};
   padding: 16px 24px;
   margin-top: 20vh;
   color: ${props => props.theme.text};
