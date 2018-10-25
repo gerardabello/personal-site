@@ -7,7 +7,6 @@ import Home from './home'
 import About from './about'
 import Projects from './projects'
 import Contact from './contact'
-import Background from './background'
 
 import SofiaProBoldWoff from '../assets/fonts/subset-SofiaPro-Bold.woff'
 import SofiaProBoldWoff2 from '../assets/fonts/subset-SofiaPro-Bold.woff2'
@@ -75,6 +74,8 @@ const Content = styled.div`
 
 export default class App extends Component {
   render () {
+    const Background = theme.backgroundComponent
+
     return (
       <ThemeProvider theme={theme}>
         <Router>

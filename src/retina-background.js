@@ -11,8 +11,6 @@ import Square from './figures/square'
 
 import poissonDiscSampler from './sampling'
 
-import { theme } from './config'
-
 const FIGURE_SHAPES = {
   ring: Ring,
   zig: Zig,
@@ -23,7 +21,7 @@ const FIGURE_SHAPES = {
   square: Square
 }
 
-const COLORS = [theme.color1, theme.color2, theme.color3, theme.color4]
+const COLORS = ['#212D40', '#364156', '#7D4E57', '#D66853']
 
 function shuffle (iarray) {
   let array = [...iarray]
@@ -41,7 +39,7 @@ function shuffle (iarray) {
 }
 
 const PreRoot = styled.div`
-  background-color: ${props => props.theme.background};
+  background-color: #11151c;
   position: absolute;
   top: 0;
   left: 0;
@@ -66,15 +64,6 @@ const Root = styled.div`
 
   @media (max-width: 400px) {
     transform: scale(0.65);
-  }
-`
-const hover = keyframes`
-  50% {
-    transform: translateY(-15px);
-  }
-
-  0%, 100% {
-    transform: translateY(0);
   }
 `
 
