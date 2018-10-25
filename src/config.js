@@ -12,7 +12,7 @@ export const darkTheme = {
 
 export const lightTheme = {
   backgroundComponent: MovingBallsBackground,
-  bodyFontWeight: 'bold',
+  bodyFontWeight: 'normal',
   background: '#f3f1f0',
   text: '#2b2b2b',
   color2: '#737272',
