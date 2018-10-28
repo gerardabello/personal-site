@@ -12,7 +12,7 @@ const Paragraph = styled.p`
   text-align: justify;
 
   font-size: 16px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   line-height: 1.5em;
   color: ${p => p.theme.text};
   font-weight: ${p => p.theme.bodyFontWeight};
