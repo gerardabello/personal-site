@@ -44,10 +44,10 @@ export default class About extends Component {
             also allows me to face problems I could not solve before.
           </Paragraph>
           <Paragraph>
-            Programming is not only my job, it is also my passion. I like, among
-            other technologies, <strong>Javascript</strong>,{' '}
-            <strong>React</strong>, <strong>WebAudio</strong>,{' '}
-            <strong>Go</strong> and <strong>Deep Learning</strong>.
+            Programming is not only my job, it is also my passion. I'm currently
+            really into <strong>Javascript</strong>, <strong>React</strong>,{' '}
+            <strong>WebAudio</strong>, <strong>Functional programming</strong>{' '}
+            and <strong>Web performance</strong>.
           </Paragraph>
           <Paragraph>I also like drawing, gaming, hiking and tea.</Paragraph>
         </Layout>
