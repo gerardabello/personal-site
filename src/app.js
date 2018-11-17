@@ -11,8 +11,11 @@ import Contact from './contact'
 import SofiaProBoldWoff from '../assets/fonts/subset-SofiaPro-Bold.woff'
 import SofiaProBoldWoff2 from '../assets/fonts/subset-SofiaPro-Bold.woff2'
 
-import MonostenWoff from '../assets/fonts/subset-Monosten-E.woff'
-import MonostenWoff2 from '../assets/fonts/subset-Monosten-E.woff2'
+import IBMPlexMonoWoff from '../assets/fonts/subset-IBMPlexMono.woff'
+import IBMPlexMonoWoff2 from '../assets/fonts/subset-IBMPlexMono.woff2'
+
+import IBMPlexMonoItalicWoff from '../assets/fonts/subset-IBMPlexMono-Italic.woff'
+import IBMPlexMonoItalicWoff2 from '../assets/fonts/subset-IBMPlexMono-Italic.woff2'
 
 import { theme } from './config'
 
@@ -30,11 +33,19 @@ injectGlobal`
   }
 
   @font-face {
-      font-family: 'Monosten-E';
-      src: url(${MonostenWoff2}) format('woff2'),
-          url(${MonostenWoff}) format('woff');
+      font-family: 'IBM Plex Mono';
+      src: url(${IBMPlexMonoWoff2}) format('woff2'),
+          url(${IBMPlexMonoWoff}) format('woff');
       font-weight: 400;
       font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'IBM Plex Mono';
+      src: url(${IBMPlexMonoItalicWoff2}) format('woff2'),
+          url(${IBMPlexMonoItalicWoff}) format('woff');
+      font-weight: 400;
+      font-style: italic;
   }
 
   * {

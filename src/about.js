@@ -6,7 +6,7 @@ import Layout from './layout'
 const Root = styled.div``
 
 const Paragraph = styled.p`
-  font-family: 'Monosten-E', sans-serif;
+  font-family: 'IBM Plex Mono', sans-serif;
   margin-top: 0;
   text-indent: 2em;
   text-align: justify;
@@ -21,10 +21,14 @@ const Paragraph = styled.p`
 
   a {
     color: ${props => props.theme.color4};
+    font-style: italic;
+    text-decoration: underline;
   }
+
   strong {
     color: ${props => props.theme.color4};
-    font-weight: 600;
+    font-style: italic;
+    font-weight: normal;
   }
 `
 

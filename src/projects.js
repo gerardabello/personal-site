@@ -93,7 +93,7 @@ const ProjectImg = styled.img`
 `
 
 const ProjectTitle = styled.span`
-  font-family: 'Monosten-E', sans-serif;
+  font-family: 'IBM Plex Mono', sans-serif;
   color: ${p => p.theme.text};
   font-size: 20px;
   font-weight: ${p => p.theme.bodyFontWeight};
