@@ -6,18 +6,25 @@ import Layout from './layout'
 const Root = styled.div``
 
 const Paragraph = styled.p`
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   margin-top: 0;
   text-indent: 2em;
   text-align: justify;
 
-  font-size: 16px;
-  letter-spacing: -0.03em;
-  line-height: 1.5em;
   color: ${p => p.theme.text};
   font-weight: ${p => p.theme.bodyFontWeight};
 
   hyphens: auto;
+
+  letter-spacing: -0.03em;
+
+  font-size: 18px;
+  line-height: 28px;
+
+  @media (max-width: 425px) {
+    font-size: 16px;
+    line-height: 26px;
+  }
 
   a {
     color: ${props => props.theme.color4};
