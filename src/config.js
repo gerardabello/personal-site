@@ -5,6 +5,7 @@ import PhysicsBackground from './physics-background'
 import { isMobile, getRandomFromArray } from './utils'
 
 export const darkTheme = {
+  id: 'dark',
   backgroundComponent: RetinaBackground,
   bodyFontWeight: 'normal',
   background: '#11151C',
@@ -14,6 +15,7 @@ export const darkTheme = {
 }
 
 export const lightTheme = {
+  id: 'light',
   backgroundComponent: MovingBallsBackground,
   bodyFontWeight: 'normal',
   background: '#f3f1f0',
@@ -23,6 +25,7 @@ export const lightTheme = {
 }
 
 export const physicsTheme = {
+  id: 'physics',
   backgroundComponent: PhysicsBackground,
   bodyFontWeight: 'normal',
   background: '#ffffff',
@@ -38,4 +41,12 @@ if (window.DeviceMotionEvent != null && isMobile) {
   themes.push(physicsTheme)
 }
 
-export const theme = getRandomFromArray(themes)
+export const getTheme = excludeId => {
+  const newTheme = getRandomFromArray(themes)
+
+  if (excludeId && newTheme.id === excludeId) {
+    return getTheme(excludeId)
+  }
+
+  return newTheme
+}

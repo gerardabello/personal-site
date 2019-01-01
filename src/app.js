@@ -17,13 +17,16 @@ import IBMPlexMonoWoff2 from '../assets/fonts/subset-IBMPlexMono.woff2'
 import IBMPlexMonoItalicWoff from '../assets/fonts/subset-IBMPlexMono-Italic.woff'
 import IBMPlexMonoItalicWoff2 from '../assets/fonts/subset-IBMPlexMono-Italic.woff2'
 
-import { theme } from './config'
+import { getTheme } from './config'
 
-injectGlobal`
+/*
+  wait for styled-components v4
   html, body, #root{
     background: ${theme.background};
   }
+  */
 
+injectGlobal`
   @font-face {
       font-family: 'Sofia Pro';
       src: url(${SofiaProBoldWoff2}) format('woff2'),
@@ -84,19 +87,35 @@ const Content = styled.div`
 `
 
 export default class App extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { theme: getTheme() }
+
+    this.changeTheme = this.changeTheme.bind(this)
+  }
+
+  changeTheme () {
+    this.setState({ theme: getTheme(this.state.theme.id) })
+  }
+
   render () {
-    const Background = theme.backgroundComponent
+    const Background = this.state.theme.backgroundComponent
 
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={this.state.theme}>
         <Router>
           <Root>
             <MetaTags>
-              <meta name='theme-color' content={theme.background} />
+              <meta name='theme-color' content={this.state.theme.background} />
             </MetaTags>
             <Background />
             <Content>
-              <Route exact path='/' component={Home} />
+              <Route
+                exact
+                path='/'
+                component={() => <Home onChangeTheme={this.changeTheme} />}
+              />
               <Route exact path='/about' component={About} />
               <Route exact path='/projects' component={Projects} />
               <Route exact path='/contact' component={Contact} />

@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 import Container from './container'
 import Menu from './menu'
+import RefreshIcon from './refresh-icon'
 
 const appearBottom = keyframes`
   100% {
@@ -21,6 +22,18 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+const ChangeThemeButton = styled.div`
+  height: 48px;
+  width: 48px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${p => p.theme.text};
 `
 
 const TitleWrapper = styled.div`
@@ -74,6 +87,9 @@ export default class Home extends Component {
             <Menu />
           </MenuWrapper>
         </Container>
+        <ChangeThemeButton onClick={this.props.onChangeTheme}>
+          <RefreshIcon />
+        </ChangeThemeButton>
       </Root>
     )
   }
