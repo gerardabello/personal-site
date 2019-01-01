@@ -14,23 +14,22 @@ const Root = styled.div`
 `
 
 class Background extends React.Component {
-  componentDidMount () {
+  createEngine (ref) {
     const width = window.innerWidth
     const height = window.innerHeight
 
     // module aliases
-    const Engine = Matter.Engine,
-      Render = Matter.Render,
-      World = Matter.World,
-      Bodies = Matter.Bodies
+    const Render = Matter.Render
+    const World = Matter.World
+    const Bodies = Matter.Bodies
 
     // create an engine
-    this.engine = Engine.create()
+    const engine = Matter.Engine.create()
 
     // create a renderer
-    var render = Render.create({
-      element: this.ref,
-      engine: this.engine,
+    const render = Render.create({
+      element: ref,
+      engine: engine,
       options: {
         wireframes: false,
         width,
@@ -80,25 +79,25 @@ class Background extends React.Component {
       })
     ]
 
-    var ground = Bodies.rectangle(width / 2, height + 25, width, 50, {
+    const ground = Bodies.rectangle(width / 2, height + 25, width, 50, {
       isStatic: true,
       friction
     })
-    var topGround = Bodies.rectangle(width / 2, -25, width, 50, {
+    const topGround = Bodies.rectangle(width / 2, -25, width, 50, {
       isStatic: true,
       friction
     })
-    var leftGround = Bodies.rectangle(-25, height / 2, 50, height, {
+    const leftGround = Bodies.rectangle(-25, height / 2, 50, height, {
       isStatic: true,
       friction
     })
-    var rightGround = Bodies.rectangle(width + 25, height / 2, 50, height, {
+    const rightGround = Bodies.rectangle(width + 25, height / 2, 50, height, {
       isStatic: true,
       friction
     })
 
     // add all of the bodies to the world
-    World.add(this.engine.world, [
+    World.add(engine.world, [
       ...shapes,
       ground,
       rightGround,
@@ -107,10 +106,16 @@ class Background extends React.Component {
     ])
 
     // run the engine
-    Engine.run(this.engine)
+    Matter.Engine.run(engine)
 
     // run the renderer
     Render.run(render)
+
+    return engine
+  }
+
+  componentDidMount () {
+    this.engine = this.createEngine(this.ref)
 
     window.addEventListener('devicemotion', this.handleMotion.bind(this), false)
   }
@@ -121,7 +126,7 @@ class Background extends React.Component {
   }
 
   render () {
-    return <Root innerRef={r => (this.ref = r)} />
+    return <Root ref={r => (this.ref = r)} />
   }
 }
 

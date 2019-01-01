@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled, { injectGlobal, ThemeProvider } from 'styled-components'
+import React, { Component, Suspense } from 'react'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import MetaTags from 'react-meta-tags'
 
@@ -19,14 +19,21 @@ import IBMPlexMonoItalicWoff2 from '../assets/fonts/subset-IBMPlexMono-Italic.wo
 
 import { getTheme } from './config'
 
-/*
-  wait for styled-components v4
+const GlobalStyle = createGlobalStyle`
   html, body, #root{
-    background: ${theme.background};
+    background: ${props => props.theme.background};
   }
-  */
 
-injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+`
+const GlobalFontsStyle = createGlobalStyle`
   @font-face {
       font-family: 'Sofia Pro';
       src: url(${SofiaProBoldWoff2}) format('woff2'),
@@ -51,13 +58,6 @@ injectGlobal`
       font-style: italic;
   }
 
-  * {
-    box-sizing: border-box;
-  }
-
-  a {
-    text-decoration: none;
-  }
 `
 
 const Root = styled.div`
@@ -106,20 +106,26 @@ export default class App extends Component {
       <ThemeProvider theme={this.state.theme}>
         <Router>
           <Root>
+            <GlobalStyle />
+            <GlobalFontsStyle />
             <MetaTags>
               <meta name='theme-color' content={this.state.theme.background} />
             </MetaTags>
-            <Background />
-            <Content>
-              <Route
-                exact
-                path='/'
-                component={() => <Home onChangeTheme={this.changeTheme} />}
-              />
-              <Route exact path='/about' component={About} />
-              <Route exact path='/projects' component={Projects} />
-              <Route exact path='/contact' component={Contact} />
-            </Content>
+            <Suspense fallback={<div />}>
+              <Background />
+              <Content>
+                <Route
+                  exact
+                  path='/'
+                  render={props => (
+                    <Home {...props} onChangeTheme={this.changeTheme} />
+                  )}
+                />
+                <Route exact path='/about' component={About} />
+                <Route exact path='/projects' component={Projects} />
+                <Route exact path='/contact' component={Contact} />
+              </Content>
+            </Suspense>
           </Root>
         </Router>
       </ThemeProvider>

@@ -7,12 +7,6 @@ module.exports = {
     chunkFilename: '[name]-[chunkhash].js',
     filename: '[hash]-[name]-entry.js'
   },
-  resolve: {
-    alias: {
-      react: 'preact-compat',
-      'react-dom': 'preact-compat'
-    }
-  },
   module: {
     rules: [
       {
