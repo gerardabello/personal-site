@@ -1,5 +1,8 @@
 import RetinaBackground from './retina-background'
 import MovingBallsBackground from './moving-balls-background'
+import PhysicsBackground from './physics-background'
+
+import { isMobile, getRandomFromArray } from './utils'
 
 export const darkTheme = {
   backgroundComponent: RetinaBackground,
@@ -19,4 +22,20 @@ export const lightTheme = {
   color4: '#1e2bf5'
 }
 
-export const theme = Math.random() > 0.5 ? darkTheme : lightTheme
+export const physicsTheme = {
+  backgroundComponent: PhysicsBackground,
+  bodyFontWeight: 'normal',
+  background: '#ffffff',
+  text: '#000000',
+  color2: '#000000',
+  color4: '#ff0000'
+}
+
+let themes = [darkTheme, lightTheme]
+
+if (window.DeviceMotionEvent != null && isMobile) {
+  // It works on desktop, but it's fun only if the device has motion sensor
+  themes.push(physicsTheme)
+}
+
+export const theme = getRandomFromArray(themes)

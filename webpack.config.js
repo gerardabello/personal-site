@@ -33,5 +33,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({ template: 'src/index.html' })]
+  plugins: [new HtmlWebpackPlugin({ template: 'src/index.html' })],
+  devServer: {
+    disableHostCheck: true,
+    compress: true
+  }
 }

@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@typeform/embed": "^0.5.12",
+    "matter-js": "^0.14.2",
     "preact": "^8.3.1",
     "preact-compat": "^3.18.4",
     "react-meta-tags": "^0.6.0",
