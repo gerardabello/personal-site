@@ -36,7 +36,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "start": "webpack-dev-server --mode development --hot",
-    "build": "npm run clean && webpack --mode production"
+    "build": "npm run clean && webpack --mode production && cp -a ./static_files/. ./dist/"
   },
   "license": "UNLICENSED"
 }
