@@ -17,15 +17,15 @@ const Box = styled.div`
   border-bottom: ${p => (p.selected ? `4px solid ${p.theme.color4}` : 'none')};
 
   height: 40px;
-  font-size: 30px;
+  font-size: 26px;
   @media (max-width: 500px) {
     height: 36px;
-    font-size: 28px;
+    font-size: 20px;
   }
 
   @media (max-width: 400px) {
     height: 30px;
-    font-size: 22px;
+    font-size: 16px;
   }
 
   a {

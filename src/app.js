@@ -8,8 +8,8 @@ import About from './about'
 import Projects from './projects'
 import Contact from './contact'
 
-import SofiaProBoldWoff from '../assets/fonts/subset-SofiaPro-Bold.woff'
-import SofiaProBoldWoff2 from '../assets/fonts/subset-SofiaPro-Bold.woff2'
+import IntegralCFBoldWoff from '../assets/fonts/subset-IntegralCF-Bold.woff'
+import IntegralCFBoldWoff2 from '../assets/fonts/subset-IntegralCF-Bold.woff2'
 
 import IBMPlexMonoWoff from '../assets/fonts/subset-IBMPlexMono.woff'
 import IBMPlexMonoWoff2 from '../assets/fonts/subset-IBMPlexMono.woff2'
@@ -35,9 +35,9 @@ const GlobalStyle = createGlobalStyle`
 `
 const GlobalFontsStyle = createGlobalStyle`
   @font-face {
-      font-family: 'Sofia Pro';
-      src: url(${SofiaProBoldWoff2}) format('woff2'),
-          url(${SofiaProBoldWoff}) format('woff');
+      font-family: 'Integral CF';
+      src: url(${IntegralCFBoldWoff2}) format('woff2'),
+          url(${IntegralCFBoldWoff}) format('woff');
       font-weight: bold;
       font-style: normal;
   }
@@ -61,7 +61,7 @@ const GlobalFontsStyle = createGlobalStyle`
 `
 
 const Root = styled.div`
-  font-family: 'Sofia Pro', sans-serif;
+  font-family: 'Integral CF', sans-serif;
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
