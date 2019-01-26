@@ -4,7 +4,7 @@ import Matter from 'matter-js'
 
 const Root = styled.div`
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
 
   left: 0;

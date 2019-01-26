@@ -10,7 +10,7 @@ const RadiusRand = FromToRandom(0.2, 0.8)
 const Root = styled.div`
   background-color: #f3f1f0;
   position: absolute;
-  overflow: hidden;
+  overflow: visible;
 
   left: 0;
   top: 0;
