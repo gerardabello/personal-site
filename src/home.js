@@ -49,6 +49,8 @@ const MenuWrapper = styled.div`
 `
 
 const Title = styled.h1`
+  font-family: 'Integral CF', sans-serif;
+  letter-spacing: 3px;
   font-weight: 700;
   margin-bottom: 48px;
   text-align: center;

@@ -16,8 +16,6 @@ const Paragraph = styled.p`
 
   hyphens: auto;
 
-  letter-spacing: -0.03em;
-
   font-size: 18px;
   line-height: 28px;
 

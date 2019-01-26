@@ -94,7 +94,7 @@ const GlobalFontsStyle = createGlobalStyle`
 `
 
 const Root = styled.div`
-  font-family: 'Integral CF', sans-serif;
+  font-family: 'Barlow', sans-serif;
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
