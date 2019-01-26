@@ -6,7 +6,7 @@ import Layout from './layout'
 const Root = styled.div``
 
 const Paragraph = styled.p`
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Space Mono', monospace;
   margin-top: 0;
   text-indent: 2em;
   text-align: justify;
@@ -15,8 +15,6 @@ const Paragraph = styled.p`
   font-weight: ${p => p.theme.bodyFontWeight};
 
   hyphens: auto;
-
-  letter-spacing: -0.03em;
 
   font-size: 18px;
   line-height: 28px;

@@ -49,18 +49,20 @@ const MenuWrapper = styled.div`
 `
 
 const Title = styled.h1`
+  font-family: 'Integral CF', sans-serif;
+  letter-spacing: 3px;
   font-weight: 700;
   margin-bottom: 48px;
   text-align: center;
   opacity: 0;
   margin: 0;
 
-  font-size: 72px;
+  font-size: 60px;
   @media (max-width: 500px) {
-    font-size: 58px;
+    font-size: 48px;
   }
   @media (max-width: 350px) {
-    font-size: 42px;
+    font-size: 36px;
   }
 
   -webkit-font-smoothing: antialiased;

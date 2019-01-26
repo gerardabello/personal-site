@@ -9,7 +9,9 @@ const Root = styled.div`
 `
 
 const Box = styled.div`
-  font-weight: 700;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: ${p => p.theme.text};
@@ -17,7 +19,7 @@ const Box = styled.div`
   border-bottom: ${p => (p.selected ? `4px solid ${p.theme.color4}` : 'none')};
 
   height: 40px;
-  font-size: 30px;
+  font-size: 32px;
   @media (max-width: 500px) {
     height: 36px;
     font-size: 28px;

@@ -12,7 +12,8 @@ const Content = styled.div`
 `
 
 const ContactButton = styled.button`
-  border: 4px solid ${p => p.theme.text};
+  border: none;
+  border-bottom: 4px solid ${p => p.theme.text};
   padding: 16px 24px;
   margin-top: 20vh;
   color: ${props => props.theme.text};
@@ -21,7 +22,7 @@ const ContactButton = styled.button`
   line-height: 32px;
   background: transparent;
   outline: none;
-  font-family: Sofia Pro;
+  font-family: 'Integral CF';
   cursor: pointer;
 
   -webkit-font-smoothing: antialiased;
