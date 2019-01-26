@@ -6,7 +6,7 @@ import Layout from './layout'
 const Root = styled.div``
 
 const Paragraph = styled.p`
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Space Mono', monospace;
   margin-top: 0;
   text-indent: 2em;
   text-align: justify;
