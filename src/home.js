@@ -50,7 +50,7 @@ const MenuWrapper = styled.div`
 
 const Title = styled.h1`
   font-family: 'Integral CF', sans-serif;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-weight: 700;
   margin-bottom: 48px;
   text-align: center;
@@ -59,7 +59,7 @@ const Title = styled.h1`
 
   font-size: 60px;
   @media (max-width: 500px) {
-    font-size: 48px;
+    font-size: 46px;
   }
   @media (max-width: 350px) {
     font-size: 36px;
