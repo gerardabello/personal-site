@@ -10,8 +10,15 @@ import colossalImg from '../assets/imgs/colossal.png'
 import weighImg from '../assets/imgs/weight.png'
 import envelopeImg from '../assets/imgs/envelope-graph.png'
 import gasptImg from '../assets/imgs/gaspt.jpg'
+import unwelchImg from '../assets/imgs/unwelch.png'
 
 const projects = [
+  {
+    img: unwelchImg,
+    href: 'https://unwel.ch/',
+    title: 'Unwelch',
+    description: 'Friendly betting'
+  },
   {
     img: countersImg,
     href: 'https://counters.gerard.sh/',
