@@ -15,7 +15,9 @@ const Root = styled.div`
 
 const Square = styled.div.attrs({
   style: ({ rotationX, rotationY, rotationIndex }) => ({
-    transform: `translate3d(-50%, -50%, 0) rotate3d(
+    transform: `translate3d(-50%, -50%, 0) 
+    scale(${1 - Math.abs(rotationY) / 500},${1 - Math.abs(rotationX) / 500})
+    rotate3d(
       1,
       0,
       0,
@@ -35,8 +37,8 @@ const Square = styled.div.attrs({
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 40px;
-  width: 40px;
+  width: 30vw;
+  height: 30vw;
   background: ${props => props.color};
 `
 
