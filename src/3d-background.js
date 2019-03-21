@@ -29,18 +29,21 @@ const Square = styled.div.attrs({
       1,
       0,
       0,
-      ${(rotationX / 10) * rotationIndex}deg
+      ${(rotationX / 5) * rotationIndex}deg
     )
     rotate3d(
       0,
       1,
       0,
-      ${(rotationY / 10) * rotationIndex}deg
+      ${(rotationY / 5) * rotationIndex}deg
     )
     `
   })
 })`
   transform-origin: center center -${props => props.rotationIndex * 30}px;
+  filter: blur(
+    ${props => 30 / (props.rotationIndex * props.rotationIndex * 2)}px
+  );
 
   position: absolute;
   width: ${SIZE}vw;
@@ -53,50 +56,26 @@ const Stack = ({ posX, posY, rotationX, rotationY }) => (
     <Square
       rotationX={rotationX}
       rotationY={rotationY}
-      color='#111'
-      rotationIndex={0}
-    />
-    <Square
-      rotationX={rotationX}
-      rotationY={rotationY}
-      color='#111'
-      rotationIndex={1}
-    />
-    <Square
-      rotationX={rotationX}
-      rotationY={rotationY}
-      color='#222'
+      color='#101010'
       rotationIndex={2}
     />
     <Square
       rotationX={rotationX}
       rotationY={rotationY}
-      color='#333'
+      color='#161616'
       rotationIndex={3}
     />
     <Square
       rotationX={rotationX}
       rotationY={rotationY}
-      color='#444'
+      color='#1B1B1B'
       rotationIndex={4}
     />
     <Square
       rotationX={rotationX}
       rotationY={rotationY}
-      color='#555'
+      color='#232323'
       rotationIndex={5}
-    />
-    <Square
-      rotationX={rotationX}
-      rotationY={rotationY}
-      color='#666'
-      rotationIndex={6}
-    />
-    <Square
-      rotationX={rotationX}
-      rotationY={rotationY}
-      color='#777'
-      rotationIndex={7}
     />
   </StackRoot>
 )
