@@ -2,6 +2,7 @@ import { lazy } from 'react'
 
 import RetinaBackground from './retina-background'
 import MovingBallsBackground from './moving-balls-background'
+import tridimentionalBackground from './3d-background'
 
 const PhysicsBackground = lazy(() =>
   import(/* webpackChunkName: "physicsBG" */ './physics-background')
@@ -39,6 +40,16 @@ export const physicsTheme = {
   color4: '#ff0000'
 }
 
+export const tridimentionalTheme = {
+  id: 'physics',
+  backgroundComponent: tridimentionalBackground,
+  bodyFontWeight: 'normal',
+  background: '#ffffff',
+  text: '#000000',
+  color2: '#000000',
+  color4: '#ff0000'
+}
+
 let themes = [darkTheme, lightTheme]
 
 if (window.DeviceMotionEvent != null && isMobile) {
@@ -47,6 +58,7 @@ if (window.DeviceMotionEvent != null && isMobile) {
 }
 
 export const getTheme = excludeId => {
+  return tridimentionalTheme
   const newTheme = getRandomFromArray(themes)
 
   if (excludeId && newTheme.id === excludeId) {
