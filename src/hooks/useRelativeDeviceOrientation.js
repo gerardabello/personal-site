@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const SET_INITIAL_AT = 500
+const SET_INITIAL_AT = 1000
 
 function useInitialDeviceOrientation () {
   const [initialOrientation, setInitialOrientation] = useState({

@@ -44,10 +44,10 @@ export const tridimentionalTheme = {
   id: 'physics',
   backgroundComponent: tridimentionalBackground,
   bodyFontWeight: 'normal',
-  background: '#ffffff',
-  text: '#000000',
+  background: '#000000',
+  text: '#DDDDDD',
   color2: '#000000',
-  color4: '#ff0000'
+  color4: '#ffff00'
 }
 
 let themes = [darkTheme, lightTheme]
