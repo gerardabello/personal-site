@@ -27,8 +27,8 @@
   "dependencies": {
     "@typeform/embed": "^0.5.12",
     "matter-js": "^0.14.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-meta-tags": "^0.6.0",
     "react-router-dom": "^4.3.1",
     "styled-components": "^4.1.3"
