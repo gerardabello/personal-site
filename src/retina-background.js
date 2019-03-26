@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { withRouter } from 'react-router-dom'
 
 import Ring from './figures/ring'
 import Zig from './figures/zig'
@@ -21,7 +22,14 @@ const FIGURE_SHAPES = {
   square: Square
 }
 
-const COLORS = ['#212D40', '#364156', '#7D4E57', '#D66853']
+const COLORS = [
+  '#212D40',
+  '#212D40',
+  '#364156',
+  '#364156',
+  '#7D4E57',
+  '#D66853'
+]
 
 function shuffle (iarray) {
   let array = [...iarray]
@@ -40,7 +48,7 @@ function shuffle (iarray) {
 
 const PreRoot = styled.div`
   background-color: #11151c;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -71,6 +79,10 @@ const Wrapper = styled.div`
   left: ${p => p.left}%;
   top: ${p => p.top}%;
   position: absolute;
+
+  * {
+    transition: all 0.6s ease;
+  }
 `
 
 const generateShapes = () => {
@@ -104,37 +116,49 @@ const generateShapes = () => {
   shapes = shapes.map((s, i) => ({
     position: s.position,
     shape: s.shape,
-    color: COLORS[1 + i % (COLORS.length - 1)]
+    color: COLORS[Math.floor(Math.random() * COLORS.length)]
   }))
 
   return shapes
 }
 
-const Shape = ({ shape }) => {
+const Shape = ({ onlyBasicColor, shape }) => {
   const C = FIGURE_SHAPES[shape.shape]
-  const contentCollision = !(
-    shape.position[0] < 0.23 || shape.position[0] > 0.77
-  )
+  const contentCollision =
+    shape.position[0] > 0.3 &&
+    shape.position[0] < 0.7 &&
+    shape.position[1] > 0.3 &&
+    shape.position[1] < 0.7
   return (
     <Wrapper left={shape.position[0] * 100} top={shape.position[1] * 100}>
-      <C color={contentCollision ? COLORS[0] : shape.color} />
+      <C color={onlyBasicColor || contentCollision ? COLORS[0] : shape.color} />
     </Wrapper>
   )
 }
 
-export default class Background extends Component {
+class Background extends Component {
   constructor () {
     super()
     this.state = { shapes: generateShapes() }
   }
 
   render () {
+    const { location } = this.props
+
     return (
       <PreRoot>
         <Root>
-          {this.state.shapes.map((s, i) => <Shape key={i} shape={s} />)}
+          {this.state.shapes.map((s, i) => (
+            <Shape
+              onlyBasicColor={location.pathname === '/about'}
+              key={i}
+              shape={s}
+            />
+          ))}
         </Root>
       </PreRoot>
     )
   }
 }
+
+export default withRouter(Background)
