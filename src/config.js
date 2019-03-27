@@ -46,12 +46,12 @@ if (window.DeviceMotionEvent != null && isMobile) {
   themes.push(physicsTheme)
 }
 
-export const getTheme = excludeId => {
-  const newTheme = getRandomFromArray(themes)
-
-  if (excludeId && newTheme.id === excludeId) {
-    return getTheme(excludeId)
+export const getTheme = currentThemeId => {
+  if (!currentThemeId) {
+    return getRandomFromArray(themes)
   }
 
-  return newTheme
+  const currentIndex = themes.findIndex(theme => theme.id === currentThemeId)
+
+  return themes[(currentIndex + 1) % themes.length]
 }
