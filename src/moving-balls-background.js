@@ -39,7 +39,17 @@ const Circle = styled.div`
 class Background extends React.Component {
   render () {
     const topPos1 = FromToRandom(0, 100)(Math.random())
-    const topPos2 = (topPos1 + 50) % 100 + FromToRandom(-5, 5)(Math.random())
+    const topPos2 = ((topPos1 + 50) % 100) + FromToRandom(-5, 5)(Math.random())
+
+    const getRandomSize = () => {
+      const initial = SizeRand(Math.random())
+      const ratio = Math.min(
+        1,
+        (0.33 * window.innerHeight) / window.innerWidth + 0.42
+      )
+      console.log(ratio)
+      return initial * ratio
+    }
 
     return (
       <Root>
@@ -50,7 +60,7 @@ class Background extends React.Component {
           c={RadiusRand(Math.random())}
           d={RadiusRand(Math.random())}
           r={Math.random()}
-          size={SizeRand(Math.random())}
+          size={getRandomSize()}
           left={PositionRand(Math.random())}
           top={topPos1}
         />
@@ -62,7 +72,7 @@ class Background extends React.Component {
           c={RadiusRand(Math.random())}
           d={RadiusRand(Math.random())}
           r={Math.random()}
-          size={SizeRand(Math.random())}
+          size={getRandomSize()}
           left={100 - PositionRand(Math.random())}
           top={topPos2}
         />
