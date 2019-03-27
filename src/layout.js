@@ -38,16 +38,13 @@ const MenuWrapper = styled.div``
 
 export default class About extends Component {
   render () {
-    const { title, children } = this.props
+    const { children } = this.props
     return (
       <Root>
         <Container>
           <MenuWrapper>
             <Menu />
           </MenuWrapper>
-          {
-            // <Title>{title}</Title>
-          }
           <Content>{children}</Content>
         </Container>
       </Root>

@@ -43,6 +43,10 @@ const ProjectsBox = styled(Box)``
 const ContactBox = styled(Box)``
 
 export default class Menu extends Component {
+  componentDidMount () {
+    console.log('MENU')
+  }
+
   render () {
     return (
       <Root>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Layout from './layout'
-
 import fldImg from '../assets/imgs/fld.jpg'
 import countersImg from '../assets/imgs/counters.png'
 import goobaImg from '../assets/imgs/gooba.jpg'
@@ -119,20 +117,18 @@ export default class Projects extends Component {
   render () {
     return (
       <Root>
-        <Layout title='Projects'>
-          <ProjectList>
-            {projects.map(project => (
-              <Link key={project.title} href={project.href}>
-                <Project>
-                  <ProjectImgWrapper>
-                    <ProjectImg src={project.img} />
-                  </ProjectImgWrapper>
-                  <ProjectTitle>{project.title}</ProjectTitle>
-                </Project>
-              </Link>
-            ))}
-          </ProjectList>
-        </Layout>
+        <ProjectList>
+          {projects.map(project => (
+            <Link key={project.title} href={project.href}>
+              <Project>
+                <ProjectImgWrapper>
+                  <ProjectImg src={project.img} />
+                </ProjectImgWrapper>
+                <ProjectTitle>{project.title}</ProjectTitle>
+              </Project>
+            </Link>
+          ))}
+        </ProjectList>
       </Root>
     )
   }

@@ -9,3 +9,10 @@ export const isMobile =
 
 export const getRandomFromArray = array =>
   array[Math.floor(Math.random() * array.length)]
+
+export const createStaticGlobalStyles = styleString => {
+  const styleNode = document.createElement('style')
+  document.getElementsByTagName('head')[0].appendChild(styleNode)
+  styleNode.type = 'text/css'
+  styleNode.appendChild(document.createTextNode(styleString))
+}

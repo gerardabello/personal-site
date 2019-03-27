@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Layout from './layout'
-
 const Root = styled.div``
 
 const Content = styled.div`
@@ -51,13 +49,11 @@ export default class About extends Component {
   render () {
     return (
       <Root>
-        <Layout title='Contact'>
-          <Content>
-            <ContactButton onClick={this.openPopup}>
-              Leave a message
-            </ContactButton>
-          </Content>
-        </Layout>
+        <Content>
+          <ContactButton onClick={this.openPopup}>
+            Leave a message
+          </ContactButton>
+        </Content>
       </Root>
     )
   }
