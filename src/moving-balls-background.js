@@ -47,7 +47,6 @@ class Background extends React.Component {
         1,
         (0.33 * window.innerHeight) / window.innerWidth + 0.42
       )
-      console.log(ratio)
       return initial * ratio
     }
 
