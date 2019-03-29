@@ -114,7 +114,7 @@ const Link = styled.a`
 `
 
 export default class Projects extends Component {
-  render () {
+  render() {
     return (
       <Root>
         <ProjectList>

@@ -18,17 +18,6 @@ const appearBottom = keyframes`
   }
 `
 
-const Title = styled.div`
-  font-weight: 700;
-  margin-bottom: 48px;
-  text-align: center;
-  font-size: 48px;
-
-  @media (max-width: 450px) {
-    font-size: 36px;
-  }
-`
-
 const Content = styled.div`
   padding-top: 12vh;
   animation: ${appearBottom} 0.8s ease;
@@ -37,7 +26,7 @@ const Content = styled.div`
 const MenuWrapper = styled.div``
 
 export default class About extends Component {
-  render () {
+  render() {
     const { children } = this.props
     return (
       <Root>

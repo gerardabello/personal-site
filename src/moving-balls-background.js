@@ -37,7 +37,7 @@ const Circle = styled.div`
 `
 
 class Background extends React.Component {
-  render () {
+  render() {
     const topPos1 = FromToRandom(0, 100)(Math.random())
     const topPos2 = ((topPos1 + 50) % 100) + FromToRandom(-5, 5)(Math.random())
 
@@ -53,7 +53,7 @@ class Background extends React.Component {
     return (
       <Root>
         <Circle
-          color='#d3d6f3'
+          color="#d3d6f3"
           a={RadiusRand(Math.random())}
           b={RadiusRand(Math.random())}
           c={RadiusRand(Math.random())}
@@ -65,7 +65,7 @@ class Background extends React.Component {
         />
 
         <Circle
-          color='#f7e6af'
+          color="#f7e6af"
           a={RadiusRand(Math.random())}
           b={RadiusRand(Math.random())}
           c={RadiusRand(Math.random())}

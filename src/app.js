@@ -41,7 +41,7 @@ const Content = styled.div`
 `
 
 export default class App extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = { theme: getTheme() }
@@ -49,11 +49,11 @@ export default class App extends Component {
     this.changeTheme = this.changeTheme.bind(this)
   }
 
-  changeTheme () {
+  changeTheme() {
     this.setState({ theme: getTheme(this.state.theme.id) })
   }
 
-  render () {
+  render() {
     const Background = this.state.theme.backgroundComponent
 
     return (
@@ -61,7 +61,7 @@ export default class App extends Component {
         <Root>
           <GlobalStyle />
           <MetaTags>
-            <meta name='theme-color' content={this.state.theme.background} />
+            <meta name="theme-color" content={this.state.theme.background} />
           </MetaTags>
           <Router>
             <Suspense fallback={<div />}>
@@ -70,7 +70,7 @@ export default class App extends Component {
                 <Switch>
                   <Route
                     exact
-                    path='/'
+                    path="/"
                     render={props => (
                       <Home {...props} onChangeTheme={this.changeTheme} />
                     )}

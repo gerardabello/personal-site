@@ -1,4 +1,4 @@
-export default function poissonDiscSampler (
+export default function poissonDiscSampler(
   width,
   height,
   radius,
@@ -21,7 +21,7 @@ export default function poissonDiscSampler (
 
   const rng = Math.random
 
-  function far (x, y) {
+  function far(x, y) {
     let i = (x / cellSize) | 0
     let j = (y / cellSize) | 0
 
@@ -50,7 +50,7 @@ export default function poissonDiscSampler (
     return true
   }
 
-  function sample (x, y) {
+  function sample(x, y) {
     const s = [x, y]
 
     queue.push(s)

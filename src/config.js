@@ -3,11 +3,11 @@ import { lazy } from 'react'
 import RetinaBackground from './retina-background'
 import MovingBallsBackground from './moving-balls-background'
 
+import { isMobile, getRandomFromArray } from './utils'
+
 const PhysicsBackground = lazy(() =>
   import(/* webpackChunkName: "physicsBG" */ './physics-background')
 )
-
-import { isMobile, getRandomFromArray } from './utils'
 
 export const darkTheme = {
   id: 'dark',

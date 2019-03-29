@@ -43,23 +43,23 @@ const ProjectsBox = styled(Box)``
 const ContactBox = styled(Box)``
 
 export default class Menu extends Component {
-  componentDidMount () {
+  componentDidMount() {
     console.log('MENU')
   }
 
-  render () {
+  render() {
     return (
       <Root>
         <AboutBox selected={window.location.pathname.match('about')}>
-          <Link to='/about'>About</Link>
+          <Link to="/about">About</Link>
         </AboutBox>
 
         <ProjectsBox selected={window.location.pathname.match('projects')}>
-          <Link to='/projects'>Projects</Link>
+          <Link to="/projects">Projects</Link>
         </ProjectsBox>
 
         <ContactBox selected={window.location.pathname.match('contact')}>
-          <Link to='/contact'>Contact</Link>
+          <Link to="/contact">Contact</Link>
         </ContactBox>
       </Root>
     )

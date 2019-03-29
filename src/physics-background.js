@@ -14,7 +14,7 @@ const Root = styled.div`
 `
 
 class Background extends React.Component {
-  createEngine (ref) {
+  createEngine(ref) {
     const width = window.innerWidth
     const height = window.innerHeight
 
@@ -114,18 +114,18 @@ class Background extends React.Component {
     return engine
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.engine = this.createEngine(this.ref)
 
     window.addEventListener('devicemotion', this.handleMotion.bind(this), false)
   }
 
-  handleMotion (event) {
+  handleMotion(event) {
     this.engine.world.gravity.y = event.accelerationIncludingGravity.y / 5
     this.engine.world.gravity.x = -event.accelerationIncludingGravity.x / 5
   }
 
-  render () {
+  render() {
     return <Root ref={r => (this.ref = r)} />
   }
 }

@@ -34,7 +34,7 @@ const ContactButton = styled.button`
 `
 
 export default class About extends Component {
-  openPopup () {
+  openPopup() {
     import(/* webpackChunkName: "embed" */ '@typeform/embed')
       .then(({ makePopup }) => {
         makePopup('https://gerardabello.typeform.com/to/ITG3fr', {
@@ -43,10 +43,10 @@ export default class About extends Component {
           autoClose: 2000
         })
       })
-      .catch(error => alert('Could not show contact form'))
+      .catch(() => alert('Could not show contact form'))
   }
 
-  render () {
+  render() {
     return (
       <Root>
         <Content>

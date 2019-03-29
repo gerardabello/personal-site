@@ -77,13 +77,13 @@ const SubTitle = styled(Title)`
 `
 
 export default class Home extends Component {
-  render () {
+  render() {
     return (
       <Root>
         <Container>
           <TitleWrapper>
             <HiTitle>Hi!</HiTitle>
-            <SubTitle>I'm Gerard</SubTitle>
+            <SubTitle>I&apos;m Gerard</SubTitle>
           </TitleWrapper>
           <MenuWrapper>
             <Menu />

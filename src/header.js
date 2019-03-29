@@ -11,7 +11,7 @@ const Root = styled.div`
 `
 
 export default class Header extends Component {
-  render () {
+  render() {
     return (
       <Root>
         <Menu />

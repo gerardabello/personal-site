@@ -87,7 +87,7 @@ createStaticGlobalStyles(`
 
 const Root = styled.div``
 
-export function mount (node) {
+export function mount(node) {
   ReactDOM.render(
     <Root>
       <GlobalStyle />

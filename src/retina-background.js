@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { withRouter } from 'react-router-dom'
 
 import Ring from './figures/ring'
@@ -31,7 +31,7 @@ const COLORS = [
   '#D66853'
 ]
 
-function shuffle (iarray) {
+function shuffle(iarray) {
   let array = [...iarray]
   let count = array.length
   let randomnumber
@@ -100,8 +100,6 @@ const generateShapes = () => {
     })
   }
 
-  shapes.forEach(shape => {})
-
   const shapeList = Object.keys(FIGURE_SHAPES)
 
   shapes = shuffle(shapes)
@@ -113,7 +111,7 @@ const generateShapes = () => {
 
   shapes = shuffle(shapes)
 
-  shapes = shapes.map((s, i) => ({
+  shapes = shapes.map(s => ({
     position: s.position,
     shape: s.shape,
     color: COLORS[Math.floor(Math.random() * COLORS.length)]
@@ -137,12 +135,12 @@ const Shape = ({ onlyBasicColor, shape }) => {
 }
 
 class Background extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = { shapes: generateShapes() }
   }
 
-  render () {
+  render() {
     const { location } = this.props
 
     return (
