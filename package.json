@@ -17,7 +17,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "8.0.2",
     "browserslist": "^4.1.1",
-    "eslint-config-gerard": "^0.0.2",
+    "eslint-config-gerard": "^0.0.4",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "4.19.1",
@@ -37,7 +37,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "start": "webpack-dev-server --mode development --hot",
-    "build": "npm run clean && webpack --mode production && cp -a ./static_files/. ./dist/"
+    "build": "npm run clean && webpack --mode production && cp -a ./static_files/. ./dist/",
+    "lint": "eslint --ext .js,.jsx . --fix"
   },
   "license": "UNLICENSED"
 }

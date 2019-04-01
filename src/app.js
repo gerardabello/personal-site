@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import MetaTags from 'react-meta-tags'
@@ -40,48 +40,40 @@ const Content = styled.div`
   position: relative;
 `
 
-export default class App extends Component {
-  constructor(props) {
-    super(props)
+const App = () => {
+  const [theme, setTheme] = useState(getTheme())
 
-    this.state = { theme: getTheme() }
+  const Background = theme.backgroundComponent
 
-    this.changeTheme = this.changeTheme.bind(this)
-  }
+  const handleThemeChange = () => setTheme(getTheme)
 
-  changeTheme() {
-    this.setState({ theme: getTheme(this.state.theme.id) })
-  }
-
-  render() {
-    const Background = this.state.theme.backgroundComponent
-
-    return (
-      <ThemeProvider theme={this.state.theme}>
-        <Root>
-          <GlobalStyle />
-          <MetaTags>
-            <meta name="theme-color" content={this.state.theme.background} />
-          </MetaTags>
-          <Router>
-            <Suspense fallback={<div />}>
-              <Background />
-              <Content>
-                <Switch>
-                  <Route
-                    exact
-                    path="/"
-                    render={props => (
-                      <Home {...props} onChangeTheme={this.changeTheme} />
-                    )}
-                  />
-                  <Route component={Sections} />
-                </Switch>
-              </Content>
-            </Suspense>
-          </Router>
-        </Root>
-      </ThemeProvider>
-    )
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <Root>
+        <GlobalStyle />
+        <MetaTags>
+          <meta name="theme-color" content={theme.background} />
+        </MetaTags>
+        <Router>
+          <Suspense fallback={<div />}>
+            <Background />
+            <Content>
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={props => (
+                    <Home {...props} onChangeTheme={handleThemeChange} />
+                  )}
+                />
+                <Route component={Sections} />
+              </Switch>
+            </Content>
+          </Suspense>
+        </Router>
+      </Root>
+    </ThemeProvider>
+  )
 }
+
+export default App

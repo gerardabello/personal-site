@@ -2011,10 +2011,10 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-config-gerard@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-gerard/-/eslint-config-gerard-0.0.2.tgz#3a3cf8fede898efda16806bbbc57b8827f670cb6"
-  integrity sha512-RPnldsfYga0PGwTrCOPWCZH1q77pVN3nY1Hx7/7UGMbC+jZ8Zvh3STcyWer201qcb/WLcA1VI6LvZ9GWx2P1QQ==
+eslint-config-gerard@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-gerard/-/eslint-config-gerard-0.0.4.tgz#108a908ecd40f8980e603e29bed538cfb102a76b"
+  integrity sha512-KwsZ686oEyX43uCxyfYGOCtyvUa4etkTf3us6/JfZpXCk/vZJB05HVitmO+caAWDsPF986DdKjAlgZ9dfj0QkQ==
   dependencies:
     babel-eslint "^10.0.1"
     eslint "^5.12.0"
