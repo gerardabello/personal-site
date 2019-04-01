@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({ color }) => (
+const Square = ({ color }) => (
   <svg
     style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="79px"
@@ -23,3 +24,9 @@ export default ({ color }) => (
     </g>
   </svg>
 )
+
+Square.propTypes = {
+  color: PropTypes.string
+}
+
+export default Square

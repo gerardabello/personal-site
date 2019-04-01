@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({ color }) => (
+const Ring = ({ color }) => (
   <svg
     style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="75px"
@@ -17,3 +18,9 @@ export default ({ color }) => (
     </g>
   </svg>
 )
+
+Ring.propTypes = {
+  color: PropTypes.string
+}
+
+export default Ring

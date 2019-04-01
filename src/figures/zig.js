@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({ color }) => (
+const Zig = ({ color }) => (
   <svg
     style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="111px"
@@ -23,3 +24,9 @@ export default ({ color }) => (
     </g>
   </svg>
 )
+
+Zig.propTypes = {
+  color: PropTypes.string
+}
+
+export default Zig

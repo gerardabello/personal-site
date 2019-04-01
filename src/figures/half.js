@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({ color }) => (
+const Half = ({ color }) => (
   <svg
     style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="72px"
@@ -16,3 +17,9 @@ export default ({ color }) => (
     </g>
   </svg>
 )
+
+Half.propTypes = {
+  color: PropTypes.string
+}
+
+export default Half

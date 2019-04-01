@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default ({ color }) => (
+const Hex = ({ color }) => (
   <svg
     style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="67px"
@@ -14,3 +15,9 @@ export default ({ color }) => (
     </g>
   </svg>
 )
+
+Hex.propTypes = {
+  color: PropTypes.string
+}
+
+export default Hex
