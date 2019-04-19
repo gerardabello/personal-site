@@ -1,36 +1,52 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const Root = styled.div``
+import GithubIcon from 'react-feather/dist/icons/github'
+import MailIcon from 'react-feather/dist/icons/mail'
 
-const Content = styled.div`
-  width: 100%;
+const Root = styled.div`
+  margin-top: 10vh;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
 
-const ContactButton = styled.button`
+const IconWrapper = styled.div`
+  background: ${p => p.theme.text};
+  color: ${p => p.theme.background};
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+
+  margin-right: 16px;
+
+  & > * {
+    width: 28px;
+    height: 28px;
+  }
+`
+
+const Content = styled.div`
+  width: fit-content;
+`
+
+const Button = styled.div`
+  display: flex;
+  align-items: center;
+
   border: none;
-  border-bottom: 4px solid ${p => p.theme.text};
-  padding: 16px 24px;
-  margin-top: 20vh;
-  color: ${props => props.theme.text};
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 32px;
+  margin: 16px;
   background: transparent;
   outline: none;
-  font-family: 'Integral CF';
   cursor: pointer;
+
+  font-family: 'Space Mono', sans-serif;
+  color: ${p => p.theme.text};
+  font-size: 24px;
+  font-weight: ${p => p.theme.bodyFontWeight};
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 450px) {
-    padding: 12px 20px;
-    font-size: 24px;
-    line-height: 24px;
-  }
 `
 
 export default class About extends Component {
@@ -38,7 +54,7 @@ export default class About extends Component {
     import(/* webpackChunkName: "embed" */ '@typeform/embed')
       .then(({ makePopup }) => {
         makePopup('https://gerardabello.typeform.com/to/ITG3fr', {
-          mode: 'drawer_right',
+          mode: 'popup',
           autoOpen: true,
           autoClose: 2000
         })
@@ -50,9 +66,21 @@ export default class About extends Component {
     return (
       <Root>
         <Content>
-          <ContactButton onClick={this.openPopup}>
+          <Button onClick={this.openPopup}>
+            <IconWrapper>
+              <MailIcon />
+            </IconWrapper>
             Leave a message
-          </ContactButton>
+          </Button>
+
+          <a href="https://github.com/gerardabello">
+            <Button>
+              <IconWrapper>
+                <GithubIcon />
+              </IconWrapper>
+              Github
+            </Button>
+          </a>
         </Content>
       </Root>
     )
