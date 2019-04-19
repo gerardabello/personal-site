@@ -33,6 +33,18 @@ const Paragraph = styled.p`
     font-style: italic;
     font-weight: normal;
   }
+
+  position: relative;
+
+  &:first-child:before {
+    content: '';
+    background: ${p => p.theme.text};
+    height: 10px;
+    width: 18px;
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+  }
 `
 
 export default class About extends Component {
@@ -40,8 +52,8 @@ export default class About extends Component {
     return (
       <Root>
         <Paragraph>
-          My name is Gerard Abelló Serras and I&apos;m a software engineer living in
-          Barcelona and currently working at{' '}
+          My name is Gerard Abelló Serras and I&apos;m a software engineer
+          living in Barcelona and currently working at{' '}
           <a href="https://www.typeform.com">Typeform</a>. I try to be a
           comprehensive programmer, as no one technology is good for solving all
           problems. I believe good, modern design and quality code are
