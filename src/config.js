@@ -55,11 +55,19 @@ export const gifTheme = {
   textBackgroundGif: trippyGif
 }
 
-let themes = [darkTheme, lightTheme, gifTheme]
+let themes = [darkTheme, lightTheme]
 
 if (window.DeviceMotionEvent != null && isMobile) {
   // It works on desktop, but it's fun only if the device has motion sensor
   themes.push(physicsTheme)
+}
+
+if (
+  CSS.supports &&
+  (CSS.supports('-webkit-background-clip', 'text') ||
+    CSS.supports('background-clip', 'text'))
+) {
+  themes.push(gifTheme)
 }
 
 export const getTheme = currentTheme => {
