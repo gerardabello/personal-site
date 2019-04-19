@@ -71,9 +71,34 @@ const Title = styled.h1`
 
 const HiTitle = styled(Title)`
   animation: ${appearBottom} 1s ease 0.2s forwards;
+
+  ${props =>
+    props.theme.textBackgroundGif &&
+    `
+      background-image: url(${props.theme.textBackgroundGif});
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      background-position-x: 50%;
+      background-position-y: -200px;
+  `}
 `
+
 const SubTitle = styled(Title)`
   animation: ${appearBottom} 1s ease 1s forwards;
+
+  ${props =>
+    props.theme.textBackgroundGif &&
+    `
+      background-image: url(${props.theme.textBackgroundGif});
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      background-position-x: 50%;
+      background-position-y: -300px;
+  `}
 `
 
 export default class Home extends Component {

@@ -1,9 +1,14 @@
 import { lazy } from 'react'
+import styled from 'styled-components'
+
+import trippyGif from '../assets/imgs/trippy.gif'
 
 import RetinaBackground from './retina-background'
 import MovingBallsBackground from './moving-balls-background'
 
 import { isMobile, getRandomFromArray } from './utils'
+
+const NoBackground = styled.div``
 
 const PhysicsBackground = lazy(() =>
   import(/* webpackChunkName: "physicsBG" */ './physics-background')
@@ -39,7 +44,18 @@ export const physicsTheme = {
   color4: '#ff0000'
 }
 
-let themes = [darkTheme, lightTheme]
+export const gifTheme = {
+  id: 'gif',
+  backgroundComponent: NoBackground,
+  bodyFontWeight: 'normal',
+  background: '#040404',
+  text: '#e8e8e8',
+  color2: '#616161',
+  color4: '#e8e8e8',
+  textBackgroundGif: trippyGif
+}
+
+let themes = [darkTheme, lightTheme, gifTheme]
 
 if (window.DeviceMotionEvent != null && isMobile) {
   // It works on desktop, but it's fun only if the device has motion sensor

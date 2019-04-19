@@ -36,11 +36,54 @@ const Box = styled.div`
   }
 `
 
-const AboutBox = styled(Box)``
+const AboutBox = styled(Box)`
+  a {
+    ${props =>
+      props.theme.textBackgroundGif &&
+      `
+      background-image: url(${props.theme.textBackgroundGif});
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
 
-const ProjectsBox = styled(Box)``
+      background-size: 701%;
+      background-position-x: 41%;
+      background-position-y: 81%;
 
-const ContactBox = styled(Box)``
+  `}
+`
+
+const ProjectsBox = styled(Box)`
+  a {
+    ${props =>
+      props.theme.textBackgroundGif &&
+      `
+      background-image: url(${props.theme.textBackgroundGif});
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      background-size: 701%;
+      background-position-x: 70%;
+      background-position-y: 50%;
+  `}
+    `
+
+const ContactBox = styled(Box)`
+  a {
+    ${props =>
+      props.theme.textBackgroundGif &&
+      `
+      background-image: url(${props.theme.textBackgroundGif});
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      background-size: 701%;
+      background-position-x: 50%;
+      background-position-y: 20%;
+  `}
+      `
 
 export default class Menu extends Component {
   componentDidMount() {
