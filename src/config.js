@@ -48,7 +48,7 @@ export const gifTheme = {
   id: 'gif',
   backgroundComponent: NoBackground,
   bodyFontWeight: 'normal',
-  background: '#040404',
+  background: '#000000',
   text: '#e8e8e8',
   color2: '#616161',
   color4: '#e8e8e8',
