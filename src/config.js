@@ -25,7 +25,7 @@ export const lightTheme = {
   bodyFontWeight: 'normal',
   background: '#f3f1f0',
   text: '#2b2b2b',
-  color2: '#737272',
+  color2: '#3c3a39',
   color4: '#1e2bf5'
 }
 
