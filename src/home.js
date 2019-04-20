@@ -81,7 +81,8 @@ const HiTitle = styled(Title)`
       background-clip: text;
 
       background-position-x: 50%;
-      background-position-y: -200px;
+      background-position-y: -114px;
+      background-size: 82%;
   `}
 `
 
@@ -96,8 +97,9 @@ const SubTitle = styled(Title)`
       -webkit-background-clip: text;
       background-clip: text;
 
+      background-size: 84%;
       background-position-x: 50%;
-      background-position-y: -300px;
+      background-position-y: -276px;
   `}
 `
 
