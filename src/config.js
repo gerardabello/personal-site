@@ -51,7 +51,7 @@ export const gifTheme = {
   background: '#000000',
   text: '#e8e8e8',
   color2: '#616161',
-  color4: '#e8e8e8',
+  color4: '#ffcc66',
   textBackgroundGif: trippyGif
 }
 
