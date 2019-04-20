@@ -38,6 +38,9 @@ const ChangeThemeButton = styled.div`
 
 const TitleWrapper = styled.div`
   margin-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const MenuWrapper = styled.div`
@@ -56,6 +59,8 @@ const Title = styled.h1`
   text-align: center;
   opacity: 0;
   margin: 0;
+
+  display: inline;
 
   font-size: 60px;
   @media (max-width: 500px) {
@@ -80,9 +85,9 @@ const HiTitle = styled(Title)`
       -webkit-background-clip: text;
       background-clip: text;
 
-      background-position-x: 50%;
-      background-position-y: -114px;
-      background-size: 82%;
+      background-position-x: 60%;
+      background-position-y: 34%;
+      background-size: 502%;
   `}
 `
 
@@ -97,9 +102,9 @@ const SubTitle = styled(Title)`
       -webkit-background-clip: text;
       background-clip: text;
 
-      background-size: 84%;
+      background-size: 138%;
       background-position-x: 50%;
-      background-position-y: -276px;
+      background-position-y: 55%;
   `}
 `
 
