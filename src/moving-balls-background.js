@@ -36,48 +36,44 @@ const Circle = styled.div`
   transition: all 1.5s ease;
 `
 
-class Background extends React.Component {
-  render() {
-    const topPos1 = FromToRandom(0, 100)(Math.random())
-    const topPos2 = ((topPos1 + 50) % 100) + FromToRandom(-5, 5)(Math.random())
+export default () => {
+  const topPos1 = FromToRandom(0, 100)(Math.random())
+  const topPos2 = ((topPos1 + 50) % 100) + FromToRandom(-5, 5)(Math.random())
 
-    const getRandomSize = () => {
-      const initial = SizeRand(Math.random())
-      const ratio = Math.min(
-        1,
-        (0.33 * window.innerHeight) / window.innerWidth + 0.42
-      )
-      return initial * ratio
-    }
-
-    return (
-      <Root>
-        <Circle
-          color="#d3d6f3"
-          a={RadiusRand(Math.random())}
-          b={RadiusRand(Math.random())}
-          c={RadiusRand(Math.random())}
-          d={RadiusRand(Math.random())}
-          r={Math.random()}
-          size={getRandomSize()}
-          left={PositionRand(Math.random())}
-          top={topPos1}
-        />
-
-        <Circle
-          color="#f7e6af"
-          a={RadiusRand(Math.random())}
-          b={RadiusRand(Math.random())}
-          c={RadiusRand(Math.random())}
-          d={RadiusRand(Math.random())}
-          r={Math.random()}
-          size={getRandomSize()}
-          left={100 - PositionRand(Math.random())}
-          top={topPos2}
-        />
-      </Root>
+  const getRandomSize = () => {
+    const initial = SizeRand(Math.random())
+    const ratio = Math.min(
+      1,
+      (0.33 * window.innerHeight) / window.innerWidth + 0.42
     )
+    return initial * ratio
   }
-}
 
-export default Background
+  return (
+    <Root>
+      <Circle
+        color="#d3d6f3"
+        a={RadiusRand(Math.random())}
+        b={RadiusRand(Math.random())}
+        c={RadiusRand(Math.random())}
+        d={RadiusRand(Math.random())}
+        r={Math.random()}
+        size={getRandomSize()}
+        left={PositionRand(Math.random())}
+        top={topPos1}
+      />
+
+      <Circle
+        color="#f7e6af"
+        a={RadiusRand(Math.random())}
+        b={RadiusRand(Math.random())}
+        c={RadiusRand(Math.random())}
+        d={RadiusRand(Math.random())}
+        r={Math.random()}
+        size={getRandomSize()}
+        left={100 - PositionRand(Math.random())}
+        top={topPos2}
+      />
+    </Root>
+  )
+}

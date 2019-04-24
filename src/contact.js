@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import GithubIcon from 'react-feather/dist/icons/github'
@@ -49,40 +49,38 @@ const Button = styled.div`
   -moz-osx-font-smoothing: grayscale;
 `
 
-export default class About extends Component {
-  openPopup() {
-    import(/* webpackChunkName: "embed" */ '@typeform/embed')
-      .then(({ makePopup }) => {
-        makePopup('https://gerardabello.typeform.com/to/ITG3fr', {
-          mode: 'popup',
-          autoOpen: true,
-          autoClose: 2000
-        })
+const openPopup = () => {
+  import(/* webpackChunkName: "embed" */ '@typeform/embed')
+    .then(({ makePopup }) => {
+      makePopup('https://gerardabello.typeform.com/to/ITG3fr', {
+        mode: 'popup',
+        autoOpen: true,
+        autoClose: 2000
       })
-      .catch(() => alert('Could not show contact form'))
-  }
-
-  render() {
-    return (
-      <Root>
-        <Content>
-          <Button onClick={this.openPopup}>
-            <IconWrapper>
-              <MailIcon />
-            </IconWrapper>
-            Leave a message
-          </Button>
-
-          <a href="https://github.com/gerardabello">
-            <Button>
-              <IconWrapper>
-                <GithubIcon />
-              </IconWrapper>
-              Github
-            </Button>
-          </a>
-        </Content>
-      </Root>
-    )
-  }
+    })
+    .catch(() => alert('Could not show contact form'))
 }
+
+const About = () => (
+  <Root>
+    <Content>
+      <Button onClick={openPopup}>
+        <IconWrapper>
+          <MailIcon />
+        </IconWrapper>
+        Leave a message
+      </Button>
+
+      <a href="https://github.com/gerardabello">
+        <Button>
+          <IconWrapper>
+            <GithubIcon />
+          </IconWrapper>
+          Github
+        </Button>
+      </a>
+    </Content>
+  </Root>
+)
+
+export default About

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import Container from './container'
@@ -25,18 +25,13 @@ const Content = styled.div`
 
 const MenuWrapper = styled.div``
 
-export default class About extends Component {
-  render() {
-    const { children } = this.props
-    return (
-      <Root>
-        <Container>
-          <MenuWrapper>
-            <Menu />
-          </MenuWrapper>
-          <Content>{children}</Content>
-        </Container>
-      </Root>
-    )
-  }
-}
+export default ({ children }) => (
+  <Root>
+    <Container>
+      <MenuWrapper>
+        <Menu />
+      </MenuWrapper>
+      <Content>{children}</Content>
+    </Container>
+  </Root>
+)

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { withRouter } from 'react-router-dom'
 
@@ -134,29 +134,22 @@ const Shape = ({ onlyBasicColor, shape }) => {
   )
 }
 
-class Background extends Component {
-  constructor() {
-    super()
-    this.state = { shapes: generateShapes() }
-  }
+const Background = ({ location }) => {
+  const [shapes] = useState(generateShapes())
 
-  render() {
-    const { location } = this.props
-
-    return (
-      <PreRoot>
-        <Root>
-          {this.state.shapes.map((s, i) => (
-            <Shape
-              onlyBasicColor={location.pathname === '/about'}
-              key={i}
-              shape={s}
-            />
-          ))}
-        </Root>
-      </PreRoot>
-    )
-  }
+  return (
+    <PreRoot>
+      <Root>
+        {shapes.map((s, i) => (
+          <Shape
+            onlyBasicColor={location.pathname === '/about'}
+            key={i}
+            shape={s}
+          />
+        ))}
+      </Root>
+    </PreRoot>
+  )
 }
 
 export default withRouter(Background)

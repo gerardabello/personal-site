@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import Menu from './menu'
@@ -10,12 +10,10 @@ const Root = styled.div`
   margin-bottom: 56px;
 `
 
-export default class Header extends Component {
-  render() {
-    return (
-      <Root>
-        <Menu />
-      </Root>
-    )
-  }
-}
+const Header = () => (
+  <Root>
+    <Menu />
+  </Root>
+)
+
+export default Header

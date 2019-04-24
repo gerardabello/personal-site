@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import Container from './container'
@@ -108,23 +108,21 @@ const SubTitle = styled(Title)`
   `}
 `
 
-export default class Home extends Component {
-  render() {
-    return (
-      <Root>
-        <Container>
-          <TitleWrapper>
-            <HiTitle>Hi!</HiTitle>
-            <SubTitle>I&apos;m Gerard</SubTitle>
-          </TitleWrapper>
-          <MenuWrapper>
-            <Menu />
-          </MenuWrapper>
-        </Container>
-        <ChangeThemeButton onClick={this.props.onChangeTheme}>
-          <RefreshIcon />
-        </ChangeThemeButton>
-      </Root>
-    )
-  }
-}
+const Home = ({ onChangeTheme }) => (
+  <Root>
+    <Container>
+      <TitleWrapper>
+        <HiTitle>Hi!</HiTitle>
+        <SubTitle>I&apos;m Gerard</SubTitle>
+      </TitleWrapper>
+      <MenuWrapper>
+        <Menu />
+      </MenuWrapper>
+    </Container>
+    <ChangeThemeButton onClick={onChangeTheme}>
+      <RefreshIcon />
+    </ChangeThemeButton>
+  </Root>
+)
+
+export default Home

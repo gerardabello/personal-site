@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import fldImg from '../assets/imgs/fld.jpg'
@@ -113,23 +113,21 @@ const Link = styled.a`
   border: none;
 `
 
-export default class Projects extends Component {
-  render() {
-    return (
-      <Root>
-        <ProjectList>
-          {projects.map(project => (
-            <Link key={project.title} href={project.href}>
-              <Project>
-                <ProjectImgWrapper>
-                  <ProjectImg src={project.img} />
-                </ProjectImgWrapper>
-                <ProjectTitle>{project.title}</ProjectTitle>
-              </Project>
-            </Link>
-          ))}
-        </ProjectList>
-      </Root>
-    )
-  }
-}
+const Projects = () => (
+  <Root>
+    <ProjectList>
+      {projects.map(project => (
+        <Link key={project.title} href={project.href}>
+          <Project>
+            <ProjectImgWrapper>
+              <ProjectImg src={project.img} />
+            </ProjectImgWrapper>
+            <ProjectTitle>{project.title}</ProjectTitle>
+          </Project>
+        </Link>
+      ))}
+    </ProjectList>
+  </Root>
+)
+
+export default Projects
