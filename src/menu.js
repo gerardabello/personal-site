@@ -1,11 +1,25 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+
+import { getRelativeBoundingClientRect } from './utils'
 
 const Root = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
+`
+
+const BoxUnderline = styled.div`
+  position: absolute;
+  height: 4px;
+  background: ${p => p.theme.color4};
+  width: ${p => p.width}px;
+  top: ${p => p.top + p.height - 4}px;
+  left: ${p => p.left}px;
+
+  transition: all 0.3s ease-out;
 `
 
 const Box = styled.div`
@@ -15,8 +29,6 @@ const Box = styled.div`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: ${p => p.theme.text};
-
-  border-bottom: ${p => (p.selected ? `4px solid ${p.theme.color4}` : 'none')};
 
   height: 40px;
   font-size: 32px;
@@ -33,6 +45,10 @@ const Box = styled.div`
   a {
     color: ${p => p.theme.text};
     text-decoration: none;
+
+    &:active {
+      color: ${p => p.theme.color4};
+    }
   }
 `
 
@@ -51,6 +67,7 @@ const AboutBox = styled(Box)`
       background-position-y: 81%;
 
   `}
+  }
 `
 
 const ProjectsBox = styled(Box)`
@@ -67,7 +84,8 @@ const ProjectsBox = styled(Box)`
       background-position-x: 70%;
       background-position-y: 50%;
   `}
-    `
+  }
+`
 
 const ContactBox = styled(Box)`
   a {
@@ -83,28 +101,52 @@ const ContactBox = styled(Box)`
       background-position-x: 50%;
       background-position-y: 20%;
   `}
-      `
+  }
+`
 
-export default class Menu extends Component {
-  componentDidMount() {
-    console.log('MENU')
+const Menu = () => {
+  const [aboutRef, setAboutRef] = useState()
+  const [projectsRef, setProjectsRef] = useState()
+  const [contactRef, setContactRef] = useState()
+  const [rootRef, setRootRef] = useState()
+
+  let node
+  if (window.location.pathname.match('about')) {
+    node = aboutRef
   }
 
-  render() {
-    return (
-      <Root>
-        <AboutBox selected={window.location.pathname.match('about')}>
-          <Link to="/about">About</Link>
-        </AboutBox>
-
-        <ProjectsBox selected={window.location.pathname.match('projects')}>
-          <Link to="/projects">Projects</Link>
-        </ProjectsBox>
-
-        <ContactBox selected={window.location.pathname.match('contact')}>
-          <Link to="/contact">Contact</Link>
-        </ContactBox>
-      </Root>
-    )
+  if (window.location.pathname.match('projects')) {
+    node = projectsRef
   }
+
+  if (window.location.pathname.match('contact')) {
+    node = contactRef
+  }
+
+  const boundingClientRect =
+    node && rootRef ? getRelativeBoundingClientRect(rootRef, node) : {}
+
+  return (
+    <Root ref={setRootRef}>
+      <BoxUnderline
+        top={boundingClientRect.top}
+        width={boundingClientRect.width}
+        height={boundingClientRect.height}
+        left={boundingClientRect.left}
+      />
+      <AboutBox ref={setAboutRef}>
+        <Link to="/about">About</Link>
+      </AboutBox>
+
+      <ProjectsBox ref={setProjectsRef}>
+        <Link to="/projects">Projects</Link>
+      </ProjectsBox>
+
+      <ContactBox ref={setContactRef}>
+        <Link to="/contact">Contact</Link>
+      </ContactBox>
+    </Root>
+  )
 }
+
+export default Menu
