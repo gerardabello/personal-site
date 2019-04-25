@@ -118,8 +118,8 @@ const useGravity = () => {
 
   useEffect(() => {
     const handleMotion = event => {
-      const y = event.accelerationIncludingGravity.y / 5
-      const x = -event.accelerationIncludingGravity.x / 5
+      const y = event.accelerationIncludingGravity.y
+      const x = -event.accelerationIncludingGravity.x
       setGravity([x, y])
     }
 
