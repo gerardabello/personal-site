@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import SectionWrapper from './section-wrapper'
+
 import GithubIcon from 'react-feather/dist/icons/github'
 import MailIcon from 'react-feather/dist/icons/mail'
 
@@ -62,25 +64,27 @@ const openPopup = () => {
 }
 
 const About = () => (
-  <Root>
-    <Content>
-      <Button onClick={openPopup}>
-        <IconWrapper>
-          <MailIcon />
-        </IconWrapper>
-        Leave a message
-      </Button>
-
-      <a href="https://github.com/gerardabello">
-        <Button>
+  <SectionWrapper>
+    <Root>
+      <Content>
+        <Button onClick={openPopup}>
           <IconWrapper>
-            <GithubIcon />
+            <MailIcon />
           </IconWrapper>
-          Github
+          Leave a message
         </Button>
-      </a>
-    </Content>
-  </Root>
+
+        <a href="https://github.com/gerardabello">
+          <Button>
+            <IconWrapper>
+              <GithubIcon />
+            </IconWrapper>
+            Github
+          </Button>
+        </a>
+      </Content>
+    </Root>
+  </SectionWrapper>
 )
 
 export default About

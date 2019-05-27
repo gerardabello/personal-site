@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import SectionWrapper from './section-wrapper'
+
 import fldImg from '../assets/imgs/fld.jpg'
 import countersImg from '../assets/imgs/counters.png'
 import goobaImg from '../assets/imgs/gooba.jpg'
@@ -114,20 +116,22 @@ const Link = styled.a`
 `
 
 const Projects = () => (
-  <Root>
-    <ProjectList>
-      {projects.map(project => (
-        <Link key={project.title} href={project.href}>
-          <Project>
-            <ProjectImgWrapper>
-              <ProjectImg src={project.img} />
-            </ProjectImgWrapper>
-            <ProjectTitle>{project.title}</ProjectTitle>
-          </Project>
-        </Link>
-      ))}
-    </ProjectList>
-  </Root>
+  <SectionWrapper>
+    <Root>
+      <ProjectList>
+        {projects.map(project => (
+          <Link key={project.title} href={project.href}>
+            <Project>
+              <ProjectImgWrapper>
+                <ProjectImg src={project.img} />
+              </ProjectImgWrapper>
+              <ProjectTitle>{project.title}</ProjectTitle>
+            </Project>
+          </Link>
+        ))}
+      </ProjectList>
+    </Root>
+  </SectionWrapper>
 )
 
 export default Projects

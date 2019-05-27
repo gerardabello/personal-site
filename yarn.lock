@@ -4898,6 +4898,11 @@ split-string@^3.0.1, split-string@^3.0.2:
   dependencies:
     extend-shallow "^3.0.0"
 
+spring-animation-keyframes@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/spring-animation-keyframes/-/spring-animation-keyframes-0.0.8.tgz#a7d76e47916c8208675e04176ec1577251024c7a"
+  integrity sha512-0JS0fukBoJwoDj6PxUoR0Aj9gA3LldbsPA3OyFOD+nVmFI/KM77rOBmx+Xn3D6KxgnCaELGbRGfH79+fX1kV3g==
+
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"

@@ -1,21 +1,32 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { generateKeyframes } from 'spring-animation-keyframes'
 
 import Container from './container'
 import Menu from './menu'
 import RefreshIcon from './refresh-icon'
 
-const appearBottom = keyframes`
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  0%{
-    opacity: 0;
-    transform: translateY(30px);
-  }
-`
+const appearBottom = keyframes`${generateKeyframes(
+  [
+    {
+      tension: 280,
+      friction: 60,
+      from: 30,
+      to: 0,
+      unit: 'px',
+      property: 'translateY'
+    },
+    {
+      tension: 280,
+      friction: 100,
+      from: 0,
+      to: 1,
+      unit: '',
+      property: 'opacity'
+    }
+  ],
+  2
+)}`
 
 const Root = styled.div`
   height: 100%;
@@ -47,8 +58,8 @@ const MenuWrapper = styled.div`
   margin-top: 20vh;
   padding: 0 8px;
 
-  opacity: 0;
-  animation: ${appearBottom} 1s ease 1.8s forwards;
+  position: relative;
+  animation: ${appearBottom} 2s linear 2s backwards;
 `
 
 const Title = styled.h1`
@@ -57,7 +68,6 @@ const Title = styled.h1`
   font-weight: 700;
   margin-bottom: 48px;
   text-align: center;
-  opacity: 0;
   margin: 0;
 
   display: inline;
@@ -75,7 +85,8 @@ const Title = styled.h1`
 `
 
 const HiTitle = styled(Title)`
-  animation: ${appearBottom} 1s ease 0.2s forwards;
+  position: relative;
+  animation: ${appearBottom} 2s linear 0.4s backwards;
 
   ${props =>
     props.theme.textBackgroundGif &&
@@ -92,7 +103,8 @@ const HiTitle = styled(Title)`
 `
 
 const SubTitle = styled(Title)`
-  animation: ${appearBottom} 1s ease 1s forwards;
+  position: relative;
+  animation: ${appearBottom} 2s linear 1.2s backwards;
 
   ${props =>
     props.theme.textBackgroundGif &&
