@@ -25,7 +25,7 @@ const appearBottom = keyframes`${generateKeyframes(
       property: 'opacity'
     }
   ],
-  2
+  { time: 2 }
 )}`
 
 const Root = styled.div`

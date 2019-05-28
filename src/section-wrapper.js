@@ -20,8 +20,7 @@ const appearBottom = keyframes`${generateKeyframes(
       unit: '',
       property: 'opacity'
     }
-  ],
-  2
+  ]
 )}`
 
 const Root = styled.div`
