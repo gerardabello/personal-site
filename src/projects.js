@@ -13,12 +13,14 @@ import gasptImg from '../assets/imgs/gaspt.jpg'
 import unwelchImg from '../assets/imgs/unwelch.png'
 
 const projects = [
+  /*
   {
     img: unwelchImg,
     href: 'https://unwel.ch/',
     title: 'Unwelch',
     description: 'Friendly betting'
   },
+  */
   {
     img: countersImg,
     href: 'https://counters.gerard.sh/',
