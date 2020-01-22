@@ -11,8 +11,16 @@ import weighImg from '../assets/imgs/weight.png'
 import envelopeImg from '../assets/imgs/envelope-graph.png'
 import gasptImg from '../assets/imgs/gaspt.jpg'
 import unwelchImg from '../assets/imgs/unwelch.png'
+import circuitEquationImg from '../assets/imgs/equation-circuit.png'
 
 const projects = [
+  {
+    img: circuitEquationImg,
+    href: 'https://gerardabello.github.io/equation-circuit-solver/',
+    title: 'Circuit Equation Solver',
+    description:
+      'Equation solver using a circuit of constraints as seen on SICP 3.3.5'
+  },
   /*
   {
     img: unwelchImg,
