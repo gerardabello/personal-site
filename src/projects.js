@@ -16,7 +16,7 @@ import circuitEquationImg from '../assets/imgs/equation-circuit.png'
 const projects = [
   {
     img: circuitEquationImg,
-    href: 'https://gerardabello.github.io/equation-circuit-solver/',
+    href: 'https://equation-solver.gerard.sh',
     title: 'Circuit Equation Solver',
     description:
       'Equation solver using a circuit of constraints as seen on SICP 3.3.5'
@@ -37,7 +37,7 @@ const projects = [
   },
   {
     img: gasptImg,
-    href: 'https://pt.gerard.sh',
+    href: 'https://gaspt.gerard.sh',
     title: 'gasPT',
     description: 'Javascript path tracer based on smallPT'
   },
@@ -55,7 +55,7 @@ const projects = [
   },
   {
     img: colossalImg,
-    href: 'https://colossal.surge.sh',
+    href: 'https://colossal.gerard.sh',
     title: 'Colossal',
     description: 'A simple poly synth using Web Audio and React'
   },
