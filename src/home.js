@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components'
 import { generateKeyframes } from 'spring-animation-keyframes'
 
 import Container from './container'
-import Menu from './menu'
 import RefreshIcon from './refresh-icon'
 
 const appearBottom = keyframes`${generateKeyframes(
@@ -29,16 +28,18 @@ const appearBottom = keyframes`${generateKeyframes(
 )}`
 
 const Root = styled.div`
-  height: 100%;
+  position: relative;
+  height: 93vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `
 
 const ChangeThemeButton = styled.div`
   height: 48px;
   width: 48px;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   display: flex;
@@ -48,25 +49,16 @@ const ChangeThemeButton = styled.div`
 `
 
 const TitleWrapper = styled.div`
-  margin-top: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-const MenuWrapper = styled.div`
-  margin-top: 20vh;
-  padding: 0 8px;
-
-  position: relative;
-  animation: ${appearBottom} 2s linear 2s backwards;
-`
-
 const Title = styled.h1`
-  font-family: 'Integral CF', sans-serif;
-  letter-spacing: 1px;
-  font-weight: 700;
-  margin-bottom: 48px;
+font-family: 'Whyte Inktrap', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+  letter-spacing: 2px;
   text-align: center;
   margin: 0;
 
@@ -74,7 +66,7 @@ const Title = styled.h1`
 
   font-size: 60px;
   @media (max-width: 500px) {
-    font-size: 46px;
+    font-size: 42px;
   }
   @media (max-width: 350px) {
     font-size: 36px;
@@ -114,7 +106,7 @@ const SubTitle = styled(Title)`
       -webkit-background-clip: text;
       background-clip: text;
 
-      background-size: 138%;
+      background-size: 120%;
       background-position-x: 50%;
       background-position-y: 55%;
   `}
@@ -127,9 +119,6 @@ const Home = ({ onChangeTheme }) => (
         <HiTitle>Hi!</HiTitle>
         <SubTitle>I&apos;m Gerard</SubTitle>
       </TitleWrapper>
-      <MenuWrapper>
-        <Menu />
-      </MenuWrapper>
     </Container>
     <ChangeThemeButton onClick={onChangeTheme}>
       <RefreshIcon />

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import { withRouter } from 'react-router-dom'
 
 import Ring from './figures/ring'
 import Zig from './figures/zig'
@@ -48,7 +47,7 @@ function shuffle(iarray) {
 
 const PreRoot = styled.div`
   background-color: #11151c;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -60,24 +59,12 @@ const PreRoot = styled.div`
 `
 
 const Root = styled.div`
-  min-width: 1000px;
-  min-height: 1000px;
   width: 100%;
   height: 100%;
   position: relative;
-
-  @media (max-width: 550px) {
-    transform: scale(0.85);
-  }
-
-  @media (max-width: 400px) {
-    transform: scale(0.65);
-  }
 `
 
 const Wrapper = styled.div`
-  left: ${p => p.left}%;
-  top: ${p => p.top}%;
   position: absolute;
 
   * {
@@ -85,12 +72,15 @@ const Wrapper = styled.div`
   }
 `
 
-const generateShapes = () => {
-  const margin = 0.2
-  const spacing = 0.23
+const generateShapes = (element) => {
+  const width = element.clientWidth
+  const height = element.clientHeight
+  const scale = Math.min(0.7, width/ 900)
+  const margin = 100 * scale;
+  const spacing = 200 * scale;
   let shapes = []
   // width, height, radius
-  const sampler = poissonDiscSampler(1 + margin * 2, 1 + margin * 2, spacing)
+  const sampler = poissonDiscSampler(width + margin * 2, height + margin * 2, spacing)
 
   let sample
 
@@ -112,6 +102,7 @@ const generateShapes = () => {
   shapes = shuffle(shapes)
 
   shapes = shapes.map(s => ({
+    scale,
     position: s.position,
     shape: s.shape,
     color: COLORS[Math.floor(Math.random() * COLORS.length)]
@@ -120,29 +111,46 @@ const generateShapes = () => {
   return shapes
 }
 
-const Shape = ({ onlyBasicColor, shape }) => {
+const Shape = ({ shape }) => {
   const C = FIGURE_SHAPES[shape.shape]
   const contentCollision =
-    shape.position[0] > 0.3 &&
-    shape.position[0] < 0.7 &&
-    shape.position[1] > 0.3 &&
-    shape.position[1] < 0.7
+    shape.position[1] > window.innerHeight * 0.8
   return (
-    <Wrapper left={shape.position[0] * 100} top={shape.position[1] * 100}>
-      <C color={onlyBasicColor || contentCollision ? COLORS[0] : shape.color} />
+    <Wrapper style={{left: `${shape.position[0]}px`, top:`${shape.position[1]}px`, transform: `scale(${shape.scale})`}}>
+      <C color={contentCollision ? COLORS[Math.round(shape.position[0]) % 2] : shape.color} />
     </Wrapper>
   )
 }
 
-const Background = ({ location }) => {
-  const [shapes] = useState(generateShapes())
+const Background = () => {
+  const [shapes, setShapes] = useState([])
+  const rootRef = useRef()
+
+  useEffect(() => {
+    if (rootRef.current){
+      setShapes(generateShapes(rootRef.current))
+    }
+  }, [])
+
+  useEffect(() => {
+    const onResize = () => {
+
+    if (rootRef.current){
+      setShapes(generateShapes(rootRef.current))
+    }
+    }
+
+    window.addEventListener("resize", onResize)
+     return () => {
+    window.removeEventListener("resize", onResize)
+     }
+  }, [])
 
   return (
-    <PreRoot>
+    <PreRoot ref={rootRef}>
       <Root>
         {shapes.map((s, i) => (
           <Shape
-            onlyBasicColor={location.pathname === '/about'}
             key={i}
             shape={s}
           />
@@ -152,4 +160,4 @@ const Background = ({ location }) => {
   )
 }
 
-export default withRouter(Background)
+export default Background

@@ -1,10 +1,12 @@
 import React, { Suspense, useState } from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import MetaTags from 'react-meta-tags'
 
+import Container from './container'
 import Home from './home'
-import Sections from './sections'
+import Projects from './projects'
+import Contact from './contact'
+import About from './about'
 
 import { getTheme } from './config'
 
@@ -15,24 +17,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Root = styled.div`
+  position: relative;
   font-family: 'Barlow', sans-serif;
-  min-height: 100%;
   width: 100%;
   overflow-x: hidden;
   background-color: ${props => props.theme.background};
   color: ${props => props.theme.text};
-  padding: 36px;
-  padding-top: 24px;
-
-  @media (max-width: 500px) {
-    padding: 24px;
-    padding-top: 18px;
-  }
-
-  @media (max-width: 400px) {
-    padding: 18px;
-    padding-top: 16px;
-  }
 `
 
 const Content = styled.div`
@@ -54,23 +44,17 @@ const App = () => {
         <MetaTags>
           <meta name="theme-color" content={theme.background} />
         </MetaTags>
-        <Router>
-          <Suspense fallback={<div />}>
-            <Background />
-            <Content>
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={props => (
-                    <Home {...props} onChangeTheme={handleThemeChange} />
-                  )}
-                />
-                <Route component={Sections} />
-              </Switch>
-            </Content>
-          </Suspense>
-        </Router>
+        <Suspense fallback={<div />}>
+          <Background />
+          <Content>
+            <Home onChangeTheme={handleThemeChange} />
+            <Container>
+            <About />
+            <Projects />
+            <Contact />
+            </Container>
+          </Content>
+        </Suspense>
       </Root>
     </ThemeProvider>
   )

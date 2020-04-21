@@ -6,7 +6,7 @@ import SectionWrapper from './section-wrapper'
 const Root = styled.div``
 
 const Paragraph = styled.p`
-  font-family: 'Space Mono', monospace;
+  font-family: 'Input Sans Compressed', monospace;
   margin-top: 0;
   text-indent: 2em;
   text-align: justify;

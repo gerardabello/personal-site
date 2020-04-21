@@ -4,7 +4,7 @@ export default function poissonDiscSampler(
   radius,
   customFilter = () => true
 ) {
-  const k = 1000 // maximum number of samples before rejection
+  const k = 30 // maximum number of samples before rejection
   const radius2 = radius * radius
   const R = 3 * radius2
   const cellSize = radius * Math.SQRT1_2

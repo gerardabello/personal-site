@@ -7,9 +7,8 @@ import GithubIcon from 'react-feather/dist/icons/github'
 import MailIcon from 'react-feather/dist/icons/mail'
 
 const Root = styled.div`
-  margin-top: 10vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
 `
 
@@ -28,21 +27,17 @@ const IconWrapper = styled.div`
   }
 `
 
-const Content = styled.div`
-  width: fit-content;
-`
-
 const Button = styled.div`
   display: flex;
   align-items: center;
 
   border: none;
-  margin: 16px;
+  margin: 8px 0;
   background: transparent;
   outline: none;
   cursor: pointer;
 
-  font-family: 'Space Mono', sans-serif;
+  font-family: 'Input Sans Compressed', sans-serif;
   color: ${p => p.theme.text};
   font-size: 24px;
   font-weight: ${p => p.theme.bodyFontWeight};
@@ -64,9 +59,8 @@ const openPopup = () => {
 }
 
 const About = () => (
-  <SectionWrapper>
+  <SectionWrapper title='Contact'>
     <Root>
-      <Content>
         <Button onClick={openPopup}>
           <IconWrapper>
             <MailIcon />
@@ -82,7 +76,6 @@ const About = () => (
             Github
           </Button>
         </a>
-      </Content>
     </Root>
   </SectionWrapper>
 )

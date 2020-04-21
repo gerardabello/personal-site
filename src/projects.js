@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 import SectionWrapper from './section-wrapper'
@@ -10,14 +10,13 @@ import colossalImg from '../assets/imgs/colossal.png'
 import weighImg from '../assets/imgs/weight.png'
 import envelopeImg from '../assets/imgs/envelope-graph.png'
 import gasptImg from '../assets/imgs/gaspt.jpg'
-import unwelchImg from '../assets/imgs/unwelch.png'
 import circuitEquationImg from '../assets/imgs/equation-circuit.png'
 
 const projects = [
   {
     img: circuitEquationImg,
     href: 'https://equation-solver.gerard.sh',
-    title: 'Circuit Equation Solver',
+    title: 'Equation Solver',
     description:
       'Equation solver using a circuit of constraints as seen on SICP 3.3.5'
   },
@@ -75,48 +74,64 @@ const projects = [
 
 const Root = styled.div``
 const ProjectList = styled.div`
-  width: max-content;
-  margin: 0 auto;
-
-  @media (max-width: 500px) {
     width: 100%;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 80px;
+
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr 1fr;
   }
+
+  @media (max-width: 450px) {
+    grid-gap: 40px;
+  }
+
 `
 const Project = styled.div`
-  width: max-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 16px;
+position: relative;
+display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: ${p => p.theme.color2} -4px 4px;
 `
 
 const ProjectImgWrapper = styled.div`
   line-height: 0;
-  margin-right: 16px;
-  overflow: hidden;
-  box-shadow: ${p => p.theme.color2} -5px 5px 0 -1px;
+  width: 100%;
 `
 
 const ProjectImg = styled.img`
-  height: 86px;
-  width: 86px;
-
-  @media (max-width: 400px) {
-    height: 64px;
-    width: 64px;
-  }
+  width: 100%;
 
   filter: saturate(0) contrast(1.2);
+
+  &:hover {
+    filter: none;
+  }
+
+  transition: filter 0.2s ease-out;
 `
 
 const ProjectTitle = styled.span`
-  font-family: 'Space Mono', sans-serif;
-  color: ${p => p.theme.text};
+  font-family: 'Input Sans Compressed', sans-serif;
+  //background: ${p => p.theme.text};
   font-size: 20px;
   font-weight: ${p => p.theme.bodyFontWeight};
+  position: absolute;
+    color: ${p => p.theme.text};
+    text-align: center;
+    top: calc(100% + 8px);
+    white-space: nowrap;
 
-  @media (max-width: 500px) {
-    font-size: 20px;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 16px;
   }
 `
 
@@ -125,8 +140,14 @@ const Link = styled.a`
   border: none;
 `
 
+const RotatedProjectTitle = ({children}) => {
+  const [rotation] = useState(Math.random() * 4 - 2)
+  const [translation] = useState(Math.random() * 8 - 4)
+              return <ProjectTitle translation={translation} rotation={rotation}>{children}</ProjectTitle>
+}
+
 const Projects = () => (
-  <SectionWrapper>
+  <SectionWrapper title='Projects' titleMargin='8vh'>
     <Root>
       <ProjectList>
         {projects.map(project => (
@@ -135,7 +156,7 @@ const Projects = () => (
               <ProjectImgWrapper>
                 <ProjectImg src={project.img} />
               </ProjectImgWrapper>
-              <ProjectTitle>{project.title}</ProjectTitle>
+              <RotatedProjectTitle>{project.title}</RotatedProjectTitle>
             </Project>
           </Link>
         ))}

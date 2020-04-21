@@ -50,7 +50,7 @@ export const gifTheme = {
   bodyFontWeight: 'normal',
   background: '#000000',
   text: '#e8e8e8',
-  color2: '#656056',
+  color2: '#353535',
   color4: '#ffcc66',
   textBackgroundGif: trippyGif
 }
