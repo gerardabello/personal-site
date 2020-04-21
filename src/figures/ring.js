@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Ring = ({ color }) => (
   <svg
-    style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="75px"
     height="75px"
     viewBox="0 0 75 75"

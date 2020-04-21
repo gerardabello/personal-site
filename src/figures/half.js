@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Half = ({ color }) => (
   <svg
-    style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="72px"
     height="72px"
     viewBox="0 0 72 72"

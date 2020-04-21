@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Square = ({ color }) => (
   <svg
-    style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="79px"
     height="79px"
     viewBox="0 0 79 79"

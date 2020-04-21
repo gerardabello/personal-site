@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Triangle = ({ color }) => (
   <svg
-    style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="64px"
     height="58px"
     viewBox="0 0 64 58"

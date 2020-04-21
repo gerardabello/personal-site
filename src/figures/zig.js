@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Zig = ({ color }) => (
   <svg
-    style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="111px"
     height="20px"
     viewBox="0 0 111 20"

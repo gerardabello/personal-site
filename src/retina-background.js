@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 
 import Ring from './figures/ring'
 import Zig from './figures/zig'
@@ -29,6 +29,24 @@ const COLORS = [
   '#7D4E57',
   '#D66853'
 ]
+
+const shapeAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+
+  1% {
+    transform: rotate(15deg);
+  }
+
+  40% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+`
 
 function shuffle(iarray) {
   let array = [...iarray]
@@ -66,6 +84,13 @@ const Root = styled.div`
 
 const Wrapper = styled.div`
   position: absolute;
+    transform-origin: center;
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier(0, 0, 0.18, 1.34);
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-name: ${shapeAnimation};
+
 
   * {
     transition: all 0.6s ease;
@@ -105,6 +130,7 @@ const generateShapes = (element) => {
     scale,
     position: s.position,
     shape: s.shape,
+    animationDelay: Math.random() * 10,
     color: COLORS[Math.floor(Math.random() * COLORS.length)]
   }))
 
@@ -116,8 +142,10 @@ const Shape = ({ shape }) => {
   const contentCollision =
     shape.position[1] > window.innerHeight * 0.8
   return (
-    <Wrapper style={{left: `${shape.position[0]}px`, top:`${shape.position[1]}px`, transform: `scale(${shape.scale})`}}>
+    <Wrapper style={{left: `${shape.position[0]}px`, top:`${shape.position[1]}px`, animationDelay: `${shape.animationDelay}s` }}>
+      <div style={{transform: `scale(${shape.scale})`}} >
       <C color={contentCollision ? COLORS[Math.round(shape.position[0]) % 2] : shape.color} />
+      </div>
     </Wrapper>
   )
 }

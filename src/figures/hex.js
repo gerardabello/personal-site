@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Hex = ({ color }) => (
   <svg
-    style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="67px"
     height="77px"
     viewBox="0 0 67 77"

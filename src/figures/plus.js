@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Plus = ({ color }) => (
   <svg
-    style={{ marginLeft: '-50%', marginTop: '-50%' }}
     width="59px"
     height="59px"
     viewBox="0 0 59 59"
