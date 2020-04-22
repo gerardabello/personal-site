@@ -52,11 +52,12 @@ const Circle = styled.div`
   }
 
 const Ball = ({index}) => {
-  const [topPos] =useState( (index * 70) + FromToRandom(0, 50)(Math.random()))
-  const [leftPos] =useState( index % 2 === 0 ? PositionRand(Math.random()) : 100 - PositionRand(Math.random()))
 
   const [rotation] =useState( Math.random())
   const [size] =useState( getRandomSize())
+
+  const [topPos] =useState( (index * 80) + FromToRandom(0, 50)(Math.random()))
+  const [leftPos] =useState( index % 2 === 0 ? PositionRand(Math.random()) : 100 - PositionRand(Math.random()))
 
   const [a, setA] = useState(RadiusRand(Math.random()))
   const [b, setB] = useState(RadiusRand(Math.random()))
