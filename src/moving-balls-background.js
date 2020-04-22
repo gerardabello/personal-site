@@ -1,5 +1,11 @@
-import React from 'react'
+import React, {useState, useEffect } from 'react'
 import styled from 'styled-components'
+
+const ANIMATION_TIME = 5
+const COLORS = [
+'#d3d6f3',
+   '#f7e6af'
+  ,'#f5cdcc']
 
 const FromToRandom = (from, to) => rand => from + (to - from) * rand
 
@@ -9,13 +15,13 @@ const RadiusRand = FromToRandom(0.2, 0.8)
 
 const Root = styled.div`
   background-color: #f3f1f0;
-  position: fixed;
+  position: absolute;
   overflow: hidden;
 
+  width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
-  right: 0;
-  bottom: 0;
 `
 
 const Circle = styled.div`
@@ -33,12 +39,8 @@ const Circle = styled.div`
       100}% / ${(1 - p.c) * 100}% ${(1 - p.d) * 100}% ${p.d * 100}% ${p.c *
       100}%`};
   transform: rotate(${p => p.r * 360}deg);
-  transition: all 1.5s ease;
+  transition: all ${ANIMATION_TIME}s ease;
 `
-
-export default () => {
-  const topPos1 = FromToRandom(0, 100)(Math.random())
-  const topPos2 = ((topPos1 + 50) % 100) + FromToRandom(-5, 5)(Math.random())
 
   const getRandomSize = () => {
     const initial = SizeRand(Math.random())
@@ -49,31 +51,53 @@ export default () => {
     return initial * ratio
   }
 
-  return (
-    <Root>
-      <Circle
-        color="#d3d6f3"
-        a={RadiusRand(Math.random())}
-        b={RadiusRand(Math.random())}
-        c={RadiusRand(Math.random())}
-        d={RadiusRand(Math.random())}
-        r={Math.random()}
-        size={getRandomSize()}
-        left={PositionRand(Math.random())}
-        top={topPos1}
-      />
+const Ball = ({index}) => {
+  const [topPos] =useState( (index * 70) + FromToRandom(0, 50)(Math.random()))
+  const [leftPos] =useState( index % 2 === 0 ? PositionRand(Math.random()) : 100 - PositionRand(Math.random()))
 
+  const [rotation] =useState( Math.random())
+  const [size] =useState( getRandomSize())
+
+  const [a, setA] = useState(RadiusRand(Math.random()))
+  const [b, setB] = useState(RadiusRand(Math.random()))
+  const [c, setC] = useState(RadiusRand(Math.random()))
+  const [d, setD] = useState(RadiusRand(Math.random()))
+
+
+
+  useEffect(() => {
+    const randomizeBall = () => {
+      setA(RadiusRand(Math.random()))
+      setB(RadiusRand(Math.random()))
+      setC(RadiusRand(Math.random()))
+      setD(RadiusRand(Math.random()))
+    }
+    const interval = setInterval(randomizeBall, ANIMATION_TIME * 1000)
+    setTimeout(randomizeBall, 100)
+
+    return () => {
+      clearInterval(interval)
+    }
+  },[])
+
+  return (
       <Circle
-        color="#f7e6af"
-        a={RadiusRand(Math.random())}
-        b={RadiusRand(Math.random())}
-        c={RadiusRand(Math.random())}
-        d={RadiusRand(Math.random())}
-        r={Math.random()}
-        size={getRandomSize()}
-        left={100 - PositionRand(Math.random())}
-        top={topPos2}
+        color={COLORS[index % COLORS.length]}
+        a={a}
+        b={b}
+        c={c}
+        d={d}
+        r={rotation}
+        size={size}
+
+        left={leftPos}
+        top={topPos}
       />
-    </Root>
   )
 }
+
+const MovingBallsBackground = () => {
+  return <Root>{[0,1,2,3,4,5].map(i => <Ball key={i} index={i}/>)}</Root>
+}
+
+export default MovingBallsBackground
