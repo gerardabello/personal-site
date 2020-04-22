@@ -64,10 +64,9 @@ export default () => (
       </Paragraph>
       <Paragraph>
         Programming is not only my job, it is also my passion. I&apos;m
-        currently really into <strong>Javascript</strong>,{' '}
-        <strong>React</strong>, <strong>WebAudio</strong>,{' '}
-        <strong>Functional programming</strong> and{' '}
-        <strong>Web performance</strong>.
+        currently really into <strong>React</strong>,{' '}
+        <strong>WebAudio</strong>, <strong>Functional programming</strong> and{' '}
+        <strong>Rust</strong>.
       </Paragraph>
       <Paragraph>I also like drawing, gaming, hiking and tea.</Paragraph>
     </Root>
