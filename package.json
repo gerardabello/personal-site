@@ -21,6 +21,8 @@
     "eslint-config-gerard": "^1.1.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
+    "prettier": "^2.0.5",
+    "prettier-config-gerard": "^1.0.1",
     "prop-types": "^15.7.2",
     "webpack": "4.42.1",
     "webpack-bundle-analyzer": "^3.7.0",
