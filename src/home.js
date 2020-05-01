@@ -29,7 +29,7 @@ const appearBottom = keyframes`${generateKeyframes(
 
 const Root = styled.div`
   position: relative;
-  height: 93vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
