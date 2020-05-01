@@ -6,9 +6,8 @@ import SectionWrapper from './section-wrapper'
 const Root = styled.div``
 
 const Paragraph = styled.p`
-  font-family: 'Input Sans Compressed', monospace;
+  font-family: 'Input Sans Condensed', monospace;
   margin-top: 0;
-  text-indent: 2em;
   text-align: justify;
 
   color: ${p => p.theme.text};
@@ -38,9 +37,13 @@ const Paragraph = styled.p`
 
   position: relative;
 
+  &:first-child {
+    text-indent: 2em;
+  }
+
   &:first-child:before {
     content: '';
-    background: ${p => p.theme.text};
+    background: ${p => p.theme.color2};
     height: 10px;
     width: 18px;
     position: absolute;

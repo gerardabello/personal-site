@@ -115,7 +115,7 @@ const ProjectImg = styled.img`
 `
 
 const ProjectTitle = styled.span`
-  font-family: 'Input Sans Compressed', sans-serif;
+  font-family: 'Input Sans Condensed', monospace;
   //background: ${p => p.theme.text};
   font-size: 20px;
   font-weight: ${p => p.theme.bodyFontWeight};

@@ -37,7 +37,7 @@ const Button = styled.div`
   outline: none;
   cursor: pointer;
 
-  font-family: 'Input Sans Compressed', sans-serif;
+  font-family: 'Input Sans Condensed', sans-serif;
   color: ${p => p.theme.text};
   font-size: 24px;
   font-weight: ${p => p.theme.bodyFontWeight};
