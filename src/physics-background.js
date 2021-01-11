@@ -13,7 +13,7 @@ const Root = styled.div`
   bottom: 0;
 `
 
-const createEngine = element => {
+const createEngine = (element) => {
   const width = window.innerWidth
   const height = window.innerHeight
 
@@ -33,8 +33,8 @@ const createEngine = element => {
       wireframes: false,
       width,
       height,
-      background: '#FFFFFF'
-    }
+      background: '#FFFFFF',
+    },
   })
 
   const friction = 0.1
@@ -48,24 +48,24 @@ const createEngine = element => {
       friction,
       render: {
         fillStyle: boxColor,
-        lineWidth: 0
-      }
+        lineWidth: 0,
+      },
     }),
     Bodies.rectangle(width / 2 + 20, 120, 80, 80, {
       density: 0.1,
       friction,
       render: {
         fillStyle: boxColor,
-        lineWidth: 0
-      }
+        lineWidth: 0,
+      },
     }),
     Bodies.rectangle(width / 2 - 20, 235, 60, 60, {
       density: 0.1,
       friction,
       render: {
         fillStyle: boxColor,
-        lineWidth: 0
-      }
+        lineWidth: 0,
+      },
     }),
 
     Bodies.rectangle(width / 2 + 20, 320, 120, 120, {
@@ -73,26 +73,26 @@ const createEngine = element => {
       friction,
       render: {
         fillStyle: boxColor,
-        lineWidth: 0
-      }
-    })
+        lineWidth: 0,
+      },
+    }),
   ]
 
   const ground = Bodies.rectangle(width / 2, height + 25, width, 50, {
     isStatic: true,
-    friction
+    friction,
   })
   const topGround = Bodies.rectangle(width / 2, -25, width, 50, {
     isStatic: true,
-    friction
+    friction,
   })
   const leftGround = Bodies.rectangle(-25, height / 2, 50, height, {
     isStatic: true,
-    friction
+    friction,
   })
   const rightGround = Bodies.rectangle(width + 25, height / 2, 50, height, {
     isStatic: true,
-    friction
+    friction,
   })
 
   // add all of the bodies to the world
@@ -101,7 +101,7 @@ const createEngine = element => {
     ground,
     rightGround,
     topGround,
-    leftGround
+    leftGround,
   ])
 
   // run the engine
@@ -117,7 +117,7 @@ const useGravity = () => {
   const [gravity, setGravity] = useState([0, 0])
 
   useEffect(() => {
-    const handleMotion = event => {
+    const handleMotion = (event) => {
       const y = event.accelerationIncludingGravity.y
       const x = -event.accelerationIncludingGravity.x
       setGravity([x, y])

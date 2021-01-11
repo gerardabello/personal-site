@@ -7,12 +7,11 @@ import Home from './home'
 import Projects from './projects'
 import Contact from './contact'
 import About from './about'
-
 import { getTheme } from './config'
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root{
-    background: ${props => props.theme.background};
+    background: ${(props) => props.theme.background};
   }
 `
 
@@ -21,8 +20,8 @@ const Root = styled.div`
   font-family: 'Barlow', sans-serif;
   width: 100%;
   overflow-x: hidden;
-  background-color: ${props => props.theme.background};
-  color: ${props => props.theme.text};
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.text};
 `
 
 const Content = styled.div`
@@ -49,9 +48,9 @@ const App = () => {
           <Content>
             <Home onChangeTheme={handleThemeChange} />
             <Container>
-            <About />
-            <Projects />
-            <Contact />
+              <About />
+              <Projects />
+              <Contact />
             </Container>
           </Content>
         </Suspense>

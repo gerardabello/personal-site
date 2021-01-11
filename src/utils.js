@@ -7,10 +7,10 @@ export const isMobile =
   navigator.userAgent.match(/BlackBerry/i) ||
   navigator.userAgent.match(/Windows Phone/i)
 
-export const getRandomFromArray = array =>
+export const getRandomFromArray = (array) =>
   array[Math.floor(Math.random() * array.length)]
 
-export const createStaticGlobalStyles = styleString => {
+export const createStaticGlobalStyles = (styleString) => {
   const styleNode = document.createElement('style')
   document.getElementsByTagName('head')[0].appendChild(styleNode)
   styleNode.type = 'text/css'
@@ -26,6 +26,6 @@ export const getRelativeBoundingClientRect = (parent, node) => {
     right: nbr.right - pbr.right,
     left: nbr.left - pbr.left,
     width: nbr.width,
-    height: nbr.height
+    height: nbr.height,
   }
 }

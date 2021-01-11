@@ -1,20 +1,17 @@
 import React from 'react'
-
 import ReactDOM from 'react-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 
 import App from './app'
+import { createStaticGlobalStyles } from './utils'
 
 import WhyteInktrapWoff from '../assets/fonts/subset-WhyteInktrap-Super.woff'
 import WhyteInktrapWoff2 from '../assets/fonts/subset-WhyteInktrap-Super.woff2'
-
 import InputSansCondensedItalicWoff from '../assets/fonts/subset-InputSansCondensed-Italic.woff'
 import InputSansCondensedItalicWoff2 from '../assets/fonts/subset-InputSansCondensed-Italic.woff2'
-
 import InputSansCondensedWoff from '../assets/fonts/subset-InputSansCondensed-Regular.woff'
 import InputSansCondensedWoff2 from '../assets/fonts/subset-InputSansCondensed-Regular.woff2'
 
-import { createStaticGlobalStyles } from './utils'
 
 const GlobalStyle = createGlobalStyle`
   * {

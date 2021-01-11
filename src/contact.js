@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import SectionWrapper from './section-wrapper'
-
 import GithubIcon from 'react-feather/dist/icons/github'
 import MailIcon from 'react-feather/dist/icons/mail'
+
+import SectionWrapper from './section-wrapper'
 
 const Root = styled.div`
   display: flex;
@@ -13,8 +12,8 @@ const Root = styled.div`
 `
 
 const IconWrapper = styled.div`
-  background: ${p => p.theme.text};
-  color: ${p => p.theme.background};
+  background: ${(p) => p.theme.text};
+  color: ${(p) => p.theme.background};
   padding: 8px;
   width: 44px;
   height: 44px;
@@ -38,9 +37,9 @@ const Button = styled.div`
   cursor: pointer;
 
   font-family: 'Input Sans Condensed', sans-serif;
-  color: ${p => p.theme.text};
+  color: ${(p) => p.theme.text};
   font-size: 24px;
-  font-weight: ${p => p.theme.bodyFontWeight};
+  font-weight: ${(p) => p.theme.bodyFontWeight};
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -52,30 +51,30 @@ const openPopup = () => {
       makePopup('https://gerardabello.typeform.com/to/ITG3fr', {
         mode: 'popup',
         autoOpen: true,
-        autoClose: 2000
+        autoClose: 2000,
       })
     })
     .catch(() => alert('Could not show contact form'))
 }
 
 const About = () => (
-  <SectionWrapper title='Contact'>
+  <SectionWrapper title="Contact">
     <Root>
-        <Button onClick={openPopup}>
-          <IconWrapper>
-            <MailIcon />
-          </IconWrapper>
-          Leave a message
-        </Button>
+      <Button onClick={openPopup}>
+        <IconWrapper>
+          <MailIcon />
+        </IconWrapper>
+        Leave a message
+      </Button>
 
-        <a href="https://github.com/gerardabello">
-          <Button>
-            <IconWrapper>
-              <GithubIcon />
-            </IconWrapper>
-            Github
-          </Button>
-        </a>
+      <a href="https://github.com/gerardabello">
+        <Button>
+          <IconWrapper>
+            <GithubIcon />
+          </IconWrapper>
+          Github
+        </Button>
+      </a>
     </Root>
   </SectionWrapper>
 )

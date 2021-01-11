@@ -13,7 +13,7 @@ const appearBottom = keyframes`${generateKeyframes(
       from: 30,
       to: 0,
       unit: 'px',
-      property: 'translateY'
+      property: 'translateY',
     },
     {
       tension: 280,
@@ -21,8 +21,8 @@ const appearBottom = keyframes`${generateKeyframes(
       from: 0,
       to: 1,
       unit: '',
-      property: 'opacity'
-    }
+      property: 'opacity',
+    },
   ],
   { time: 2 }
 )}`
@@ -45,7 +45,7 @@ const ChangeThemeButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${p => p.theme.text};
+  color: ${(p) => p.theme.text};
 `
 
 const TitleWrapper = styled.div`
@@ -55,16 +55,19 @@ const TitleWrapper = styled.div`
 `
 
 const Title = styled.h1`
-font-family: 'Whyte Inktrap', sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
+  font-family: 'Whyte Inktrap', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
   letter-spacing: 2px;
   text-align: center;
   margin: 0;
 
   display: inline;
 
-  font-size: 60px;
+  font-size: 72px;
+  @media (max-width: 700px) {
+    font-size: 60px;
+  }
   @media (max-width: 500px) {
     font-size: 42px;
   }
@@ -80,7 +83,7 @@ const HiTitle = styled(Title)`
   position: relative;
   animation: ${appearBottom} 2s linear 0.4s backwards;
 
-  ${props =>
+  ${(props) =>
     props.theme.textBackgroundGif &&
     `
       background-image: url(${props.theme.textBackgroundGif});
@@ -98,7 +101,7 @@ const SubTitle = styled(Title)`
   position: relative;
   animation: ${appearBottom} 2s linear 1.2s backwards;
 
-  ${props =>
+  ${(props) =>
     props.theme.textBackgroundGif &&
     `
       background-image: url(${props.theme.textBackgroundGif});

@@ -10,8 +10,8 @@ const Paragraph = styled.p`
   margin-top: 0;
   text-align: justify;
 
-  color: ${p => p.theme.text};
-  font-weight: ${p => p.theme.bodyFontWeight};
+  color: ${(p) => p.theme.text};
+  font-weight: ${(p) => p.theme.bodyFontWeight};
 
   hyphens: auto;
 
@@ -24,13 +24,13 @@ const Paragraph = styled.p`
   }
 
   a {
-    color: ${props => props.theme.color4};
+    color: ${(props) => props.theme.color4};
     font-style: italic;
     text-decoration: underline;
   }
 
   strong {
-    color: ${props => props.theme.color4};
+    color: ${(props) => props.theme.color4};
     font-style: italic;
     font-weight: normal;
   }
@@ -43,7 +43,7 @@ const Paragraph = styled.p`
 
   &:first-child:before {
     content: '';
-    background: ${p => p.theme.color2};
+    background: ${(p) => p.theme.color2};
     height: 10px;
     width: 18px;
     position: absolute;
@@ -67,9 +67,8 @@ export default () => (
       </Paragraph>
       <Paragraph>
         Programming is not only my job, it is also my passion. I&apos;m
-        currently really into <strong>React</strong>,{' '}
-        <strong>WebAudio</strong>, <strong>Functional programming</strong> and{' '}
-        <strong>Rust</strong>.
+        currently really into <strong>React</strong>, <strong>WebAudio</strong>,{' '}
+        <strong>Functional programming</strong> and <strong>Rust</strong>.
       </Paragraph>
       <Paragraph>I also like drawing, gaming, hiking and tea.</Paragraph>
     </Root>

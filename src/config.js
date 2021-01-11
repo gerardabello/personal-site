@@ -1,12 +1,12 @@
 import { lazy } from 'react'
 import styled from 'styled-components'
 
-import trippyGif from '../assets/imgs/trippy.gif'
 
 import RetinaBackground from './retina-background'
 import MovingBallsBackground from './moving-balls-background'
-
 import { isMobile, getRandomFromArray } from './utils'
+
+import trippyGif from '../assets/imgs/trippy.gif'
 
 const NoBackground = styled.div``
 
@@ -21,7 +21,7 @@ export const darkTheme = {
   background: '#11151C',
   text: '#EAE3E0',
   color2: '#364156',
-  color4: '#D66853'
+  color4: '#D66853',
 }
 
 export const lightTheme = {
@@ -31,7 +31,7 @@ export const lightTheme = {
   background: '#f3f1f0',
   text: '#2b2b2b',
   color2: '#3c3a39',
-  color4: '#1e2bf5'
+  color4: '#1e2bf5',
 }
 
 export const physicsTheme = {
@@ -41,7 +41,7 @@ export const physicsTheme = {
   background: '#ffffff',
   text: '#000000',
   color2: '#000000',
-  color4: '#ff0000'
+  color4: '#ff0000',
 }
 
 export const gifTheme = {
@@ -52,7 +52,7 @@ export const gifTheme = {
   text: '#e8e8e8',
   color2: '#353535',
   color4: '#ffcc66',
-  textBackgroundGif: trippyGif
+  textBackgroundGif: trippyGif,
 }
 
 let themes = [darkTheme, lightTheme]
@@ -70,12 +70,12 @@ if (
   themes.push(gifTheme)
 }
 
-export const getTheme = currentTheme => {
+export const getTheme = (currentTheme) => {
   if (!currentTheme) {
     return getRandomFromArray(themes)
   }
 
-  const currentIndex = themes.findIndex(theme => theme.id === currentTheme.id)
+  const currentIndex = themes.findIndex((theme) => theme.id === currentTheme.id)
 
   return themes[(currentIndex + 1) % themes.length]
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import SectionWrapper from './section-wrapper'
@@ -18,7 +18,7 @@ const projects = [
     href: 'https://equation-solver.gerard.sh',
     title: 'Equation Solver',
     description:
-      'Equation solver using a circuit of constraints as seen on SICP 3.3.5'
+      'Equation solver using a circuit of constraints as seen on SICP 3.3.5',
   },
   /*
   {
@@ -32,53 +32,53 @@ const projects = [
     img: countersImg,
     href: 'https://counters.gerard.sh/',
     title: 'Counters',
-    description: 'Create online shareable counters'
+    description: 'Create online shareable counters',
   },
   {
     img: gasptImg,
     href: 'https://gaspt.gerard.sh',
     title: 'gasPT',
-    description: 'Javascript path tracer based on smallPT'
+    description: 'Javascript path tracer based on smallPT',
   },
   {
     img: weighImg,
     href: 'https://github.com/gerardabello/weight',
     title: 'Weight',
-    description: 'Neural network lib focused on ease of use'
+    description: 'Neural network lib focused on ease of use',
   },
   {
     img: envelopeImg,
     href: 'https://www.npmjs.com/package/adsr-envelope-graph',
     title: 'ADSR Graph',
-    description: 'Visualization of an ADSR envelope as a React component'
+    description: 'Visualization of an ADSR envelope as a React component',
   },
   {
     img: colossalImg,
     href: 'https://colossal.gerard.sh',
     title: 'Colossal',
-    description: 'A simple poly synth using Web Audio and React'
+    description: 'A simple poly synth using Web Audio and React',
   },
   {
     img: goobaImg,
     href: 'http://play.google.com/store/apps/details?id=com.gerardas.gooba',
     title: 'Gooba Monsters',
-    description: 'Android puzzle game'
+    description: 'Android puzzle game',
   },
   {
     img: fldImg,
     href: 'http://upcommons.upc.edu/handle/2099.1/25191?locale-attribute=en',
     title: 'Master thesis',
-    description: 'Robot loop detection'
-  }
+    description: 'Robot loop detection',
+  },
 ]
 
 const Root = styled.div``
 const ProjectList = styled.div`
-    width: 100%;
-    display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 80px;
+  width: 100%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 80px;
 
   @media (max-width: 650px) {
     grid-template-columns: 1fr 1fr;
@@ -87,14 +87,13 @@ const ProjectList = styled.div`
   @media (max-width: 450px) {
     grid-gap: 40px;
   }
-
 `
 const Project = styled.div`
-position: relative;
-display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: ${p => p.theme.color2} -4px 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: ${(p) => p.theme.color2} -4px 4px;
 `
 
 const ProjectImgWrapper = styled.div`
@@ -116,15 +115,14 @@ const ProjectImg = styled.img`
 
 const ProjectTitle = styled.span`
   font-family: 'Input Sans Condensed', monospace;
-  //background: ${p => p.theme.text};
+  //background: ${(p) => p.theme.text};
   font-size: 20px;
-  font-weight: ${p => p.theme.bodyFontWeight};
+  font-weight: ${(p) => p.theme.bodyFontWeight};
   position: absolute;
-    color: ${p => p.theme.text};
-    text-align: center;
-    top: calc(100% + 8px);
-    white-space: nowrap;
-
+  color: ${(p) => p.theme.text};
+  text-align: center;
+  top: calc(100% + 8px);
+  white-space: nowrap;
 
   @media (max-width: 600px) {
     font-size: 18px;
@@ -140,17 +138,21 @@ const Link = styled.a`
   border: none;
 `
 
-const RotatedProjectTitle = ({children}) => {
+const RotatedProjectTitle = ({ children }) => {
   const [rotation] = useState(Math.random() * 4 - 2)
   const [translation] = useState(Math.random() * 8 - 4)
-              return <ProjectTitle translation={translation} rotation={rotation}>{children}</ProjectTitle>
+  return (
+    <ProjectTitle translation={translation} rotation={rotation}>
+      {children}
+    </ProjectTitle>
+  )
 }
 
 const Projects = () => (
-  <SectionWrapper title='Projects' titleMargin='8vh'>
+  <SectionWrapper title="Projects" titleMargin="8vh">
     <Root>
       <ProjectList>
-        {projects.map(project => (
+        {projects.map((project) => (
           <Link key={project.title} href={project.href}>
             <Project>
               <ProjectImgWrapper>
