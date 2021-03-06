@@ -10,9 +10,17 @@ import colossalImg from '../assets/imgs/colossal.png'
 import weighImg from '../assets/imgs/weight.png'
 import envelopeImg from '../assets/imgs/envelope-graph.png'
 import gasptImg from '../assets/imgs/gaspt.jpg'
+import migImg from '../assets/imgs/mig.png'
 import circuitEquationImg from '../assets/imgs/equation-circuit.png'
 
 const projects = [
+  {
+    img: migImg,
+    href: 'https://mig.gerard.sh',
+    title: 'MiG Components',
+    description:
+      'React components inspired by MiG cockpits',
+  },
   {
     img: circuitEquationImg,
     href: 'https://equation-solver.gerard.sh',
