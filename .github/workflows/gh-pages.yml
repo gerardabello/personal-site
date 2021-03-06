@@ -19,6 +19,7 @@ jobs:
       run: |
         yarn
         yarn build
+        cp CNAME dist/CNAME
       env:
         CI: true
     - name: Deploy
