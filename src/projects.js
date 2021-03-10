@@ -157,7 +157,7 @@ const RotatedProjectTitle = ({ children }) => {
 }
 
 const Projects = () => (
-  <SectionWrapper title="Projects" titleMargin="8vh">
+  <SectionWrapper>
     <Root>
       <ProjectList>
         {projects.map((project) => (
