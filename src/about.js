@@ -58,7 +58,7 @@ export default () => (
       <Paragraph>
         My name is Gerard Abelló Serras and I&apos;m a software engineer living
         in Barcelona and currently working at{' '}
-        <a href="https://www.typeform.com">Typeform</a>. I try to be a
+        <a href="https://remote.com/">Remote</a>. I try to be a
         comprehensive programmer, as no one technology is good for solving all
         problems. I believe good, modern design and quality code are fundamental
         to create excellent software products. I like learning new technologies
