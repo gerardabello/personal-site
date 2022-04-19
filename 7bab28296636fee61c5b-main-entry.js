@@ -209,7 +209,7 @@ font-family: 'Whyte Inktrap', sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-`,te=()=>{n.e(2).then(n.t.bind(null,31,7)).then(({makePopup:e})=>{e("https://abmin.typeform.com/to/ITG3fr",{mode:"popup",autoOpen:!0,autoClose:2e3})}).catch(()=>alert("Could not show contact form"))};var ne=()=>o.a.createElement(S,{title:"Contact"},o.a.createElement(Z,null,o.a.createElement(ee,{onClick:te},o.a.createElement(J,null,o.a.createElement(X,null)),"Leave a message"),o.a.createElement("a",{href:"https://github.com/gerardabello"},o.a.createElement(ee,null,o.a.createElement(J,null,o.a.createElement(Q,null)),"Github"))));const re=l.c.div``,oe=l.c.p`
+`,te=()=>{n.e(2).then(n.t.bind(null,31,7)).then(({makePopup:e})=>{e("https://gerardabello.typeform.com/to/uoel9pyw",{mode:"popup",autoOpen:!0,autoClose:2e3})}).catch(()=>alert("Could not show contact form"))};var ne=()=>o.a.createElement(S,{title:"Contact"},o.a.createElement(Z,null,o.a.createElement(ee,{onClick:te},o.a.createElement(J,null,o.a.createElement(X,null)),"Leave a message"),o.a.createElement("a",{href:"https://github.com/gerardabello"},o.a.createElement(ee,null,o.a.createElement(J,null,o.a.createElement(Q,null)),"Github"))));const re=l.c.div``,oe=l.c.p`
   font-family: 'Input Sans Condensed', monospace;
   margin-top: 0;
   text-align: justify;
@@ -344,4 +344,4 @@ font-family: 'Whyte Inktrap', sans-serif;
     text-decoration: none;
   }
 `;(e=>{const t=document.createElement("style");document.getElementsByTagName("head")[0].appendChild(t),t.type="text/css",t.appendChild(document.createTextNode(e))})(`\n  @font-face {\n    font-family: 'Whyte Inktrap';\n    src: url(${Ye}) format('woff2'),\n    url(${Ke}) format('woff');\n    font-weight: 900;\n    font-style: normal;\n  }\n\n  @font-face {\n    font-family: 'Input Sans Condensed';\n    src: url(${et}) format('woff2'),\n    url(${Je}) format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n  @font-face {\n    font-family: 'Input Sans Condensed';\n    src: url(${Ze}) format('woff2'),\n    url(${Xe}) format('woff');\n    font-weight: normal;\n    font-style: italic;\n  }\n`);const nt=l.c.div``;var rt;rt=document.getElementById("root"),a.a.render(o.a.createElement(nt,null,o.a.createElement(tt,null),o.a.createElement(Ge,null)),rt)}]);
-//# sourceMappingURL=3a46777b5ef6c0745ca2-main-entry.js.map
+//# sourceMappingURL=7bab28296636fee61c5b-main-entry.js.map
