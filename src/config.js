@@ -22,6 +22,7 @@ export const darkTheme = {
   text: '#EAE3E0',
   color2: '#364156',
   color4: '#D66853',
+  textShadow: '#11151C 0 0 20px',
 }
 
 export const lightTheme = {

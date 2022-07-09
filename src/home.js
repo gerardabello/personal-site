@@ -55,7 +55,7 @@ const TitleWrapper = styled.div`
 `
 
 const Title = styled.h1`
-  font-family: 'Whyte Inktrap', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
@@ -64,19 +64,26 @@ const Title = styled.h1`
 
   display: inline;
 
-  font-size: 72px;
+  font-size: 90px;
   @media (max-width: 700px) {
-    font-size: 60px;
+    font-size: 72px;
   }
   @media (max-width: 500px) {
-    font-size: 42px;
+    font-size: 52px;
   }
   @media (max-width: 350px) {
-    font-size: 36px;
+    font-size: 42px;
   }
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  ${(props) =>
+    props.theme.textShadow &&
+    `
+    text-shadow: ${props.theme.textShadow};
+    `
+  }
 `
 
 const HiTitle = styled(Title)`

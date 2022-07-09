@@ -5,8 +5,8 @@ import styled, { createGlobalStyle } from 'styled-components'
 import App from './app'
 import { createStaticGlobalStyles } from './utils'
 
-import WhyteInktrapWoff from '../assets/fonts/subset-WhyteInktrap-Super.woff'
-import WhyteInktrapWoff2 from '../assets/fonts/subset-WhyteInktrap-Super.woff2'
+import BarlowSemiCondensedWoff from '../assets/fonts/subset-BarlowSemiCondensed-Black.woff'
+import BarlowSemiCondensedWoff2 from '../assets/fonts/subset-BarlowSemiCondensed-Black.woff2'
 import InputSansCondensedItalicWoff from '../assets/fonts/subset-InputSansCondensed-Italic.woff'
 import InputSansCondensedItalicWoff2 from '../assets/fonts/subset-InputSansCondensed-Italic.woff2'
 import InputSansCondensedWoff from '../assets/fonts/subset-InputSansCondensed-Regular.woff'
@@ -28,9 +28,9 @@ const GlobalStyle = createGlobalStyle`
 // This hack is to solve https://github.com/styled-components/styled-components/issues/1593
 createStaticGlobalStyles(`
   @font-face {
-    font-family: 'Whyte Inktrap';
-    src: url(${WhyteInktrapWoff2}) format('woff2'),
-    url(${WhyteInktrapWoff}) format('woff');
+    font-family: 'Barlow Semi Condensed';
+    src: url(${BarlowSemiCondensedWoff2}) format('woff2'),
+    url(${BarlowSemiCondensedWoff}) format('woff');
     font-weight: 900;
     font-style: normal;
   }
