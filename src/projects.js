@@ -3,26 +3,16 @@ import styled from 'styled-components'
 
 import SectionWrapper from './section-wrapper'
 
-import fldImg from '../assets/imgs/fld.jpg'
-import countersImg from '../assets/imgs/counters.png'
-import goobaImg from '../assets/imgs/gooba.jpg'
-import colossalImg from '../assets/imgs/colossal.png'
-import weighImg from '../assets/imgs/weight.png'
-import envelopeImg from '../assets/imgs/envelope-graph.png'
-import gasptImg from '../assets/imgs/gaspt.jpg'
-import migImg from '../assets/imgs/mig.png'
-import circuitEquationImg from '../assets/imgs/equation-circuit.png'
-
 const projects = [
   {
-    img: migImg,
+    img: '/assets/imgs/mig.png',
     href: 'https://mig.gerard.sh',
     title: 'MiG Components',
     description:
       'React components inspired by MiG cockpits',
   },
   {
-    img: circuitEquationImg,
+    img: '/assets/imgs/equation-circuit.png',
     href: 'https://equation-solver.gerard.sh',
     title: 'Equation Solver',
     description:
@@ -37,43 +27,43 @@ const projects = [
   },
   */
   {
-    img: countersImg,
+    img: '/assets/imgs/counters.png',
     href: 'https://counters.gerard.sh/',
     title: 'Counters',
     description: 'Create online shareable counters',
   },
   {
-    img: gasptImg,
+    img: '/assets/imgs/gaspt.jpg',
     href: 'https://gaspt.gerard.sh',
     title: 'gasPT',
     description: 'Javascript path tracer based on smallPT',
   },
   {
-    img: weighImg,
+    img: '/assets/imgs/weight.png',
     href: 'https://github.com/gerardabello/weight',
     title: 'Weight',
     description: 'Neural network lib focused on ease of use',
   },
   {
-    img: envelopeImg,
+    img: '/assets/imgs/envelope-graph.png',
     href: 'https://www.npmjs.com/package/adsr-envelope-graph',
     title: 'ADSR Graph',
     description: 'Visualization of an ADSR envelope as a React component',
   },
   {
-    img: colossalImg,
+    img: '/assets/imgs/colossal.png',
     href: 'https://colossal.gerard.sh',
     title: 'Colossal',
     description: 'A simple poly synth using Web Audio and React',
   },
   {
-    img: goobaImg,
+    img: '/assets/imgs/gooba.jpg',
     href: 'http://play.google.com/store/apps/details?id=com.gerardas.gooba',
     title: 'Gooba Monsters',
     description: 'Android puzzle game',
   },
   {
-    img: fldImg,
+    img: '/assets/imgs/fld.jpg',
     href: 'http://upcommons.upc.edu/handle/2099.1/25191?locale-attribute=en',
     title: 'Master thesis',
     description: 'Robot loop detection',
@@ -101,7 +91,7 @@ const Project = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: ${(p) => p.theme.color2} -4px 4px;
+  border: 2px solid  ${(p) => p.theme.text};
 `
 
 const ProjectImgWrapper = styled.div`

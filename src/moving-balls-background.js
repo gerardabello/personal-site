@@ -6,8 +6,6 @@ const COLORS = ['#d3d6f3', '#f7e6af', '#f5cdcc']
 
 const FromToRandom = (from, to) => (rand) => from + (to - from) * rand
 
-const SizeRand = FromToRandom(70, 120)
-const PositionRand = FromToRandom(-10, 10)
 const RadiusRand = FromToRandom(0.2, 0.8)
 
 const Root = styled.div`
@@ -26,7 +24,7 @@ const Circle = styled.div`
   position: absolute;
 
   left: calc(${(p) => p.left}vw - ${(p) => p.size / 2}vw);
-  top: calc(${(p) => p.top}vh - ${(p) => p.size / 2}vw);
+  top: calc(30vh + calc(calc(30vh * ${p => p.index}) - ${(p) => p.size / 2}vw) + calc(40vw * ${p => p.index}));
 
   height: ${(p) => p.size}vw;
   width: ${(p) => p.size}vw;
@@ -39,31 +37,22 @@ const Circle = styled.div`
   transition: all ${ANIMATION_TIME}s ease;
 `
 
-const getRandomSize = () => {
-  const initial = SizeRand(Math.random())
-  const ratio = Math.min(
-    1,
-    (0.33 * window.innerHeight) / window.innerWidth + 0.42
-  )
-  return initial * ratio
-}
 
 const Ball = ({ index }) => {
-  const [rotation] = useState(Math.random())
-  const [size] = useState(getRandomSize())
+  const [rotation] = useState(1.234)
+  const [size] = useState(60)
 
-  const [topPos] = useState(index * 80 + FromToRandom(0, 50)(Math.random()))
   const [leftPos] = useState(
     index % 2 === 0
-      ? PositionRand(Math.random())
-      : 100 - PositionRand(Math.random())
+      ? 0
+      : 100
   )
 
-  const [a, setA] = useState(RadiusRand(Math.random()))
-  const [b, setB] = useState(RadiusRand(Math.random()))
-  const [c, setC] = useState(RadiusRand(Math.random()))
-  const [d, setD] = useState(RadiusRand(Math.random()))
-
+  const [a, setA] = useState(0.32)
+  const [b, setB] = useState(0.501)
+  const [c, setC] = useState(0.49)
+  const [d, setD] = useState(0.53)
+  
   useEffect(() => {
     const randomizeBall = () => {
       setA(RadiusRand(Math.random()))
@@ -89,7 +78,7 @@ const Ball = ({ index }) => {
       r={rotation}
       size={size}
       left={leftPos}
-      top={topPos}
+      index={index}
     />
   )
 }

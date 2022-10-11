@@ -1,82 +1,87 @@
-import { lazy } from 'react'
-import styled from 'styled-components'
+import styled from "styled-components";
 
+import dynamic from "next/dynamic";
 
-import RetinaBackground from './retina-background'
-import MovingBallsBackground from './moving-balls-background'
-import { isMobile, getRandomFromArray } from './utils'
+const RetinaBackground = dynamic(() => import("./retina-background"), {
+  ssr: false,
+});
 
-import trippyGif from '../assets/imgs/trippy.gif'
+import MovingBallsBackground from "./moving-balls-background" 
 
-const NoBackground = styled.div``
+import { getRandomFromArray } from "./utils";
 
-const PhysicsBackground = lazy(() =>
-  import(/* webpackChunkName: "physicsBG" */ './physics-background')
-)
+const NoBackground = styled.div``;
+
+const PhysicsBackground = dynamic(() => import("./physics-background"));
 
 export const darkTheme = {
-  id: 'dark',
+  id: "dark",
   backgroundComponent: RetinaBackground,
-  bodyFontWeight: 'normal',
-  background: '#11151C',
-  text: '#EAE3E0',
-  color2: '#364156',
-  color4: '#D66853',
-  textShadow: '#11151C 0 0 20px',
-}
+  bodyFontWeight: "normal",
+  background: "#11151C",
+  text: "#EAE3E0",
+  color4: "#D66853",
+  textShadow: "#11151C 0 0 20px",
+};
 
 export const lightTheme = {
-  id: 'light',
+  id: "light",
   backgroundComponent: MovingBallsBackground,
-  bodyFontWeight: 'normal',
-  background: '#f3f1f0',
-  text: '#2b2b2b',
-  color2: '#3c3a39',
-  color4: '#1e2bf5',
-}
+  bodyFontWeight: "normal",
+  background: "#f3f1f0",
+  text: "#2b2b2b",
+  color4: "#1e2bf5",
+};
 
 export const physicsTheme = {
-  id: 'physics',
+  id: "physics",
   backgroundComponent: PhysicsBackground,
-  bodyFontWeight: 'normal',
-  background: '#ffffff',
-  text: '#000000',
-  color2: '#000000',
-  color4: '#ff0000',
-}
+  bodyFontWeight: "normal",
+  background: "#ffffff",
+  text: "#000000",
+  color4: "#ff0000",
+};
 
 export const gifTheme = {
-  id: 'gif',
+  id: "gif",
   backgroundComponent: NoBackground,
-  bodyFontWeight: 'normal',
-  background: '#000000',
-  text: '#e8e8e8',
-  color2: '#353535',
-  color4: '#ffcc66',
-  textBackgroundGif: trippyGif,
-}
+  bodyFontWeight: "normal",
+  background: "#000000",
+  text: "#e8e8e8",
+  color4: "#ffcc66",
+  textBackgroundGif: "/assets/imgs/trippy.gif",
+};
 
-let themes = [darkTheme, lightTheme]
+let themes = [darkTheme, lightTheme];
 
-if (window.DeviceMotionEvent != null && isMobile) {
-  // It works on desktop, but it's fun only if the device has motion sensor
-  themes.push(physicsTheme)
-}
-
-if (
-  CSS.supports &&
-  (CSS.supports('-webkit-background-clip', 'text') ||
-    CSS.supports('background-clip', 'text'))
-) {
-  themes.push(gifTheme)
-}
-
-export const getTheme = (currentTheme) => {
-  if (!currentTheme) {
-    return getRandomFromArray(themes)
+if (typeof window !== "undefined") {
+  if (
+    window.DeviceMotionEvent != null &&
+    window.innerHeight > window.innerWidth
+  ) {
+    // It works on desktop, but it's fun only if the device has motion sensor
+    themes.push(physicsTheme);
   }
 
-  const currentIndex = themes.findIndex((theme) => theme.id === currentTheme.id)
-
-  return themes[(currentIndex + 1) % themes.length]
+  if (
+    CSS.supports &&
+    (CSS.supports("-webkit-background-clip", "text") ||
+      CSS.supports("background-clip", "text"))
+  ) {
+    themes.push(gifTheme);
+  }
 }
+
+export const getRandomThemeId = (currentThemeId) => {
+  if (!currentThemeId) {
+    return getRandomFromArray(themes).id;
+  }
+
+  const currentIndex = themes.findIndex((theme) => theme.id === currentThemeId);
+
+  return themes[(currentIndex + 1) % themes.length].id;
+};
+
+export const getTheme = (id) => {
+  return themes.find((t) => t.id === id) ?? lightTheme;
+};
