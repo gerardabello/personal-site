@@ -1,12 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 const Half = ({ color }) => (
-  <svg
-    width="72px"
-    height="72px"
-    viewBox="0 0 72 72"
-    version="1.1">
+  <svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-80.000000, -585.000000)" fill={color}>
         <g transform="translate(107.500000, 630.000000) rotate(45.000000) translate(-107.500000, -630.000000) translate(66.000000, 609.000000)">
@@ -15,10 +11,10 @@ const Half = ({ color }) => (
       </g>
     </g>
   </svg>
-)
+);
 
 Half.propTypes = {
-  color: PropTypes.string
-}
+  color: PropTypes.string,
+};
 
-export default Half
+export default Half;

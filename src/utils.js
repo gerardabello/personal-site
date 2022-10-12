@@ -1,9 +1,9 @@
 export const getRandomFromArray = (array) =>
-  array[Math.floor(Math.random() * array.length)]
+  array[Math.floor(Math.random() * array.length)];
 
 export const getRelativeBoundingClientRect = (parent, node) => {
-  const nbr = node.getBoundingClientRect()
-  const pbr = parent.getBoundingClientRect()
+  const nbr = node.getBoundingClientRect();
+  const pbr = parent.getBoundingClientRect();
   return {
     top: nbr.top - pbr.top,
     bottom: nbr.bottom - pbr.bottom,
@@ -11,5 +11,5 @@ export const getRelativeBoundingClientRect = (parent, node) => {
     left: nbr.left - pbr.left,
     width: nbr.width,
     height: nbr.height,
-  }
-}
+  };
+};

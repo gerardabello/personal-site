@@ -1,17 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 const Square = ({ color }) => (
-  <svg
-    width="79px"
-    height="79px"
-    viewBox="0 0 79 79"
-    version="1.1">
+  <svg width="79px" height="79px" viewBox="0 0 79 79" version="1.1">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-645.000000, -117.000000)"
         stroke={color}
-        strokeWidth="11">
+        strokeWidth="11"
+      >
         <rect
           transform="translate(684.500000, 156.500000) rotate(45.000000) translate(-684.500000, -156.500000) "
           x="662.5"
@@ -22,10 +19,10 @@ const Square = ({ color }) => (
       </g>
     </g>
   </svg>
-)
+);
 
 Square.propTypes = {
-  color: PropTypes.string
-}
+  color: PropTypes.string,
+};
 
-export default Square
+export default Square;
