@@ -53,16 +53,16 @@ const Index = () => (
 
   @font-face {
     font-family: 'Input Sans Condensed';
-    src: url('/fonts/subset-InputSansCondensed-Italic.woff2') format('woff2'),
-    url('/fonts/subset-InputSansCondensed-Italic.woff') format('woff');
+    src: url('/fonts/subset-InputSansCondensed-Regular.woff2') format('woff2'),
+    url('/fonts/subset-InputSansCondensed-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Input Sans Condensed';
-    src: url('/fonts/subset-InputSansCondensed-Regular.woff2') format('woff2'),
-    url('/fonts/subset-InputSansCondensed-Regular.woff') format('woff');
+    src: url('/fonts/subset-InputSansCondensed-Italic.woff2') format('woff2'),
+    url('/fonts/subset-InputSansCondensed-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
   }

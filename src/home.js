@@ -1,9 +1,9 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import { generateKeyframes } from 'spring-animation-keyframes'
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import { generateKeyframes } from "spring-animation-keyframes";
 
-import Container from './container'
-import RefreshIcon from './refresh-icon'
+import Container from "./container";
+import RefreshIcon from "./refresh-icon";
 
 const appearBottom = keyframes`${generateKeyframes(
   [
@@ -12,20 +12,20 @@ const appearBottom = keyframes`${generateKeyframes(
       friction: 60,
       from: 30,
       to: 0,
-      unit: 'px',
-      property: 'translateY',
+      unit: "px",
+      property: "translateY",
     },
     {
       tension: 280,
       friction: 100,
       from: 0,
       to: 1,
-      unit: '',
-      property: 'opacity',
+      unit: "",
+      property: "opacity",
     },
   ],
   { time: 2 }
-)}`
+)}`;
 
 const Root = styled.div`
   position: relative;
@@ -34,7 +34,7 @@ const Root = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const ChangeThemeButton = styled.div`
   height: 48px;
@@ -46,16 +46,16 @@ const ChangeThemeButton = styled.div`
   align-items: center;
   justify-content: center;
   color: ${(p) => p.theme.text};
-`
+`;
 
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Title = styled.h1`
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
@@ -79,12 +79,11 @@ const Title = styled.h1`
   -moz-osx-font-smoothing: grayscale;
 
   ${(props) =>
-    props.theme.textShadow &&
+    props.theme.headingTextShadow &&
     `
-    text-shadow: ${props.theme.textShadow};
-    `
-  }
-`
+    text-shadow: ${props.theme.headingTextShadow};
+    `}
+`;
 
 const HiTitle = styled(Title)`
   position: relative;
@@ -102,7 +101,7 @@ const HiTitle = styled(Title)`
       background-position-y: 34%;
       background-size: 502%;
   `}
-`
+`;
 
 const SubTitle = styled(Title)`
   position: relative;
@@ -120,7 +119,7 @@ const SubTitle = styled(Title)`
       background-position-x: 50%;
       background-position-y: 55%;
   `}
-`
+`;
 
 const Home = ({ onChangeTheme }) => (
   <Root>
@@ -134,6 +133,6 @@ const Home = ({ onChangeTheme }) => (
       <RefreshIcon />
     </ChangeThemeButton>
   </Root>
-)
+);
 
-export default Home
+export default Home;

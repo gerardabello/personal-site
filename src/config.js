@@ -6,7 +6,7 @@ const RetinaBackground = dynamic(() => import("./retina-background"), {
   ssr: false,
 });
 
-import MovingBallsBackground from "./moving-balls-background" 
+import MovingBallsBackground from "./moving-balls-background";
 
 import { getRandomFromArray } from "./utils";
 
@@ -17,11 +17,12 @@ const PhysicsBackground = dynamic(() => import("./physics-background"));
 export const darkTheme = {
   id: "dark",
   backgroundComponent: RetinaBackground,
-  bodyFontWeight: "normal",
-  background: "#11151C",
-  text: "#EAE3E0",
-  color4: "#D66853",
-  textShadow: "#11151C 0 0 20px",
+  bodyFontWeight: "bolder",
+  background: "#171717",
+  text: "#FFFFFF",
+  color4: "#F7CF33",
+  headingTextShadow: "#171717 4px 4px",
+  bodyTextShadow: "#171717 2px 2px",
 };
 
 export const lightTheme = {
