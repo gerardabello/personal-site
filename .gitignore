@@ -9,6 +9,8 @@ ignore
 # Webpack build directory
 build
 dist
+.next
+out
 
 # Packaged app
 bin

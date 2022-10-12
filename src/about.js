@@ -27,6 +27,7 @@ const Paragraph = styled.p`
     color: ${(props) => props.theme.color4};
     font-style: italic;
     text-decoration: underline;
+    text-decoration-thickness: 1.5px;
   }
 
   strong {
@@ -43,7 +44,7 @@ const Paragraph = styled.p`
 
   &:first-child:before {
     content: '';
-    background: ${(p) => p.theme.color2};
+    background: ${(p) => p.theme.text};
     height: 10px;
     width: 18px;
     position: absolute;
