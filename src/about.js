@@ -15,8 +15,8 @@ const Paragraph = styled.p`
 
   hyphens: auto;
 
-  font-size: 22px;
-  line-height: 38px;
+  font-size: 18px;
+  line-height: 28px;
 
   @media (max-width: 425px) {
     font-size: 16px;
