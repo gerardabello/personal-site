@@ -25,7 +25,7 @@ const Root = styled.div``;
 const Index = () => (
   <Root>
     <Head>
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <meta
         name="Description"
         content="Gerard Abelló Serras personal website"
