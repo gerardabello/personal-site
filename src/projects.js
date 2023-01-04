@@ -24,13 +24,13 @@ const projects = [
     title: 'Unwelch',
     description: 'Friendly betting'
   },
-  */
   {
     img: "/assets/imgs/counters.png",
     href: "https://counters.gerard.sh/",
     title: "Counters",
     description: "Create online shareable counters",
   },
+  */
   {
     img: "/assets/imgs/gaspt.jpg",
     href: "https://gaspt.gerard.sh",
