@@ -6,13 +6,13 @@ import SectionWrapper from "./section-wrapper";
 const projects = [
   {
     img: "/assets/imgs/mig.png",
-    href: "https://mig.gerard.sh",
+    href: "https://mig.serras.dev",
     title: "MiG Components",
     description: "React components inspired by MiG cockpits",
   },
   {
     img: "/assets/imgs/equation-circuit.png",
-    href: "https://equation-solver.gerard.sh",
+    href: "https://equation-solver.serras.dev",
     title: "Equation Solver",
     description:
       "Equation solver using a circuit of constraints as seen on SICP 3.3.5",
@@ -33,7 +33,7 @@ const projects = [
   */
   {
     img: "/assets/imgs/gaspt.jpg",
-    href: "https://gaspt.gerard.sh",
+    href: "https://gaspt.serras.dev",
     title: "gasPT",
     description: "Javascript path tracer based on smallPT",
   },
@@ -51,7 +51,7 @@ const projects = [
   },
   {
     img: "/assets/imgs/colossal.png",
-    href: "https://colossal.gerard.sh",
+    href: "https://colossal.serras.dev",
     title: "Colossal",
     description: "A simple poly synth using Web Audio and React",
   },
