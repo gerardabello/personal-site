@@ -90,7 +90,9 @@ const Project = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid ${(p) => p.theme.text};
+  background: ${(p) => p.theme.text};
+  padding: 1px;
+  border-radius: 4px;
 `;
 
 const ProjectImgWrapper = styled.div`
@@ -100,6 +102,7 @@ const ProjectImgWrapper = styled.div`
 
 const ProjectImg = styled.img`
   width: 100%;
+  border-radius: 4px;
 
   filter: saturate(0) contrast(1.2);
 
@@ -111,10 +114,10 @@ const ProjectImg = styled.img`
 `;
 
 const ProjectTitle = styled.span`
-  font-family: "Input Sans Condensed", monospace;
-  //background: ${(p) => p.theme.text};
+  font-variation-settings: "WONK" 100, "SOFT" 100;
+
   font-size: 20px;
-  font-weight: ${(p) => p.theme.bodyFontWeight};
+  font-weight: ${(p) => p.theme.bodyFontWeight * 1.5};
   position: absolute;
   color: ${(p) => p.theme.text};
   text-align: center;

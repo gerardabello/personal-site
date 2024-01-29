@@ -6,12 +6,12 @@ import SectionWrapper from "./section-wrapper";
 const Root = styled.div``;
 
 const Paragraph = styled.p`
-  font-family: "Input Sans Condensed", monospace;
+  font-variation-settings: "WONK" 0, "SOFT" 0;
+  font-weight: ${(p) => p.theme.bodyFontWeight};
   margin-top: 0;
   text-align: justify;
 
   color: ${(p) => p.theme.text};
-  font-weight: ${(p) => p.theme.bodyFontWeight};
 
   hyphens: auto;
 
@@ -24,16 +24,16 @@ const Paragraph = styled.p`
   }
 
   a {
-    color: ${(props) => props.theme.color4};
-    font-style: italic;
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
   }
 
-  strong {
+  strong,
+  a {
     color: ${(props) => props.theme.color4};
     font-style: italic;
-    font-weight: normal;
+    font-variation-settings: "WONK" 100, "SOFT" 100;
+    font-weight: ${(p) => p.theme.bodyFontWeight * 1.3};
   }
 
   position: relative;

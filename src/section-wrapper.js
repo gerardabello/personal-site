@@ -27,7 +27,6 @@ const Root = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: "Barlow Semi Condensed", sans-serif;
   letter-spacing: 1px;
   font-weight: 900;
   margin: 0;

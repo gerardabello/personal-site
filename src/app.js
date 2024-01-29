@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
 
 const Root = styled.div`
   position: relative;
-  font-family: "Barlow", sans-serif;
   width: 100%;
   overflow-x: hidden;
   background-color: ${(props) => props.theme.background};

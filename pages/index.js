@@ -37,36 +37,28 @@ const Index = () => (
         {`
           html, body, #root{
             margin: 0;
+            font-family: 'Fraunces';
           }
         `}
       </style>
 
       <style>
         {`
- @font-face {
-    font-family: 'Barlow Semi Condensed';
-    src: url('/fonts/subset-BarlowSemiCondensed-Black.woff2') format('woff2'),
-    url('../public/fonts/subset-BarlowSemiCondensed-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-  }
+            @font-face {
+              font-family: 'Fraunces';
+              font-weight: 100 900;
+              src: url('/fonts/Fraunces--latin_basic.woff2') format('woff2');
+              unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+            }
 
-  @font-face {
-    font-family: 'Input Sans Condensed';
-    src: url('/fonts/subset-InputSansCondensed-Regular.woff2') format('woff2'),
-    url('/fonts/subset-InputSansCondensed-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Input Sans Condensed';
-    src: url('/fonts/subset-InputSansCondensed-Italic.woff2') format('woff2'),
-    url('/fonts/subset-InputSansCondensed-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-  }
-        `}
+            @font-face {
+              font-family: 'Fraunces';
+              font-weight: 100 900;
+              font-style: italic;
+              src: url('/fonts/Fraunces-Italic--latin_basic.woff2') format('woff2');
+              unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+            }
+          `}
       </style>
     </Head>
     <GlobalStyle />

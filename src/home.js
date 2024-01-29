@@ -55,9 +55,8 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: "Barlow Semi Condensed", sans-serif;
-  text-transform: uppercase;
-  font-weight: 900;
+  font-variation-settings: "WONK" 100, "SOFT" 100;
+  font-weight: ${(p) => p.theme.titleFontWeight};
   letter-spacing: 2px;
   text-align: center;
   margin: 0;
