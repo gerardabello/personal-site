@@ -29,7 +29,6 @@ const appearBottom = keyframes`${generateKeyframes(
 
 const Root = styled.div`
   position: relative;
-  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +38,7 @@ const Root = styled.div`
 const ChangeThemeButton = styled.div`
   height: 48px;
   width: 48px;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   display: flex;
@@ -51,40 +50,37 @@ const ChangeThemeButton = styled.div`
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 7vh;
 `;
 
 const Title = styled.h1`
-  font-variation-settings: "WONK" 100, "SOFT" 100;
   font-weight: ${(p) => p.theme.titleFontWeight};
   letter-spacing: 2px;
-  text-align: center;
+  text-align: left;
   margin: 0;
 
   display: inline;
 
-  font-size: 90px;
+  font-size: 70px;
+  line-height: 1.5;
   @media (max-width: 700px) {
-    font-size: 72px;
+    font-size: 62px;
   }
   @media (max-width: 500px) {
-    font-size: 52px;
+    font-size: 46px;
   }
   @media (max-width: 350px) {
-    font-size: 42px;
+    font-size: 38px;
   }
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   ${(props) =>
     props.theme.headingTextShadow &&
     `
     text-shadow: ${props.theme.headingTextShadow};
     `}
-`;
 
-const HiTitle = styled(Title)`
   position: relative;
   animation: ${appearBottom} 2s linear 0.4s backwards;
 
@@ -98,39 +94,84 @@ const HiTitle = styled(Title)`
 
       background-position-x: 60%;
       background-position-y: 34%;
-      background-size: 502%;
+      background-size: 122%;
   `}
 `;
 
-const SubTitle = styled(Title)`
-  position: relative;
-  animation: ${appearBottom} 2s linear 1.2s backwards;
+const Paragraph = styled.p`
+  font-weight: ${(p) => p.theme.bodyFontWeight};
+  margin-top: 0;
+  text-align: left;
+
+  color: ${(p) => p.theme.text};
+
+  hyphens: auto;
+
+  font-size: 36px;
+  line-height: 1.4;
+
+  @media (max-width: 425px) {
+    font-size: 28px;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+  }
+
+  strong,
+  a {
+    color: ${(props) => props.theme.color4};
+  }
 
   ${(props) =>
-    props.theme.textBackgroundGif &&
+    props.theme.bodyTextShadow &&
     `
-      background-image: url(${props.theme.textBackgroundGif});
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
+    text-shadow: ${props.theme.bodyTextShadow};
+    `}
+`;
 
-      background-size: 120%;
-      background-position-x: 50%;
-      background-position-y: 55%;
-  `}
+const About = styled.div`
+  animation: ${appearBottom} 3s linear 1s backwards;
+  margin-bottom: 20vh;
+`;
+
+const Img = styled.img`
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 40px;
+  float: both;
 `;
 
 const Home = ({ onChangeTheme }) => (
   <Root>
-    <Container>
-      <TitleWrapper>
-        <HiTitle>Hi!</HiTitle>
-        <SubTitle>I&apos;m Gerard</SubTitle>
-      </TitleWrapper>
-    </Container>
     <ChangeThemeButton onClick={onChangeTheme}>
       <RefreshIcon />
     </ChangeThemeButton>
+    <TitleWrapper>
+      <Title>Hi, I&apos;m Gerard</Title>
+    </TitleWrapper>
+
+    <About>
+      <Paragraph>
+        I&apos;m a software engineer living in Barcelona and currently working
+        at <a href="https://remote.com/">Remote</a>.
+      </Paragraph>
+      <Paragraph>
+        I love <a href="https://github.com/gerardabello">programming</a>,
+        specially doing{" "}
+        <a href="https://mig.serras.dev/?path=/story/welcome--intro">UIs</a>{" "}
+        that help people to{" "}
+        <a href="https://equation-solver.serras.dev/">solve</a> their problems.
+      </Paragraph>
+      <Paragraph>
+        I also like tea, taking care of my plants and playing the{" "}
+        <a href="https://colossal.serras.dev">piano</a>.
+      </Paragraph>
+      <Paragraph></Paragraph>
+    </About>
   </Root>
 );
 

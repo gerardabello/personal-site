@@ -4,8 +4,6 @@ import Head from "next/head";
 
 import Container from "./container";
 import Home from "./home";
-import Projects from "./projects";
-import About from "./about";
 import { getTheme, getRandomThemeId } from "./config";
 
 const GlobalStyle = createGlobalStyle`
@@ -20,6 +18,7 @@ const Root = styled.div`
   overflow-x: hidden;
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
+  min-height: 100vh;
 `;
 
 const Content = styled.div`
@@ -44,10 +43,8 @@ const App = () => {
         </Head>
         <Background />
         <Content>
-          <Home onChangeTheme={handleThemeChange} />
           <Container>
-            <About />
-            <Projects />
+            <Home onChangeTheme={handleThemeChange} />
           </Container>
         </Content>
       </Root>

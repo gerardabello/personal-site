@@ -91,9 +91,9 @@ const Wrapper = styled.div`
 const generateShapes = (element) => {
   const width = element.clientWidth;
   const height = element.clientHeight;
-  const scale = 2;
-  const margin = 100 * scale;
-  const spacing = 100 * scale;
+  const scale = 0.6;
+  const margin = 150 * scale;
+  const spacing = 150 * scale;
   let shapes = [];
   // width, height, radius
   const sampler = poissonDiscSampler(
@@ -145,9 +145,7 @@ const Shape = ({ shape }) => {
       <div
         style={{
           transform: `scale(${shape.scale}) rotate(${shape.position[0]}rad)`,
-          opacity:
-            1 *
-            Math.max(0.1, 1.4 - shape.position[1] / (window.innerHeight * 0.8)),
+          opacity: 0.2,
         }}
       >
         <C color={shape.color} />
