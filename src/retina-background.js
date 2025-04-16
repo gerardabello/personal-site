@@ -145,7 +145,7 @@ const Shape = ({ shape }) => {
       <div
         style={{
           transform: `scale(${shape.scale}) rotate(${shape.position[0]}rad)`,
-          opacity: 0.2,
+          opacity: 0.3,
         }}
       >
         <C color={shape.color} />
