@@ -163,8 +163,8 @@ const Home = ({ onChangeTheme }) => (
         I love <a href="https://github.com/gerardabello">programming</a>,
         specially creating{" "}
         <a href="https://mig.serras.dev/?path=/story/welcome--intro">UIs</a>{" "}
-        that help people to{" "}
-        <a href="https://equation-solver.serras.dev/">solve</a> their problems.
+        that help people <a href="https://equation-solver.serras.dev/">solve</a>{" "}
+        their problems.
       </Paragraph>
       <Paragraph>
         I also like tea, taking care of my plants and playing the{" "}
