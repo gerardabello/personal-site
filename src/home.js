@@ -161,7 +161,7 @@ const Home = ({ onChangeTheme }) => (
       </Paragraph>
       <Paragraph>
         I love <a href="https://github.com/gerardabello">programming</a>,
-        specially doing{" "}
+        specially creating{" "}
         <a href="https://mig.serras.dev/?path=/story/welcome--intro">UIs</a>{" "}
         that help people to{" "}
         <a href="https://equation-solver.serras.dev/">solve</a> their problems.
