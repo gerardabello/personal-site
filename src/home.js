@@ -56,6 +56,7 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.h1`
+  color: ${(p) => p.theme.titleText};
   font-weight: ${(p) => p.theme.titleFontWeight};
   letter-spacing: 2px;
   text-align: left;

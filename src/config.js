@@ -20,6 +20,7 @@ export const darkTheme = {
   bodyFontWeight: "bolder",
   background: "#171717",
   text: "#FFFFFF",
+  titleText: "#FFFFFF",
   color4: "#F7CF33",
   headingTextShadow: "#171717 4px 4px, black 0 0 60px",
   bodyTextShadow: "#171717 2px 2px",
@@ -34,6 +35,7 @@ export const lightTheme = {
   bodyFontWeight: "normal",
   background: "#f3f1f0",
   text: "#000000",
+  titleText: "#000000",
   color4: "#1e2bf5",
   titleFontWeight: "800",
   bodyFontWeight: "400",
@@ -46,6 +48,7 @@ export const physicsTheme = {
   bodyFontWeight: "normal",
   background: "#ffffff",
   text: "#000000",
+  titleText: "#000000",
   color4: "#ff0000",
   titleFontWeight: "800",
   bodyFontWeight: "400",
@@ -58,12 +61,12 @@ export const gifTheme = {
   bodyFontWeight: "normal",
   background: "#000000",
   text: "#e8e8e8",
+  titleText: "#db6152",
   color4: "#ffcc66",
-  textBackgroundGif: "/assets/imgs/trippy.gif",
   titleFontWeight: "900",
   bodyFontWeight: "400",
   nomFilter:
-    "invert(1) sepia(1) brightness(0.6) saturate(13) hue-rotate(-63deg)",
+    "invert(1) sepia(1) brightness(0.5) saturate(13) hue-rotate(-63deg)",
 };
 
 let themes = [darkTheme, lightTheme];
