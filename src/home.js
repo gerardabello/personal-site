@@ -176,7 +176,7 @@ const Home = ({ onChangeTheme }) => (
       </Paragraph>
       <Paragraph>
         To get in touch, please send me a message on{" "}
-        <a href="https://es.linkedin.com/in/gerard-abell%C3%B3-serras-23143153">
+        <a href="https://linkedin.com/in/gerard-abell%C3%B3-serras-23143153">
           Linkedin
         </a>
         .
