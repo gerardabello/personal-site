@@ -71,7 +71,7 @@ const Title = styled.h1`
   @media (max-width: 500px) {
     font-size: 46px;
   }
-  @media (max-width: 350px) {
+  @media (max-width: 370px) {
     font-size: 38px;
   }
 
@@ -108,7 +108,7 @@ const Paragraph = styled.p`
   hyphens: auto;
 
   font-size: 36px;
-  line-height: 1.4;
+  line-height: 1.25;
 
   @media (max-width: 425px) {
     font-size: 28px;
@@ -134,15 +134,17 @@ const Paragraph = styled.p`
 
 const About = styled.div`
   animation: ${appearBottom} 3s linear 1s backwards;
-  margin-bottom: 20vh;
+  margin-top: 3em;
 `;
 
-const Img = styled.img`
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 40px;
-  float: both;
+const NomImg = styled.img`
+  display: inline-block;
+
+  width: 3.5em;
+  margin-bottom: -0.6em;
+  margin-left: 0.1em;
+
+  filter: ${({ theme }) => theme.nomFilter};
 `;
 
 const Home = ({ onChangeTheme }) => (
@@ -151,7 +153,9 @@ const Home = ({ onChangeTheme }) => (
       <RefreshIcon />
     </ChangeThemeButton>
     <TitleWrapper>
-      <Title>Hi, I&apos;m Gerard</Title>
+      <Title>
+        Hi, I&apos;m <NomImg src="/assets/imgs/nom.png" />
+      </Title>
     </TitleWrapper>
 
     <About>
