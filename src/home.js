@@ -154,7 +154,7 @@ const Home = ({ onChangeTheme }) => (
     </ChangeThemeButton>
     <TitleWrapper>
       <Title>
-        Hi, I&apos;m <NomImg src="/assets/imgs/nom.png" />
+        Hi, I&apos;m <NomImg alt="Gerard" src="/assets/imgs/nom.png" />
       </Title>
     </TitleWrapper>
 
