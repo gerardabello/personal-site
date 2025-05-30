@@ -174,7 +174,13 @@ const Home = ({ onChangeTheme }) => (
         I also like tea, taking care of my plants and playing the{" "}
         <a href="https://colossal.serras.dev">piano</a>.
       </Paragraph>
-      <Paragraph></Paragraph>
+      <Paragraph>
+        To get in touch, please send me a message on{" "}
+        <a href="https://es.linkedin.com/in/gerard-abell%C3%B3-serras-23143153">
+          Linkedin
+        </a>
+        .
+      </Paragraph>
     </About>
   </Root>
 );
