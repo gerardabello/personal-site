@@ -18,15 +18,16 @@ export const darkTheme = {
   id: "dark",
   backgroundComponent: RetinaBackground,
   bodyFontWeight: "bolder",
-  background: "#171717",
+  background: "#070707",
   text: "#FFFFFF",
-  titleText: "#FFFFFF",
-  color4: "#F7CF33",
-  headingTextShadow: "#171717 4px 4px, black 0 0 60px",
-  bodyTextShadow: "#171717 2px 2px",
+  titleText: "#d2b618",
+  color4: "#4d7dd8",
+  headingTextShadow: "#070707 4px 4px, black 0 0 60px",
+  bodyTextShadow: "#070707 2px 2px",
   titleFontWeight: "800",
   bodyFontWeight: "400",
-  nomFilter: "invert(1)",
+  nomFilter:
+    "invert(1) sepia(1) brightness(0.75) saturate(12) hue-rotate(-8deg)",
 };
 
 export const lightTheme = {

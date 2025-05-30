@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 import Ring from "./figures/ring";
@@ -56,7 +56,7 @@ function shuffle(iarray) {
 }
 
 const PreRoot = styled.div`
-  background-color: #171717;
+  background-color: ${({ theme }) => theme.background};
   position: absolute;
   top: 0;
   left: 0;
@@ -145,7 +145,7 @@ const Shape = ({ shape }) => {
       <div
         style={{
           transform: `scale(${shape.scale}) rotate(${shape.position[0]}rad)`,
-          opacity: 0.3,
+          opacity: 0.15,
         }}
       >
         <C color={shape.color} />
