@@ -165,11 +165,14 @@ const Home = ({ onChangeTheme }) => (
         at <a href="https://remote.com/">Remote</a>.
       </Paragraph>
       <Paragraph>
-        I love <a href="https://github.com/gerardabello">programming</a>,
-        specially creating{" "}
-        <a href="https://mig.serras.dev/?path=/story/welcome--intro">UIs</a>{" "}
-        that help people <a href="https://equation-solver.serras.dev/">solve</a>{" "}
-        their problems.
+        My greatest joy in{" "}
+        <a href="https://github.com/gerardabello">programming</a> is creating{" "}
+        <a href="https://mig.serras.dev/?path=/story/welcome--intro">
+          interfaces
+        </a>{" "}
+        that empower users to{" "}
+        <a href="https://equation-solver.serras.dev/">solve</a> their real-world
+        problems.
       </Paragraph>
       <Paragraph>
         I also like tea, taking care of my plants and playing the{" "}
