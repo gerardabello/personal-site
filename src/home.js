@@ -175,7 +175,8 @@ const Home = ({ onChangeTheme }) => (
         problems.
       </Paragraph>
       <Paragraph>
-        I also like tea, taking care of my plants and playing the{" "}
+        I also like tea, <a href="https://gym-timer.serras.dev/">working out</a>
+        , taking care of my plants and playing the{" "}
         <a href="https://colossal.serras.dev">piano</a>.
       </Paragraph>
       <Paragraph>
