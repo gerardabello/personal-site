@@ -8,6 +8,8 @@ const RetinaBackground = dynamic(() => import("./retina-background"), {
 
 import MovingBallsBackground from "./moving-balls-background";
 
+import GrainyBackground from "./grainy-background";
+
 import { getRandomFromArray } from "./utils";
 
 const NoBackground = styled.div``;
@@ -62,15 +64,28 @@ export const gifTheme = {
   bodyFontWeight: "normal",
   background: "#000000",
   text: "#e8e8e8",
-  titleText: "#db6152",
+  titleText: "#e04d68",
   color4: "#ffcc66",
   titleFontWeight: "900",
   bodyFontWeight: "400",
   nomFilter:
-    "invert(1) sepia(1) brightness(0.5) saturate(13) hue-rotate(-63deg)",
+    "invert(1) sepia(1) brightness(0.45) saturate(14) hue-rotate(278deg)",
 };
 
-let themes = [darkTheme, lightTheme];
+export const grainyTheme = {
+  id: "grainy",
+  backgroundComponent: GrainyBackground,
+  bodyFontWeight: "normal",
+  background: "#00744dff",
+  text: "#ffffffff",
+  titleText: "#ffffffff",
+  color4: "#f6e780",
+  titleFontWeight: "800",
+  bodyFontWeight: "400",
+  nomFilter: "invert(1)",
+};
+
+let themes = [darkTheme, grainyTheme, lightTheme];
 
 if (typeof window !== "undefined") {
   if (
@@ -101,5 +116,5 @@ export const getRandomThemeId = (currentThemeId) => {
 };
 
 export const getTheme = (id) => {
-  return themes.find((t) => t.id === id) ?? lightTheme;
+  return themes.find((t) => t.id === id) ?? grainyTheme;
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 import { generateKeyframes } from "spring-animation-keyframes";
 
 import Container from "./container";
@@ -136,6 +136,7 @@ const Paragraph = styled.p`
 const About = styled.div`
   animation: ${appearBottom} 3s linear 1s backwards;
   margin-top: 3em;
+  font-family: "Instrument Serif", serif;
 `;
 
 const NomImg = styled.img`
@@ -148,46 +149,49 @@ const NomImg = styled.img`
   filter: ${({ theme }) => theme.nomFilter};
 `;
 
-const Home = ({ onChangeTheme }) => (
-  <Root>
-    <ChangeThemeButton onClick={onChangeTheme}>
-      <RefreshIcon />
-    </ChangeThemeButton>
-    <TitleWrapper>
-      <Title>
-        Hi, I&apos;m <NomImg alt="Gerard" src="/assets/imgs/nom.png" />
-      </Title>
-    </TitleWrapper>
+const Home = ({ onChangeTheme }) => {
+  return (
+    <Root>
+      <ChangeThemeButton onClick={onChangeTheme}>
+        <RefreshIcon />
+      </ChangeThemeButton>
+      <TitleWrapper>
+        <Title>
+          Hi, I&apos;m <NomImg alt="Gerard" src="/assets/imgs/nom.png" />
+        </Title>
+      </TitleWrapper>
 
-    <About>
-      <Paragraph>
-        I&apos;m a software engineer living in Barcelona and currently working
-        at <a href="https://remote.com/">Remote</a>.
-      </Paragraph>
-      <Paragraph>
-        My greatest joy in{" "}
-        <a href="https://github.com/gerardabello">programming</a> is creating{" "}
-        <a href="https://mig.serras.dev/?path=/story/welcome--intro">
-          interfaces
-        </a>{" "}
-        that empower users to{" "}
-        <a href="https://equation-solver.serras.dev/">solve</a> their real-world
-        problems.
-      </Paragraph>
-      <Paragraph>
-        I also like tea, <a href="https://gym-timer.serras.dev/">working out</a>
-        , taking care of my plants and playing the{" "}
-        <a href="https://colossal.serras.dev">piano</a>.
-      </Paragraph>
-      <Paragraph>
-        To get in touch, please send me a message on{" "}
-        <a href="https://linkedin.com/in/gerard-abell%C3%B3-serras-23143153">
-          Linkedin
-        </a>
-        .
-      </Paragraph>
-    </About>
-  </Root>
-);
+      <About>
+        <Paragraph>
+          I&apos;m a software engineer living in Barcelona and currently working
+          at <a href="https://remote.com/">Remote</a>.
+        </Paragraph>
+        <Paragraph>
+          My greatest joy in{" "}
+          <a href="https://github.com/gerardabello">programming</a> is creating{" "}
+          <a href="https://mig.serras.dev/?path=/story/welcome--intro">
+            interfaces
+          </a>{" "}
+          that empower users to{" "}
+          <a href="https://equation-solver.serras.dev/">solve</a> their
+          real-world problems.
+        </Paragraph>
+        <Paragraph>
+          I also like tea,{" "}
+          <a href="https://gym-timer.serras.dev/">working out</a>, taking care
+          of my plants and playing the{" "}
+          <a href="https://colossal.serras.dev">piano</a>.
+        </Paragraph>
+        <Paragraph>
+          To get in touch, please send me a message on{" "}
+          <a href="https://linkedin.com/in/gerard-abell%C3%B3-serras-23143153">
+            Linkedin
+          </a>
+          .
+        </Paragraph>
+      </About>
+    </Root>
+  );
+};
 
 export default Home;

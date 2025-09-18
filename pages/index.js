@@ -56,6 +56,19 @@ const Index = () => (
               font-style: italic;
               src: url('/fonts/RoobertItalicGX.woff2') format('woff2');
             }
+
+                        @font-face {
+              font-family: 'Instrument Serif';
+              font-weight: 400;
+              src: url('/fonts/InstrumentSerif-Regular.ttf') format('truetype');
+            }
+
+            @font-face {
+              font-family: 'Instrument Serif';
+              font-weight: 400;
+              font-style: italic;
+              src: url('/fonts/InstrumentSerif-Italic.ttf') format('truetype');
+            }
           `}
       </style>
     </Head>
