@@ -104,6 +104,7 @@ const Paragraph = styled.p`
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 5px;
+    cursor: pointer;
   }
 
   strong,
