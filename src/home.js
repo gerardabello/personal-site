@@ -24,7 +24,7 @@ const appearBottom = keyframes`${generateKeyframes(
       property: "opacity",
     },
   ],
-  { time: 2 }
+  { time: 2 },
 )}`;
 
 const Root = styled.div`
@@ -177,9 +177,9 @@ const Home = ({ onChangeTheme }) => {
           real-world problems.
         </Paragraph>
         <Paragraph>
-          I also like tea,{" "}
+          I also like games,{" "}
           <a href="https://gym-timer.serras.dev/">working out</a>, taking care
-          of my plants and playing the{" "}
+          of my plants and <a href="https://music.serras.dev">playing</a> the{" "}
           <a href="https://colossal.serras.dev">piano</a>.
         </Paragraph>
         <Paragraph>
