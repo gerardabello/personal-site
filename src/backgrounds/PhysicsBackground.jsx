@@ -132,7 +132,7 @@ const useGravity = () => {
   return gravity;
 };
 
-const Background = () => {
+const PhysicsBackground = () => {
   const [gravityX, gravityY] = useGravity();
   const engineRef = useRef();
   const rootRef = useRef();
@@ -150,4 +150,4 @@ const Background = () => {
   return <Root ref={rootRef} />;
 };
 
-export default Background;
+export default PhysicsBackground;

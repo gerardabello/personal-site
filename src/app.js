@@ -2,9 +2,25 @@ import React, { useState } from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import Head from "next/head";
 
-import Container from "./container";
 import Home from "./home";
 import { getTheme, getRandomThemeId } from "./config";
+
+const Container = styled.div`
+  max-width: 100%;
+  width: 744px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media (max-width: 700px) {
+    padding: 0 24px;
+  }
+  @media (max-width: 500px) {
+    padding: 0 16px;
+  }
+  @media (max-width: 350px) {
+    padding: 0 14px;
+  }
+`;
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root{

@@ -99,7 +99,7 @@ const generateShapes = (element) => {
   const sampler = poissonDiscSampler(
     width + margin * 2,
     height + margin * 2,
-    spacing
+    spacing,
   );
 
   let sample;
@@ -154,7 +154,7 @@ const Shape = ({ shape }) => {
   );
 };
 
-const Background = () => {
+const RetinaBackground = () => {
   const [shapes, setShapes] = useState([]);
   const rootRef = useRef();
   const lastWindowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -196,4 +196,4 @@ const Background = () => {
   );
 };
 
-export default Background;
+export default RetinaBackground;

@@ -2,19 +2,24 @@ import styled from "styled-components";
 
 import dynamic from "next/dynamic";
 
-const RetinaBackground = dynamic(() => import("./retina-background"), {
-  ssr: false,
-});
+const RetinaBackground = dynamic(
+  () => import("./backgrounds/RetinaBackground"),
+  {
+    ssr: false,
+  },
+);
 
-import MovingBallsBackground from "./moving-balls-background";
+import MovingBallsBackground from "./backgrounds/MovingBallsBackground";
 
-import GrainyBackground from "./grainy-background";
+import GrainyBackground from "./backgrounds/GrainyBackground";
 
 import { getRandomFromArray } from "./utils";
 
 const NoBackground = styled.div``;
 
-const PhysicsBackground = dynamic(() => import("./physics-background"));
+const PhysicsBackground = dynamic(() =>
+  import("./backgrounds/PhysicsBackground"),
+);
 
 export const darkTheme = {
   id: "dark",

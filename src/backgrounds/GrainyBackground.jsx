@@ -37,7 +37,7 @@ const Noise = () => {
   );
 };
 
-const Background = () => {
+const GrainyBackground = () => {
   return (
     <Root>
       <Noise />
@@ -45,4 +45,4 @@ const Background = () => {
   );
 };
 
-export default Background;
+export default GrainyBackground;

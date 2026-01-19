@@ -2,8 +2,9 @@ import React from "react";
 import styled, { keyframes, useTheme } from "styled-components";
 import { generateKeyframes } from "spring-animation-keyframes";
 
-import Container from "./container";
 import RefreshIcon from "./refresh-icon";
+
+
 
 const appearBottom = keyframes`${generateKeyframes(
   [
