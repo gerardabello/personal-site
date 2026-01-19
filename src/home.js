@@ -2,10 +2,6 @@ import React from "react";
 import styled, { keyframes, useTheme } from "styled-components";
 import { generateKeyframes } from "spring-animation-keyframes";
 
-import RefreshIcon from "./refresh-icon";
-
-
-
 const appearBottom = keyframes`${generateKeyframes(
   [
     {
@@ -34,18 +30,6 @@ const Root = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-
-const ChangeThemeButton = styled.div`
-  height: 48px;
-  width: 48px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${(p) => p.theme.text};
 `;
 
 const TitleWrapper = styled.div`
@@ -134,6 +118,23 @@ const Paragraph = styled.p`
     `}
 `;
 
+const SmallParagraph = styled(Paragraph)`
+  margin-top: 2em;
+  font-size: 20px;
+  text-align: right;
+  font-family: "Roobert", sans-serif;
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 16px;
+  }
+`;
+
 const About = styled.div`
   animation: ${appearBottom} 3s linear 1s backwards;
   margin-top: 3em;
@@ -153,9 +154,6 @@ const NomImg = styled.img`
 const Home = ({ onChangeTheme }) => {
   return (
     <Root>
-      <ChangeThemeButton onClick={onChangeTheme}>
-        <RefreshIcon />
-      </ChangeThemeButton>
       <TitleWrapper>
         <Title>
           Hi, I&apos;m <NomImg alt="Gerard" src="/assets/imgs/nom.png" />
@@ -190,6 +188,10 @@ const Home = ({ onChangeTheme }) => {
           </a>
           .
         </Paragraph>
+
+        <SmallParagraph>
+          Tired of this theme? <a onClick={onChangeTheme}>Try a new one</a>.
+        </SmallParagraph>
       </About>
     </Root>
   );
